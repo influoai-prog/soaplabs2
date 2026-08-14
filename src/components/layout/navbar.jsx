@@ -61,7 +61,11 @@ export function Navbar({ isLoading = false }) {
           behavior: smooth ? 'smooth' : 'auto',
           block: 'start',
         })
-        window.history.replaceState(null, '', href)
+        window.history.replaceState(
+          window.history.state,
+          '',
+          `${window.location.pathname}${window.location.search}`,
+        )
         return
       }
     }
