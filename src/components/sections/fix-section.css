@@ -76,6 +76,16 @@
   color: #ff80ad;
 }
 
+.fix-intro__subheading {
+  margin: 20px auto 0;
+  font-family: 'M Saans', 'Segoe UI', sans-serif;
+  font-size: clamp(17px, 1.45vw, 20px);
+  font-weight: var(--type-body-lg-font-weight);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--muted);
+}
+
 .fix-intro__timeline {
   position: relative;
   min-width: 0;
@@ -161,7 +171,7 @@
 }
 
 .fix-intro__step-copy small {
-  font-size: clamp(12px, 1vw, 14px);
+  font-size: clamp(12.5px, 1.05vw, 14.5px);
   font-weight: 550;
   line-height: 1.12;
   color: rgba(1, 2, 5, 0.74);
@@ -359,7 +369,7 @@
   }
 
   .fix-intro__step-copy small {
-    font-size: 14px;
+    font-size: 14.5px;
   }
 
   .fix-visual__title {
@@ -400,6 +410,11 @@
   .fix-intro__line--accent {
     font-size: 0.64em;
     letter-spacing: -0.05em;
+  }
+
+  .fix-intro__subheading {
+    margin-top: 16px;
+    font-size: var(--type-body-sm-font-size);
   }
 
   .fix-intro__timeline {
