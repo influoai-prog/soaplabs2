@@ -228,6 +228,14 @@
   transform: none;
 }
 
+.process-card--one .process-card__topline {
+  padding-left: clamp(72px, 8vw, 104px);
+}
+
+.process-card--three .process-card__topline {
+  padding-right: clamp(72px, 8vw, 104px);
+}
+
 @media (min-width: 1000.01px) {
   .process-card .process-card__copy h3 {
     white-space: nowrap;
@@ -365,6 +373,10 @@
     justify-content: space-between;
     padding-bottom: clamp(27px, 2.6vw, 36px);
     border-radius: 30px;
+  }
+
+  .process-card--three .process-card__topline {
+    padding-right: 0;
   }
 
   .process-card--three::before,
