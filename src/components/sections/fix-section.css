@@ -118,9 +118,11 @@
   background: #010205;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1;
   color: #fff;
+  -webkit-text-stroke: 0.65px currentColor;
+  paint-order: stroke fill;
   z-index: 2;
 }
 
