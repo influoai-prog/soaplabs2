@@ -29,6 +29,7 @@
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 30px 90px rgba(1, 2, 5, 0.3);
+  font-family: 'M Saans', 'Segoe UI', sans-serif;
 }
 
 .booking-modal__header {
@@ -47,11 +48,11 @@
 .booking-questionnaire__intro > span {
   display: block;
   color: rgba(1, 2, 5, 0.56);
-  font-size: 11px;
+  font-size: var(--type-card-label-font-size);
   font-style: normal;
-  font-weight: 650;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  font-weight: var(--type-card-label-font-weight);
+  letter-spacing: 0.075em;
+  line-height: var(--type-card-label-line-height);
   text-transform: uppercase;
 }
 
@@ -62,9 +63,9 @@
 .booking-modal__identity h2 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(22px, 2vw, 28px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.045em;
   line-height: 1;
 }
 
@@ -99,8 +100,9 @@
 }
 
 .booking-progress strong {
-  font-size: 12px;
-  font-weight: 550;
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.012em;
 }
 
 .booking-progress .is-current,
@@ -179,26 +181,27 @@
   max-width: 420px;
   margin: 20px 0 18px;
   color: #010205;
-  font-size: clamp(42px, 5vw, 66px);
-  font-weight: 570;
-  letter-spacing: -0.065em;
-  line-height: 0.98;
+  font-size: clamp(42px, 4.4vw, 60px);
+  font-weight: var(--type-h2-font-weight);
+  letter-spacing: var(--type-h2-letter-spacing);
+  line-height: var(--type-h2-line-height);
 }
 
 .booking-questionnaire__intro p {
   max-width: 390px;
   margin: 0;
   color: rgba(1, 2, 5, 0.58);
-  font-size: 17px;
-  letter-spacing: -0.018em;
-  line-height: 1.45;
+  font-size: var(--type-body-font-size);
+  font-weight: var(--type-body-font-weight);
+  letter-spacing: var(--type-body-letter-spacing);
+  line-height: 1.38;
 }
 
 .booking-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 22px;
+  gap: 18px;
   padding: clamp(40px, 5vw, 66px);
 }
 
@@ -209,34 +212,44 @@
 
 .booking-form label > span {
   color: #010205;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.015em;
 }
 
 .booking-form label em {
   margin-left: 5px;
   color: rgba(1, 2, 5, 0.42);
-  font-size: 11px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--font-weight-regular);
 }
 
 .booking-form input,
-.booking-form textarea {
+.booking-form textarea,
+.booking-form select {
   width: 100%;
   border: 1px solid #d6d6d6;
   border-radius: 5px;
   color: #010205;
   background: #fff;
   font: inherit;
-  font-size: 15px;
+  font-family: 'M Saans', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: -0.018em;
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
-.booking-form input {
+.booking-form input,
+.booking-form select {
   height: 52px;
   padding: 0 15px;
+}
+
+.booking-form select {
+  padding-right: 40px;
+  cursor: pointer;
 }
 
 .booking-form textarea {
@@ -252,10 +265,17 @@
 }
 
 .booking-form input:focus,
-.booking-form textarea:focus {
+.booking-form textarea:focus,
+.booking-form select:focus {
   border-color: #010205;
   box-shadow: 0 0 0 1px #010205;
   outline: 0;
+}
+
+.booking-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
 .booking-form__actions {
@@ -276,8 +296,9 @@
   justify-content: center;
   gap: 10px;
   font: inherit;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--type-button-font-size);
+  font-weight: var(--type-button-font-weight);
+  letter-spacing: var(--type-button-letter-spacing);
   transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
@@ -412,6 +433,10 @@
 
   .booking-form {
     padding: 46px;
+  }
+
+  .booking-form__row {
+    grid-template-columns: 1fr;
   }
 }
 

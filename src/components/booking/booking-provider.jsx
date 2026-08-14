@@ -10,11 +10,14 @@ const CAL_NAMESPACE = 'soaplabsAudit'
 const CAL_CONTAINER_ID = 'soaplabs-cal-booking'
 
 const INITIAL_ANSWERS = {
-  name: '',
-  email: '',
-  phone: '',
+  company: '',
+  industry: '',
+  revenue: '',
+  teamSize: '',
   challenge: '',
-  notes: '',
+  desiredOutcome: '',
+  priority: '',
+  urgency: '',
 }
 
 const BookingContext = createContext(null)
@@ -106,16 +109,22 @@ function initializeCalEmbed(answers) {
       },
     })
 
+    const notes = [
+      `Business: ${answers.company}`,
+      `Industry: ${answers.industry}`,
+      `Annual revenue: ${answers.revenue}`,
+      `Team size: ${answers.teamSize}`,
+      `Primary priority: ${answers.priority}`,
+      `Timing: ${answers.urgency}`,
+      answers.desiredOutcome ? `Desired outcome: ${answers.desiredOutcome}` : null,
+    ].filter(Boolean).join('\n')
+
     const config = {
       layout: 'month_view',
       theme: 'light',
-      name: answers.name,
-      email: answers.email,
       title: answers.challenge,
-      notes: answers.notes,
+      notes,
     }
-
-    if (answers.phone) config.attendeePhoneNumber = answers.phone
 
     container.replaceChildren()
     bookingCal('inline', {
@@ -127,7 +136,7 @@ function initializeCalEmbed(answers) {
 }
 
 function BookingProgress({ step }) {
-  const labels = ['Details', 'Priorities', 'Schedule']
+  const labels = ['Profile', 'Operations', 'Schedule']
 
   return (
     <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
@@ -269,48 +278,62 @@ export function BookingProvider({ children }) {
                   {step === 1 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro">
-                        <span>01 / Your details</span>
-                        <h3>Start with the basics.</h3>
-                        <p>A few details now means less friction when you choose a time.</p>
+                        <span>01 / Business profile</span>
+                        <h3>First, the shape of the business.</h3>
+                        <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
                       </div>
 
                       <form className="booking-form" onSubmit={advanceStep}>
+                        <div className="booking-form__row">
+                          <label>
+                            <span>Business name</span>
+                            <input
+                              autoComplete="organization"
+                              name="company"
+                              onChange={updateAnswer}
+                              placeholder="Your company"
+                              required
+                              type="text"
+                              value={answers.company}
+                            />
+                          </label>
+
+                          <label>
+                            <span>Industry</span>
+                            <input
+                              name="industry"
+                              onChange={updateAnswer}
+                              placeholder="e.g. Healthcare"
+                              required
+                              type="text"
+                              value={answers.industry}
+                            />
+                          </label>
+                        </div>
+
                         <label>
-                          <span>Your name</span>
-                          <input
-                            autoComplete="name"
-                            name="name"
-                            onChange={updateAnswer}
-                            placeholder="Full name"
-                            required
-                            type="text"
-                            value={answers.name}
-                          />
+                          <span>Annual revenue</span>
+                          <select name="revenue" onChange={updateAnswer} required value={answers.revenue}>
+                            <option value="" disabled>Select a range</option>
+                            <option value="Below $250k">Below $250k</option>
+                            <option value="$250k–$500k">$250k–$500k</option>
+                            <option value="$500k–$1m">$500k–$1m</option>
+                            <option value="$1m–$3m">$1m–$3m</option>
+                            <option value="$3m–$10m">$3m–$10m</option>
+                            <option value="$10m+">$10m+</option>
+                          </select>
                         </label>
 
                         <label>
-                          <span>Work email</span>
-                          <input
-                            autoComplete="email"
-                            name="email"
-                            onChange={updateAnswer}
-                            placeholder="you@company.com"
-                            required
-                            type="email"
-                            value={answers.email}
-                          />
-                        </label>
-
-                        <label>
-                          <span>Phone number <em>Optional</em></span>
-                          <input
-                            autoComplete="tel"
-                            name="phone"
-                            onChange={updateAnswer}
-                            placeholder="Include country code"
-                            type="tel"
-                            value={answers.phone}
-                          />
+                          <span>Team size</span>
+                          <select name="teamSize" onChange={updateAnswer} required value={answers.teamSize}>
+                            <option value="" disabled>Select a range</option>
+                            <option value="1–5 people">1–5 people</option>
+                            <option value="6–15 people">6–15 people</option>
+                            <option value="16–50 people">16–50 people</option>
+                            <option value="51–150 people">51–150 people</option>
+                            <option value="151+ people">151+ people</option>
+                          </select>
                         </label>
 
                         <button className="booking-form__primary" type="submit">
@@ -324,33 +347,57 @@ export function BookingProvider({ children }) {
                   {step === 2 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro">
-                        <span>02 / Your priorities</span>
-                        <h3>Where is the drag?</h3>
-                        <p>Give us enough context to make the first conversation useful.</p>
+                        <span>02 / Operations</span>
+                        <h3>Now, where is the drag?</h3>
+                        <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
                       </div>
 
                       <form className="booking-form" onSubmit={advanceStep}>
                         <label>
                           <span>Biggest operational problem</span>
                           <textarea
-                            autoFocus
                             name="challenge"
                             onChange={updateAnswer}
                             placeholder="What is costing the most time, money, or capacity?"
                             required
-                            rows="4"
+                            rows="3"
                             value={answers.challenge}
                           />
                         </label>
 
+                        <div className="booking-form__row">
+                          <label>
+                            <span>Primary priority</span>
+                            <select name="priority" onChange={updateAnswer} required value={answers.priority}>
+                              <option value="" disabled>Select one</option>
+                              <option value="Reduce costs">Reduce costs</option>
+                              <option value="Improve margins">Improve margins</option>
+                              <option value="Reclaim team time">Reclaim team time</option>
+                              <option value="Create capacity">Create capacity</option>
+                              <option value="Simplify systems">Simplify systems</option>
+                            </select>
+                          </label>
+
+                          <label>
+                            <span>Timing</span>
+                            <select name="urgency" onChange={updateAnswer} required value={answers.urgency}>
+                              <option value="" disabled>Select one</option>
+                              <option value="As soon as possible">As soon as possible</option>
+                              <option value="Within 30 days">Within 30 days</option>
+                              <option value="Within 90 days">Within 90 days</option>
+                              <option value="Exploring options">Exploring options</option>
+                            </select>
+                          </label>
+                        </div>
+
                         <label>
-                          <span>Anything else we should know? <em>Optional</em></span>
-                          <textarea
-                            name="notes"
+                          <span>What would a meaningful win look like? <em>Optional</em></span>
+                          <input
+                            name="desiredOutcome"
                             onChange={updateAnswer}
-                            placeholder="Team size, current systems, urgency, or useful context"
-                            rows="3"
-                            value={answers.notes}
+                            placeholder="More margin, reclaimed time, extra capacity…"
+                            type="text"
+                            value={answers.desiredOutcome}
                           />
                         </label>
 
