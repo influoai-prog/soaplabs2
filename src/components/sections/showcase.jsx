@@ -172,7 +172,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button className="showcase-actions__button" href="#contact">Book a call</Button>
+          <Button className="showcase-actions__button showcase-actions__button--book" href="#contact">Book a call</Button>
         </motion.div>
         <motion.div
           variants={{
