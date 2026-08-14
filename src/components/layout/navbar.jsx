@@ -7,8 +7,8 @@ import './navbar.css'
 
 const links = [
   { label: 'Services', href: '#service' },
-  { label: 'Works', href: '#agency' },
   { label: 'Process', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
 ]
 
 export function Navbar({ isLoading = false }) {
