@@ -285,6 +285,14 @@
   text-decoration: none;
 }
 
+.nav-links a:not(.nav-cta) {
+  transition: opacity 180ms ease;
+}
+
+.nav-links a:not(.nav-cta):hover {
+  opacity: 0.58;
+}
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -296,25 +304,6 @@
   color: #141414;
   background: transparent;
   cursor: pointer;
-}
-
-.nav-links a::after {
-  position: absolute;
-  right: 0;
-  bottom: -5px;
-  left: 0;
-  height: 1px;
-  content: '';
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 220ms ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a:focus-visible::after {
-  transform: scaleX(1);
-  transform-origin: left;
 }
 
 .nav-links a:focus-visible,
