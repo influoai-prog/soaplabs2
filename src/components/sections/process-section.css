@@ -255,11 +255,11 @@
 
 @media (min-width: 810px) and (max-width: 1199px) {
   .process-card--one .process-card__number {
-    transform: translateX(12px);
+    transform: translateX(18px);
   }
 
   .process-card--one .process-card__copy {
-    padding-left: 12px;
+    padding-left: 18px;
   }
 }
 
