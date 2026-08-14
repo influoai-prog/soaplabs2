@@ -201,7 +201,7 @@
   transition:
     top 940ms cubic-bezier(0.76, 0, 0.24, 1),
     left 940ms cubic-bezier(0.76, 0, 0.24, 1),
-    opacity 180ms ease 600ms,
+    opacity 220ms ease,
     transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
@@ -210,6 +210,11 @@
   left: 50%;
   opacity: 1;
   transform: translateX(-50%);
+  transition:
+    top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    left 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 180ms ease 600ms,
+    transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .loading-wordmark strong {
