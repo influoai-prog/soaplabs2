@@ -431,3 +431,27 @@
     scroll-snap-align: none;
   }
 }
+
+/* Fully isolate the vertical phone layout from the tablet scroller. */
+@media (max-width: 479px) {
+  .industries-section-wrap,
+  .industries-section,
+  .industries-viewport,
+  .industries-track {
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .industries-track {
+    overflow-x: clip;
+    overscroll-behavior: auto;
+    scroll-snap-type: none !important;
+    touch-action: pan-y;
+  }
+
+  .industry-item {
+    transform: none !important;
+    filter: none !important;
+    scroll-snap-align: none !important;
+  }
+}
