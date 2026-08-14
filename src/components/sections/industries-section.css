@@ -23,7 +23,7 @@
   gap: clamp(32px, 3.5vw, 48px);
   overflow: hidden;
   margin-top: 0;
-  padding: clamp(260px, 26vw, 396px) var(--page-gutter) clamp(80px, 8vw, 110px);
+  padding: clamp(244px, 24.5vw, 372px) var(--page-gutter) clamp(80px, 8vw, 110px);
   border-radius: 0;
   background: #f6d0dd;
 }
