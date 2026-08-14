@@ -576,7 +576,7 @@
   }
 
   .process-card--one .process-card__number {
-    transform: translateX(4px);
+    transform: translateX(10px);
   }
 
   .process-cta {
@@ -590,5 +590,37 @@
   .process-cta__button {
     width: 100%;
     min-width: 0;
+  }
+}
+
+
+/* Keep all mobile process-card text on one shared alignment grid. */
+@media (max-width: 620px) {
+  .process-card,
+  .process-card--three,
+  .process-card--four {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-content: start;
+  }
+
+  .process-card__topline {
+    min-height: 20px;
+  }
+
+  .process-card .process-card__copy {
+    display: grid;
+    min-width: 0;
+    grid-template-rows: auto auto;
+    align-content: start;
+  }
+
+  .process-card h3,
+  .process-card .process-card__copy h3 {
+    min-height: 2.08em;
+  }
+
+  .process-card .process-card__copy p {
+    min-height: 2.8em;
   }
 }
