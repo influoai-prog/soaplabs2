@@ -1,0 +1,479 @@
+/* ============================================================================
+   FONT TOKENS - Global typography system for SOAP
+   ============================================================================
+   
+   Breakpoints:
+   - Desktop: 1200px+
+   - Tablet: 810px - 1199px
+   - Mobile: 0 - 809px
+   ============================================================================ */
+
+:root {
+  /* Font Weights - M Saans Family */
+  --font-weight-light: 300;
+  --font-weight-regular: 456;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-semibold-alt: 650;
+  --font-weight-bold: 652;
+  --font-weight-bold-ui: 700;
+
+  /* ========================================================================
+     DISPLAY STYLES (Headings, Hero Titles)
+     ======================================================================== */
+
+  /* H1 - Hero/Main title */
+  --type-h1-font-size: clamp(44px, 5.56vw, 80px);
+  --type-h1-font-weight: 600;
+  --type-h1-line-height: 0.91;
+  --type-h1-letter-spacing: -0.015em;
+
+  /* H2 - Large section title */
+  --type-h2-font-size: clamp(42px, 4.45vw, 64px);
+  --type-h2-font-weight: 600;
+  --type-h2-line-height: 0.98;
+  --type-h2-letter-spacing: -0.04em;
+
+  /* H2 Large - Industries & Outcomes sections */
+  --type-h2-lg-font-size: clamp(48px, 4.45vw, 64px);
+  --type-h2-lg-font-weight: 600;
+  --type-h2-lg-line-height: 0.94;
+  --type-h2-lg-letter-spacing: -0.03em;
+
+  /* H3 - Process cards, subsections */
+  --type-h3-font-size: clamp(29px, 2.45vw, 37px);
+  --type-h3-font-weight: 600;
+  --type-h3-line-height: 1;
+  --type-h3-letter-spacing: -0.045em;
+
+  /* H3 Alt - Outcome cards (medium weight) */
+  --type-h3-alt-font-size: clamp(28px, 2.3vw, 39px);
+  --type-h3-alt-font-weight: 500;
+  --type-h3-alt-line-height: 1.18;
+  --type-h3-alt-letter-spacing: -0.055em;
+
+  /* H4 - Fix section visual title */
+  --type-h4-font-size: 52px;
+  --type-h4-font-weight: 600;
+  --type-h4-line-height: 1.1;
+  --type-h4-letter-spacing: -0.03em;
+
+  /* ========================================================================
+     QUOTE STYLES
+     ======================================================================== */
+
+  /* Testimonial Quote */
+  --type-quote-font-size: clamp(26px, 2.1vw, 32px);
+  --type-quote-font-weight: 600;
+  --type-quote-line-height: 1.45;
+  --type-quote-letter-spacing: -0.035em;
+
+  /* ========================================================================
+     BODY TEXT STYLES
+     ======================================================================== */
+
+  /* Body Large - Hero copy, section descriptions */
+  --type-body-lg-font-size: 20px;
+  --type-body-lg-font-weight: 400;
+  --type-body-lg-line-height: 1.4;
+  --type-body-lg-letter-spacing: -0.015em;
+
+  /* Body Regular - FAQ questions, navigation text */
+  --type-body-font-size: 18px;
+  --type-body-font-weight: 456;
+  --type-body-line-height: 1.15;
+  --type-body-letter-spacing: -0.03em;
+
+  /* FAQ Question - Slightly styled body text */
+  --type-faq-question-font-size: 20px;
+  --type-faq-question-font-weight: 600;
+  --type-faq-question-line-height: 1.35;
+  --type-faq-question-letter-spacing: -0.03em;
+
+  /* FAQ Answer - Smaller body text */
+  --type-faq-answer-font-size: 15px;
+  --type-faq-answer-font-weight: 456;
+  --type-faq-answer-line-height: 1.65;
+
+  /* Body Small - Testimonial role, process description */
+  --type-body-sm-font-size: 15px;
+  --type-body-sm-font-weight: 456;
+  --type-body-sm-line-height: 1.2;
+
+  /* Body Extra Small - Footer text, descriptions */
+  --type-body-xs-font-size: 14px;
+  --type-body-xs-font-weight: 456;
+  --type-body-xs-line-height: 1.43; /* 20px / 14px */
+
+  /* Description Text - Industries section subtext */
+  --type-description-font-size: clamp(14px, 1.1vw, 16px);
+  --type-description-font-weight: 400;
+  --type-description-line-height: 1.45;
+
+  /* Fix Copy - Centered description text */
+  --type-fix-copy-font-size: 24px;
+  --type-fix-copy-font-weight: 456;
+  --type-fix-copy-line-height: 1.36;
+
+  /* ========================================================================
+     UI STYLES (Buttons, Navigation, Labels)
+     ======================================================================== */
+
+  /* Button - Primary action */
+  --type-button-font-size: 15px;
+  --type-button-font-weight: 600;
+  --type-button-line-height: 1;
+  --type-button-letter-spacing: -0.01em;
+
+  /* Navigation Link */
+  --type-nav-link-font-size: 16px;
+  --type-nav-link-font-weight: 500;
+  --type-nav-link-line-height: 1.375; /* 22px / 16px */
+  --type-nav-link-letter-spacing: 0.006em; /* 0.1px / 16px */
+
+  /* Navigation CTA */
+  --type-nav-cta-font-size: 14px;
+  --type-nav-cta-font-weight: 600;
+  --type-nav-cta-line-height: 1;
+  --type-nav-cta-letter-spacing: -0.01em;
+
+  /* Eyebrow / Section Label */
+  --type-eyebrow-font-size: 13px;
+  --type-eyebrow-font-weight: 650;
+  --type-eyebrow-line-height: 1;
+  --type-eyebrow-letter-spacing: 0.1em;
+  --type-eyebrow-text-transform: uppercase;
+
+  /* Badge / Label */
+  --type-label-font-size: 14px;
+  --type-label-font-weight: 700;
+  --type-label-line-height: 1;
+  --type-label-letter-spacing: -0.02em;
+
+  /* Card Number/Label - Process cards */
+  --type-card-label-font-size: 12px;
+  --type-card-label-font-weight: 652;
+  --type-card-label-line-height: 1;
+  --type-card-label-letter-spacing: 0.085em;
+  --type-card-label-text-transform: uppercase;
+
+  /* ========================================================================
+     SPECIAL STYLES
+     ======================================================================== */
+
+  /* Testimonial Name - Person attribution */
+  --type-person-name-font-size: 18px;
+  --type-person-name-font-weight: 652;
+  --type-person-name-line-height: 1.15;
+  --type-person-name-letter-spacing: -0.03em;
+
+  /* Footer Strong - Footer brand/headings */
+  --type-footer-strong-font-size: 22px;
+  --type-footer-strong-font-weight: 652;
+  --type-footer-strong-letter-spacing: -0.05em;
+  --type-footer-strong-line-height: 0.88;
+
+  /* Footer Link */
+  --type-footer-link-font-size: 14px;
+  --type-footer-link-font-weight: 456;
+  --type-footer-link-line-height: 1.43; /* 20px / 14px */
+
+  /* Caption - Small utility text */
+  --type-caption-font-size: 12px;
+  --type-caption-font-weight: 700;
+  --type-caption-line-height: 1;
+
+  /* Micro - Extra small utility text */
+  --type-micro-font-size: 10px;
+  --type-micro-line-height: 1.4;
+
+  /* Input/Field Text */
+  --type-input-font-size: 13px;
+  --type-input-line-height: 1.4;
+
+  /* ========================================================================
+     RESPONSIVE VARIANTS - Tablet (810px - 1199px) 
+     ======================================================================== */
+
+  /* Headings */
+  --type-h1-tablet-font-size: clamp(45px, 10vw, 72px);
+  --type-h2-tablet-font-size: clamp(40px, 8vw, 56px);
+  --type-h2-lg-tablet-font-size: clamp(42px, 8vw, 54px);
+  --type-h3-tablet-font-size: clamp(28px, 3vw, 37px);
+  --type-h4-tablet-font-size: 36px;
+
+  /* Body */
+  --type-body-tablet-font-size: 18px;
+  --type-description-tablet-font-size: clamp(12px, 1vw, 14px);
+
+  /* ========================================================================
+     RESPONSIVE VARIANTS - Mobile (0 - 809px) 
+     ======================================================================== */
+
+  /* Headings */
+  --type-h1-mobile-font-size: clamp(44px, 10vw, 72px);
+  --type-h2-mobile-font-size: clamp(40px, 8vw, 56px);
+  --type-h2-lg-mobile-font-size: clamp(40px, 11vw, 46px);
+  --type-h3-mobile-font-size: clamp(28px, 5vw, 38px);
+  --type-h4-mobile-font-size: clamp(36px, 8.5vw, 52px);
+  --type-quote-mobile-font-size: clamp(25px, 5vw, 32px);
+
+  /* Body */
+  --type-body-lg-mobile-font-size: 18px;
+  --type-body-mobile-font-size: 17px;
+  --type-faq-answer-mobile-font-size: 15px;
+  --type-fix-copy-mobile-font-size: clamp(19px, 3vw, 24px);
+  --type-description-mobile-font-size: 14px;
+
+  /* Card titles */
+  --type-h3-mobile-card-font-size: clamp(30px, 9vw, 38px);
+  --type-outcome-card-mobile-font-size: 28px;
+  --type-process-card-mobile-font-size: clamp(29px, 3vw, 44px);
+
+  /* ========================================================================
+     SMALL/UTILITY SIZES (11px - 17px range)
+     ======================================================================== */
+
+  /* Micro sizes for labels, small text */
+  --type-xs-11-font-size: 11px;
+  --type-xs-12-font-size: 12px;
+  --type-xs-13-font-size: 13px;
+  --type-xs-14-font-size: 14px;
+  --type-xs-17-font-size: 17px;
+
+  /* Small variants for utilities */
+  --type-sm-caption-font-size: 12px;
+  --type-sm-caption-font-weight: 700;
+  --type-sm-micro-font-size: 10px;
+
+  /* Avatar text size */
+  --type-avatar-font-size: 17px;
+  --type-avatar-font-weight: 652;
+
+  /* Additional specific sizes */
+  --type-wordmark-font-size: 24px;
+  --type-outcome-h3-font-size: 28px;
+  --type-mobile-quote-font-size: 23px;
+  --type-card-h3-tablet-font-size: 34px;
+
+  /* ========================================================================
+     COMPONENT-SPECIFIC RESPONSIVE CLAMPS
+     ======================================================================== */
+
+  /* Industry card titles - responsive variants */
+  --type-industry-card-title-font-size: clamp(32px, 2.9vw, 42px);
+  --type-industry-card-title-sm-font-size: clamp(12px, 1vw, 14px);
+  --type-industry-card-title-tablet-font-size: clamp(31px, 5.4vw, 38px);
+  --type-industry-card-title-mobile-font-size: clamp(30px, 9vw, 38px);
+  --type-industry-header-mobile-font-size: clamp(40px, 11vw, 46px);
+
+  /* FAQ responsive variants */
+  --type-faq-h2-mobile-sm-font-size: clamp(36px, 10.5vw, 46px);
+
+  /* Fix section responsive variants */
+  --type-fix-title-tablet-font-size: clamp(36px, 8.5vw, 52px);
+  --type-fix-title-mobile-font-size: clamp(52px, 11.5vw, 82px);
+  --type-fix-title-mobile-sm-font-size: clamp(46px, 13vw, 58px);
+
+  /* Hero responsive variants */
+  --type-h1-tablet-alt-font-size: clamp(45px, 10vw, 72px);
+  --type-h1-mobile-sm-font-size: clamp(42px, 12.3vw, 58px);
+
+  /* Outcomes responsive variants */
+  --type-outcomes-h2-mobile-font-size: clamp(46px, 10vw, 68px);
+
+  /* Tablet industry heading */
+  --type-industry-header-tablet-font-size: clamp(42px, 8vw, 54px);
+}
+
+/* ============================================================================
+   UTILITY CLASSES - Optional semantic usage
+   ============================================================================ */
+
+.type-h1 {
+  font-size: var(--type-h1-font-size);
+  font-weight: var(--type-h1-font-weight);
+  line-height: var(--type-h1-line-height);
+  letter-spacing: var(--type-h1-letter-spacing);
+}
+
+.type-h2 {
+  font-size: var(--type-h2-font-size);
+  font-weight: var(--type-h2-font-weight);
+  line-height: var(--type-h2-line-height);
+  letter-spacing: var(--type-h2-letter-spacing);
+}
+
+.type-h2-lg {
+  font-size: var(--type-h2-lg-font-size);
+  font-weight: var(--type-h2-lg-font-weight);
+  line-height: var(--type-h2-lg-line-height);
+  letter-spacing: var(--type-h2-lg-letter-spacing);
+}
+
+.type-h3 {
+  font-size: var(--type-h3-font-size);
+  font-weight: var(--type-h3-font-weight);
+  line-height: var(--type-h3-line-height);
+  letter-spacing: var(--type-h3-letter-spacing);
+}
+
+.type-h3-alt {
+  font-size: var(--type-h3-alt-font-size);
+  font-weight: var(--type-h3-alt-font-weight);
+  line-height: var(--type-h3-alt-line-height);
+  letter-spacing: var(--type-h3-alt-letter-spacing);
+}
+
+.type-h4 {
+  font-size: var(--type-h4-font-size);
+  font-weight: var(--type-h4-font-weight);
+  line-height: var(--type-h4-line-height);
+  letter-spacing: var(--type-h4-letter-spacing);
+}
+
+.type-quote {
+  font-size: var(--type-quote-font-size);
+  font-weight: var(--type-quote-font-weight);
+  line-height: var(--type-quote-line-height);
+  letter-spacing: var(--type-quote-letter-spacing);
+}
+
+.type-body-lg {
+  font-size: var(--type-body-lg-font-size);
+  font-weight: var(--type-body-lg-font-weight);
+  line-height: var(--type-body-lg-line-height);
+  letter-spacing: var(--type-body-lg-letter-spacing);
+}
+
+.type-body {
+  font-size: var(--type-body-font-size);
+  font-weight: var(--type-body-font-weight);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+}
+
+.type-faq-question {
+  font-size: var(--type-faq-question-font-size);
+  font-weight: var(--type-faq-question-font-weight);
+  line-height: var(--type-faq-question-line-height);
+  letter-spacing: var(--type-faq-question-letter-spacing);
+}
+
+.type-faq-answer {
+  font-size: var(--type-faq-answer-font-size);
+  font-weight: var(--type-faq-answer-font-weight);
+  line-height: var(--type-faq-answer-line-height);
+}
+
+.type-body-sm {
+  font-size: var(--type-body-sm-font-size);
+  font-weight: var(--type-body-sm-font-weight);
+  line-height: var(--type-body-sm-line-height);
+}
+
+.type-body-xs {
+  font-size: var(--type-body-xs-font-size);
+  font-weight: var(--type-body-xs-font-weight);
+  line-height: var(--type-body-xs-line-height);
+}
+
+.type-description {
+  font-size: var(--type-description-font-size);
+  font-weight: var(--type-description-font-weight);
+  line-height: var(--type-description-line-height);
+}
+
+.type-button {
+  font-size: var(--type-button-font-size);
+  font-weight: var(--type-button-font-weight);
+  line-height: var(--type-button-line-height);
+  letter-spacing: var(--type-button-letter-spacing);
+}
+
+.type-nav-link {
+  font-size: var(--type-nav-link-font-size);
+  font-weight: var(--type-nav-link-font-weight);
+  line-height: var(--type-nav-link-line-height);
+  letter-spacing: var(--type-nav-link-letter-spacing);
+}
+
+.type-eyebrow {
+  font-size: var(--type-eyebrow-font-size);
+  font-weight: var(--type-eyebrow-font-weight);
+  line-height: var(--type-eyebrow-line-height);
+  letter-spacing: var(--type-eyebrow-letter-spacing);
+  text-transform: var(--type-eyebrow-text-transform);
+}
+
+.type-label {
+  font-size: var(--type-label-font-size);
+  font-weight: var(--type-label-font-weight);
+  line-height: var(--type-label-line-height);
+  letter-spacing: var(--type-label-letter-spacing);
+}
+
+.type-card-label {
+  font-size: var(--type-card-label-font-size);
+  font-weight: var(--type-card-label-font-weight);
+  line-height: var(--type-card-label-line-height);
+  letter-spacing: var(--type-card-label-letter-spacing);
+  text-transform: var(--type-card-label-text-transform);
+}
+
+.type-person-name {
+  font-size: var(--type-person-name-font-size);
+  font-weight: var(--type-person-name-font-weight);
+  line-height: var(--type-person-name-line-height);
+  letter-spacing: var(--type-person-name-letter-spacing);
+}
+
+.type-footer-strong {
+  font-size: var(--type-footer-strong-font-size);
+  font-weight: var(--type-footer-strong-font-weight);
+  letter-spacing: var(--type-footer-strong-letter-spacing);
+  line-height: var(--type-footer-strong-line-height);
+}
+
+.type-footer-link {
+  font-size: var(--type-footer-link-font-size);
+  font-weight: var(--type-footer-link-font-weight);
+  line-height: var(--type-footer-link-line-height);
+}
+
+.type-caption {
+  font-size: var(--type-caption-font-size);
+  font-weight: var(--type-caption-font-weight);
+  line-height: var(--type-caption-line-height);
+}
+
+.type-micro {
+  font-size: var(--type-micro-font-size);
+  line-height: var(--type-micro-line-height);
+}
+
+.type-input {
+  font-size: var(--type-input-font-size);
+  line-height: var(--type-input-line-height);
+}
+
+/* ============================================================================
+   TABLET RESPONSIVE OVERRIDES (810px - 1199px)
+   ============================================================================ */
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  :root {
+    /* Adjust responsive clamps for tablet viewport */
+  }
+}
+
+/* ============================================================================
+   MOBILE RESPONSIVE OVERRIDES (0 - 809px)
+   ============================================================================ */
+
+@media (max-width: 809.98px) {
+  :root {
+    /* Mobile font sizes are primarily handled via clamp() in base tokens,
+       but specific overrides can be added here as needed */
+  }
+}
