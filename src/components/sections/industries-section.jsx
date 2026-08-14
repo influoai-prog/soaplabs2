@@ -264,7 +264,7 @@ export function IndustriesSection() {
         >
           <Button className="industries-header__action" href="#contact">
             Book a call
-            <ArrowIcon direction="right" size={22} aria-hidden="true" />
+            <ArrowIcon direction="right" size={20} aria-hidden="true" />
           </Button>
         </motion.div>
       </motion.div>
