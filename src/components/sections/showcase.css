@@ -87,9 +87,15 @@
   aspect-ratio: 16 / 9;
   place-items: center;
   overflow: hidden;
-  border-radius: 24px;
+  --showcase-radius: 24px;
+  border-radius: var(--showcase-radius);
   background: #010205;
   isolation: isolate;
+  contain: paint;
+  -webkit-clip-path: inset(0 round var(--showcase-radius));
+  clip-path: inset(0 round var(--showcase-radius));
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  transform: translateZ(0);
   will-change: width, height;
 }
 
@@ -103,13 +109,16 @@
 
 .showcase__video {
   z-index: 0;
-  inset: 50% auto auto 50%;
+  inset: 0;
   display: block;
   aspect-ratio: 16 / 9;
+  border-radius: inherit;
   object-fit: cover;
   object-position: 50% 50%;
-  transform: translate3d(-50%, -50%, 0);
+  transform: translateZ(0);
   transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   filter: contrast(1.04) saturate(0.92);
 }
 
@@ -184,7 +193,7 @@
   }
 
   .showcase {
-    border-radius: 16px;
+    --showcase-radius: 16px;
     width: 100%;
     max-width: 100%;
     min-height: 0;
