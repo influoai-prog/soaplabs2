@@ -52,9 +52,30 @@ function useViewport() {
 
 export function Showcase() {
   const sectionRef = useRef(null)
+  const videoRef = useRef(null)
   const shouldReduceMotion = useReducedMotion()
   const viewport = useViewport()
   const { openBooking, bookingUrl } = useBooking()
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { rootMargin: '120px 0px' },
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
@@ -142,6 +163,7 @@ export function Showcase() {
             <motion.div className="showcase-frame" style={frameStyle}>
               <motion.div className="showcase" style={screenStyle}>
                 <video
+                  ref={videoRef}
                   className="showcase__video"
                   src="/workflow-showcase.mp4"
                   autoPlay
