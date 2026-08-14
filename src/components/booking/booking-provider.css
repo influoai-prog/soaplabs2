@@ -438,6 +438,18 @@
   }
 }
 
+@media (max-width: 360px) {
+  .booking-modal__close {
+    top: 12px;
+    right: 12px;
+  }
+
+  .booking-form {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .booking-modal__loading span {
     animation: none;
