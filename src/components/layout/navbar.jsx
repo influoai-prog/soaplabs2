@@ -6,7 +6,7 @@ import { SoapLoaderMark } from '../branding/loading-logo'
 import './navbar.css'
 
 const links = [
-  { label: 'Services', href: '#service' },
+  { label: 'Services', href: '#agency' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
 ]
