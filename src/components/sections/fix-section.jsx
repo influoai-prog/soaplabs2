@@ -233,7 +233,7 @@ export function FixSection() {
 
         <p className="fix-copy">
           Better systems. Cleaner operations. Less dependence on people holding everything together.
-            We build the infrastructure your business needs to scale without adding more complexity.
+          We build the infrastructure your business needs to scale without adding more complexity.
         </p>
       </div>
     </section>
