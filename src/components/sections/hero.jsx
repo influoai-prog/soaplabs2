@@ -35,7 +35,7 @@ export function Hero() {
       initial="hidden"
       animate="visible"
     >
-      <h1 aria-label="There’s Money Leaking Out of Your Business">
+      <h1 aria-label="There Is Money Leaking Out of Your Business">
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
             There’s Money Leaking
@@ -49,8 +49,8 @@ export function Hero() {
       </h1>
 
       <motion.p className="hero-copy" variants={copy}>
-        We find the costs, bottlenecks, and wasted time hurting your margins then
-        turn them into more profit and growth.
+        We find the costs, bottlenecks, and wasted time hurting your margins 
+        then turn them into more profit and growth.
       </motion.p>
     </motion.section>
   )
