@@ -84,7 +84,7 @@ function initializeCalEmbed(answers) {
 
     bookingCal('ui', {
       theme: 'light',
-      hideEventTypeDetails: false,
+      hideEventTypeDetails: true,
       layout: 'month_view',
       cssVarsPerTheme: {
         light: {
@@ -383,7 +383,6 @@ export function BookingProvider({ children }) {
                           <ArrowLeft size={16} strokeWidth={2} aria-hidden="true" />
                           Edit answers
                         </button>
-                        <p>Choose a 30-minute time that works for you.</p>
                       </div>
 
                       {embedStatus === 'loading' ? (
