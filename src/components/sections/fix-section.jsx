@@ -172,14 +172,14 @@ export function FixSection() {
         >
           <span className="fix-intro__eyebrow">Where we make the difference</span>
 
-          <h2 id="fix-title" aria-label="We Fix What's Costing You">
+          <h2 id="fix-title" aria-label="Turn Waste Into Growth">
             <span className="fix-intro__clip">
               <motion.span
                 className="fix-intro__line"
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
               >
-                WE FIX WHAT&apos;S
+                TURN WASTE INTO
               </motion.span>
             </span>
             <span className="fix-intro__clip">
@@ -188,7 +188,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.24, ease: easeOut }}
               >
-                COSTING YOU
+                GROWTH
               </motion.span>
             </span>
           </h2>
@@ -200,9 +200,8 @@ export function FixSection() {
             }}
             transition={{ duration: 0.7, delay: 0.48, ease: easeOut }}
           >
-            We look at how your business actually runs, not the org chart, and find
-            what&apos;s leaking money. Manual work, outdated processes, overstaffed areas.
-            Then we fix it.
+            Better systems. Cleaner operations. Less dependence on people holding everything together.
+            We build the infrastructure your business needs to scale without adding more complexity.
           </motion.p>
         </motion.div>
       </div>
@@ -219,7 +218,7 @@ export function FixSection() {
             className="fix-visual__title"
             variants={reduceMotion ? undefined : titleVariants}
           >
-            Grow Your Business
+            Turn Waste Into Growth
           </motion.h2>
           <motion.div
             className="fix-visual__dots"
@@ -233,9 +232,8 @@ export function FixSection() {
         </motion.div>
 
         <p className="fix-copy">
-          We look at how your business actually runs, not the org chart, and find
-          what&apos;s leaking money. Manual work, outdated processes, overstaffed areas.
-          Then we fix it.
+          Better systems. Cleaner operations. Less dependence on people holding everything together.
+            We build the infrastructure your business needs to scale without adding more complexity.
         </p>
       </div>
     </section>
