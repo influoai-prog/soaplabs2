@@ -35,22 +35,22 @@ export function Hero() {
       initial="hidden"
       animate="visible"
     >
-      <h1 aria-label="We Find Where Money Is Being Wasted">
+      <h1 aria-label="There’s Money Leaking Out of Your Business">
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
-            We Find Where Money
+            There’s Money Leaking
           </motion.span>
         </span>
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
-            Is Being Wasted
+            Out of Your Business
           </motion.span>
         </span>
       </h1>
 
       <motion.p className="hero-copy" variants={copy}>
-        We come in, map your operations, and find exactly where money is slipping
-        through. Then we build the fix.
+        We find the costs, bottlenecks, and wasted time hurting your margins then
+        turn them into more profit and growth.
       </motion.p>
     </motion.section>
   )
