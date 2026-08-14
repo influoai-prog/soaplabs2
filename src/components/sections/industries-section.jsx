@@ -227,7 +227,7 @@ export function IndustriesSection() {
         }}
       >
         <div className="industries-header__copy">
-          <h2 id="industries-title" aria-label="Where We Create Value">
+          <h2 id="industries-title" aria-label="Value Creation Process">
             <span className="industries-title__clip">
               <motion.span
                 className="industries-title__line"
@@ -236,7 +236,7 @@ export function IndustriesSection() {
                   visible: { y: '0%', transition: { duration: 0.9, ease: easeOut } },
                 }}
               >
-                Where We Create Value
+                Value Creation Process
               </motion.span>
             </span>
           </h2>
