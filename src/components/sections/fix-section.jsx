@@ -227,7 +227,7 @@ export function FixSection() {
               }}
               transition={{ duration: 0.6, delay: 0.26, ease: easeOut }}
             >
-              We find the operational drag keeping your business from performing at its best.<br />
+              We find the operational drag keeping your business from performing at its best.<br />{' '}
               Then free up the cash, time, and capacity you need to move faster.
             </motion.p>
 
