@@ -187,16 +187,19 @@ function IndustryNeoPixelShape({ index, reduceMotion }) {
 export function IndustriesSection() {
   const sectionRef = useRef(null)
   const reduceMotion = useReducedMotion()
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 809.98px)').matches,
+  )
+  const motionDisabled = reduceMotion || isMobile
   const { openBooking, bookingUrl } = useBooking()
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 479)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    const mediaQuery = window.matchMedia('(max-width: 809.98px)')
+    const syncMobile = (event) => setIsMobile(event.matches)
+
+    setIsMobile(mediaQuery.matches)
+    mediaQuery.addEventListener('change', syncMobile)
+    return () => mediaQuery.removeEventListener('change', syncMobile)
   }, [])
 
   const { scrollYProgress } = useScroll({
@@ -205,8 +208,8 @@ export function IndustriesSection() {
   })
   const clipProgress = useTransform(
     scrollYProgress,
-    reduceMotion ? [0, 1] : [0, 0.9],
-    reduceMotion
+    motionDisabled ? [0, 1] : [0, 0.9],
+    motionDisabled
       ? ['inset(0 0 0% 0 round 0 0 32px 32px)', 'inset(0 0 0% 0 round 0 0 32px 32px)']
       : ['inset(0 0 0% 0 round 0 0 32px 32px)', 'inset(0 0 100% 0 round 0 0 32px 32px)'],
   )
@@ -220,7 +223,7 @@ export function IndustriesSection() {
       <section className="industries-section" aria-labelledby="industries-title">
       <motion.div
         className="industries-header"
-        initial={reduceMotion ? false : 'hidden'}
+        initial={motionDisabled ? false : 'hidden'}
         whileInView="visible"
         viewport={{ once: true, amount: 0.75 }}
         variants={{
@@ -277,7 +280,7 @@ export function IndustriesSection() {
             <motion.article
               className="industry-item"
               key={industry.title}
-              initial={reduceMotion ? false : 'hidden'}
+              initial={motionDisabled ? false : 'hidden'}
               whileInView="visible"
               viewport={{ once: true, amount: 0.35 }}
               variants={{
@@ -294,7 +297,7 @@ export function IndustriesSection() {
               }}
             >
               <div className="industry-card">
-                <IndustryNeoPixelShape index={index} reduceMotion={reduceMotion} />
+                <IndustryNeoPixelShape index={index} reduceMotion={motionDisabled} />
                 <motion.div
                   className="industry-card__media"
                   variants={{
