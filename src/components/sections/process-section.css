@@ -299,6 +299,7 @@
   display: flex;
   min-height: 220px;
   grid-column: 1 / -1;
+  margin-top: clamp(20px, 2.4vw, 32px);
   align-items: center;
   justify-content: space-between;
   gap: 48px;
@@ -313,25 +314,14 @@
   max-width: 650px;
 }
 
-.process-cta__copy > span {
-  display: block;
-  margin-bottom: 15px;
-  font-size: var(--type-xs-12-font-size);
-  font-weight: 652;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.56);
-}
-
 .process-cta h3 {
   margin: 0;
   font-size: var(--type-process-card-mobile-font-size);
-  font-weight: 550;
+  font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.045em;
   text-wrap: balance;
-  color: rgba(1, 2, 5, 0.82);
+  color: rgba(1, 2, 5, 0.725);
 }
 
 .process-cta__button-wrap {

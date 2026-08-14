@@ -217,7 +217,6 @@ export function ProcessSection() {
 
           <motion.div className="process-cta" variants={ctaCard}>
             <div className="process-cta__copy">
-              <motion.span variants={innerItem}>Ready when you are</motion.span>
               <h3>
                 <span className="process-card__title-clip">
                   <motion.span className="process-card__title-line" variants={titleLine}>
