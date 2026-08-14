@@ -219,6 +219,18 @@ export function FixSection() {
               </span>
             </h2>
 
+            <motion.p
+              className="fix-intro__subheading"
+              variants={{
+                hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, delay: 0.26, ease: easeOut }}
+            >
+              Recover the time and margin your operations lose.<br />
+              Turn both into capacity for cleaner growth.
+            </motion.p>
+
           </div>
 
           <motion.div
