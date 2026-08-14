@@ -366,15 +366,30 @@
 
 @media (max-width: 809.98px) {
   .booking-modal {
+    min-height: 100svh;
+    min-height: 100dvh;
     padding: 0;
+    background: #fff;
+  }
+
+  .booking-modal__backdrop {
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   .booking-modal__panel {
     width: 100%;
+    height: 100svh;
+    height: 100dvh;
     max-height: 100svh;
+    max-height: 100dvh;
     min-height: 100svh;
+    min-height: 100dvh;
     border: 0;
     border-radius: 0;
+    background: #fff;
+    box-shadow: none;
   }
 
   .booking-modal__close {
