@@ -4,6 +4,8 @@ import './legal-page.css'
 
 export function LegalPage({ documentTitle, eyebrow = 'Legal', title, updated, sections, contact }) {
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
     const previous = document.title
     document.title = documentTitle
     return () => {

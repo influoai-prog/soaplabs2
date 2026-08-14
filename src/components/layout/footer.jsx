@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FooterSoapMark } from '../branding/footer-logo'
 import './footer.css'
 
@@ -16,12 +16,41 @@ const footerLinks = [
 ]
 
 export function Footer() {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const isHome = pathname === '/'
+
+  const handleHomeNavigation = (event, href) => {
+    event.preventDefault()
+
+    const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (isHome) {
+      const target = document.querySelector(href)
+      if (target) {
+        target.scrollIntoView({
+          behavior: smooth ? 'smooth' : 'auto',
+          block: 'start',
+        })
+        window.history.replaceState(null, '', href)
+        return
+      }
+    }
+
+    navigate('/', { state: { scrollTo: href } })
+  }
+
   return (
     <div className="site-footer-shell">
       <footer className="site-footer" aria-label="Footer">
         <div className="site-footer__top">
           <div className="site-footer__brand-column">
-            <a className="site-footer__brand" href="#top" aria-label="Soap Labs home">
+            <a
+              className="site-footer__brand"
+              href="#top"
+              aria-label="Soap Labs home"
+              onClick={(event) => handleHomeNavigation(event, '#top')}
+            >
               <FooterSoapMark />
               <span className="site-footer__wordmark">
                 <strong>soap</strong>
@@ -35,7 +64,11 @@ export function Footer() {
             {footerLinks.map((column, index) => (
               <div className="site-footer__link-column" key={index}>
                 {column.map((link) => (
-                  <a href={link.href} key={link.label}>
+                  <a
+                    href={link.href}
+                    key={link.label}
+                    onClick={(event) => handleHomeNavigation(event, link.href)}
+                  >
                     {link.label}
                   </a>
                 ))}
