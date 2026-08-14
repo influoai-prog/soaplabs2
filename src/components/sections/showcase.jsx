@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { easeOut } from '../../utilities/motion-settings'
 import { ArrowIcon } from '../ui/arrow-icon'
 import { Button } from '../ui/button'
+import { useBooking } from '../booking/booking-provider'
 import './showcase.css'
 
 const FRAME = {
@@ -53,6 +54,7 @@ export function Showcase() {
   const sectionRef = useRef(null)
   const shouldReduceMotion = useReducedMotion()
   const viewport = useViewport()
+  const { openBooking, bookingUrl } = useBooking()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
@@ -172,7 +174,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button className="showcase-actions__button showcase-actions__button--book" href="#contact" whileHover={{ scale: 1.01 }}>Book a call</Button>
+          <Button className="showcase-actions__button showcase-actions__button--book" href={bookingUrl} onClick={openBooking} whileHover={{ scale: 1.01 }}>Book a call</Button>
         </motion.div>
         <motion.div
           variants={{

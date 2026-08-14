@@ -5,16 +5,19 @@ import './index.css'
 import App from './app.jsx'
 import PrivacyPolicy from './pages/privacy-policy.jsx'
 import TermsOfService from './pages/terms-of-service.jsx'
+import { BookingProvider } from './components/booking/booking-provider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="*" element={<App />} />
-      </Routes>
+      <BookingProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="*" element={<App />} />
+        </Routes>
+      </BookingProvider>
     </BrowserRouter>
   </StrictMode>,
 )

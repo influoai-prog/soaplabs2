@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { ArrowIcon } from '../ui/arrow-icon'
 import { Button } from '../ui/button'
+import { useBooking } from '../booking/booking-provider'
 import './industries-section.css'
 
 const industries = [
@@ -187,6 +188,7 @@ export function IndustriesSection() {
   const sectionRef = useRef(null)
   const reduceMotion = useReducedMotion()
   const [isMobile, setIsMobile] = useState(false)
+  const { openBooking, bookingUrl } = useBooking()
 
   useEffect(() => {
     const checkMobile = () => {
@@ -262,7 +264,7 @@ export function IndustriesSection() {
             },
           }}
         >
-          <Button className="industries-header__action" href="#contact">
+          <Button className="industries-header__action" href={bookingUrl} onClick={openBooking}>
             Book a call
             <ArrowIcon direction="right" size={20} aria-hidden="true" />
           </Button>

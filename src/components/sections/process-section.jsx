@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowIcon } from '../ui/arrow-icon'
 import { Button } from '../ui/button'
+import { useBooking } from '../booking/booking-provider'
 import './process-section.css'
 
 const easeOut = [0.22, 1, 0.36, 1]
@@ -142,6 +143,7 @@ const getCardVariants = (index, reduceMotion) => {
 }
 
 export function ProcessSection() {
+  const { openBooking, bookingUrl } = useBooking()
   const reduceMotion = useReducedMotion()
 
   const innerItem = {
@@ -225,7 +227,7 @@ export function ProcessSection() {
               </h3>
             </div>
             <motion.div className="process-cta__button-wrap" variants={innerItem}>
-              <Button href="#contact" variant="outline" className="process-cta__button">
+              <Button href={bookingUrl} onClick={openBooking} variant="outline" className="process-cta__button">
                 See our plans
                 <ArrowIcon direction="right" size={20} aria-hidden="true" />
               </Button>
