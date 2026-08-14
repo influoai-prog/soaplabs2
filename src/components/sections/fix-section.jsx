@@ -30,32 +30,26 @@ const easeOut = [0.22, 1, 0.36, 1]
 const timelineSteps = [
   {
     number: '01',
-    title: 'Cost leakage',
     detail: 'Hidden spend',
   },
   {
     number: '02',
-    title: 'Time drains',
     detail: 'Manual effort',
   },
   {
     number: '03',
-    title: 'Margin recovered',
     detail: 'Profit protected',
   },
   {
     number: '04',
-    title: 'Capacity unlocked',
     detail: 'Team unblocked',
   },
   {
     number: '05',
-    title: 'Growth funded',
     detail: 'Reinvest the gains',
   },
   {
     number: '06',
-    title: 'Scale cleaner',
     detail: 'Less complexity',
   },
 ]
@@ -225,6 +219,18 @@ export function FixSection() {
               </span>
             </h2>
 
+            <motion.p
+              className="fix-intro__subheading"
+              variants={{
+                hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 16 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6, delay: 0.26, ease: easeOut }}
+            >
+              We recover the time, margin, and capacity lost to inefficient operations.<br />
+              Then turn those gains into stronger systems and cleaner growth.
+            </motion.p>
+
           </div>
 
           <motion.div
@@ -251,7 +257,6 @@ export function FixSection() {
                 >
                   <span className="fix-intro__step-number">{step.number}</span>
                   <span className="fix-intro__step-copy">
-                    <strong>{step.title}</strong>
                     <small>{step.detail}</small>
                   </span>
                 </motion.article>

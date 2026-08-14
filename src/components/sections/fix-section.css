@@ -42,10 +42,10 @@
   width: 100%;
   align-items: baseline;
   justify-content: center;
-  gap: 0.2em;
+  gap: 0.08em;
   margin: 0;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(46px, 4.75vw, 68px);
   font-weight: var(--type-h1-font-weight);
   line-height: 0.96;
   letter-spacing: -0.05em;
@@ -57,7 +57,7 @@
 .fix-intro__clip {
   display: block;
   overflow: hidden;
-  padding: 0.01em 0 0.035em;
+  padding: 0.01em 0.08em 0.035em 0.01em;
 }
 
 .fix-intro__clip + .fix-intro__clip {
@@ -74,6 +74,17 @@
   font-size: 1em;
   letter-spacing: -0.05em;
   color: #ff80ad;
+}
+
+.fix-intro__subheading {
+  width: min(860px, 100%);
+  margin: 20px auto 0;
+  font-family: 'M Saans', 'Segoe UI', sans-serif;
+  font-size: clamp(17px, 1.45vw, 20px);
+  font-weight: var(--type-body-lg-font-weight);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  color: var(--muted);
 }
 
 .fix-intro__timeline {
@@ -118,12 +129,12 @@
   border-radius: 17px;
   background: #010205;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
-  font-size: 12px;
-  font-weight: 850;
+  font-size: 14px;
+  font-weight: 750;
   line-height: 1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: #fff;
-  -webkit-text-stroke: 0.5px currentColor;
+  -webkit-text-stroke: 0.25px currentColor;
   paint-order: stroke fill;
   z-index: 2;
 }
@@ -156,23 +167,16 @@
   padding: 0 6px;
 }
 
-.fix-intro__step-copy strong,
 .fix-intro__step-copy small {
   font-family: 'M Saans', 'Segoe UI', sans-serif;
 }
 
-.fix-intro__step-copy strong {
-  font-size: clamp(14px, 1.22vw, 17px);
-  font-weight: 650;
-  line-height: 1.08;
-  color: #010205;
-}
-
 .fix-intro__step-copy small {
-  font-size: clamp(11px, 0.94vw, 13px);
-  font-weight: 450;
+  font-size: clamp(13px, 1.1vw, 15.5px);
+  font-weight: 550;
   line-height: 1.12;
-  color: rgba(1, 2, 5, 0.56);
+  letter-spacing: -0.02em;
+  color: rgba(1, 2, 5, 0.74);
 }
 
 .fix-visual {
@@ -328,7 +332,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
-    font-size: clamp(54px, 10.5vw, 76px);
+    font-size: clamp(52px, 10vw, 72px);
   }
 
   .fix-intro__timeline {
@@ -366,12 +370,8 @@
     padding: 0;
   }
 
-  .fix-intro__step-copy strong {
-    font-size: 17px;
-  }
-
   .fix-intro__step-copy small {
-    font-size: 13px;
+    font-size: 15.5px;
   }
 
   .fix-visual__title {
@@ -386,7 +386,7 @@
 
 @media (max-width: 809.98px) {
   .fix-intro h2 {
-    font-size: clamp(50px, 11.5vw, 70px);
+    font-size: clamp(48px, 11vw, 66px);
   }
 }
 
@@ -405,13 +405,18 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
-    font-size: clamp(46px, 14.5vw, 64px);
+    font-size: clamp(44px, 14vw, 60px);
     line-height: 0.92;
   }
 
   .fix-intro__line--accent {
     font-size: 0.64em;
     letter-spacing: -0.05em;
+  }
+
+  .fix-intro__subheading {
+    margin-top: 16px;
+    font-size: var(--type-body-sm-font-size);
   }
 
   .fix-intro__timeline {
