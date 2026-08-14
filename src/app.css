@@ -22,7 +22,7 @@
   align-items: center;
   opacity: 1;
   transform: none;
-  transition: opacity 420ms ease 120ms;
+  transition: opacity 360ms ease 80ms;
 }
 
 .page-content > .hero-section + .proof-industries-flow {
