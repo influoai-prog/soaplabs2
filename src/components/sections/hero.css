@@ -115,12 +115,12 @@
 @media (max-width: 479px) {
 
   .hero-section {
-    margin-top: 52px;
+    margin-top: 48px;
     margin-bottom: 50px;
   }
 
   .hero-section h1 {
-    --mobile-hero-size: clamp(36px, 9.9vw, 43px);
+    --mobile-hero-size: clamp(37px, 10.2vw, 44px);
     font-size: var(--mobile-hero-size);
   }
 
