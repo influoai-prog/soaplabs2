@@ -257,7 +257,7 @@
   font-size: var(--type-xs-12-font-size);
   font-weight: 652;
   line-height: 1;
-  letter-spacing: 0.085em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.56);
 }
@@ -267,7 +267,7 @@
   font-size: var(--type-process-card-mobile-font-size);
   font-weight: 500;
   line-height: 1.04;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
   text-wrap: balance;
 }
 
