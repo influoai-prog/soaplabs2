@@ -86,12 +86,10 @@ html.is-white-screen body {
   }
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 810px) and (max-width: 1199px) {
   .page {
-    padding-top: 160px;
+    padding-top: clamp(96px, 10vw, 116px);
   }
-
-
 }
 
 @media (max-width: 809.98px) {
