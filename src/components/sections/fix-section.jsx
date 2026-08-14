@@ -224,7 +224,7 @@ export function FixSection() {
           >
             <span className="fix-intro__value-label">How value moves</span>
             <p>
-              Cleaner operations and less dependence on key people. We build the systems your business needs to scale without added complexity.
+              We remove operational drag and build systems that create room to scale.
             </p>
 
             <div className="fix-intro__steps">
