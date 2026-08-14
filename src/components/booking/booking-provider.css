@@ -26,7 +26,7 @@
   flex-direction: column;
   overflow: hidden;
   border: 0;
-  border-radius: 22px;
+  border-radius: 18px;
   background: #fff;
   box-shadow: 0 34px 110px rgba(1, 2, 5, 0.38);
   font-family: 'M Saans', 'Segoe UI', sans-serif;
@@ -88,6 +88,7 @@
   width: min(620px, 100%);
   margin: 0 auto;
   flex-direction: column;
+  transform: translateY(10px);
   justify-content: center;
   gap: 20px;
   padding: clamp(44px, 6vw, 64px);
@@ -366,6 +367,7 @@
     justify-content: flex-start;
     gap: 18px;
     padding: 28px 22px 40px;
+    transform: translateY(6px);
   }
 
   .booking-form__actions {
