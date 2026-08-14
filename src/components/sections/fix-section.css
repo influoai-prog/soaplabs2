@@ -28,7 +28,7 @@
   display: flex;
   width: min(1240px, 100%);
   flex-direction: column;
-  gap: clamp(44px, 5vw, 68px);
+  gap: clamp(38px, 4vw, 56px);
   text-align: left;
 }
 
@@ -321,7 +321,7 @@
 
   .fix-intro__content {
     width: min(720px, 100%);
-    gap: 40px;
+    gap: 34px;
   }
 
   .fix-intro__heading {
@@ -398,7 +398,7 @@
   }
 
   .fix-intro__content {
-    gap: 34px;
+    gap: 28px;
   }
 
   .fix-intro h2 {

@@ -30,27 +30,27 @@ const easeOut = [0.22, 1, 0.36, 1]
 const timelineSteps = [
   {
     number: '01',
-    detail: 'Hidden spend',
+    detail: 'Spend uncovered',
   },
   {
     number: '02',
-    detail: 'Manual effort',
+    detail: 'Hours reclaimed',
   },
   {
     number: '03',
-    detail: 'Profit protected',
+    detail: 'Cash retained',
   },
   {
     number: '04',
-    detail: 'Team unblocked',
+    detail: 'Capacity created',
   },
   {
     number: '05',
-    detail: 'Reinvest the gains',
+    detail: 'Growth accelerated',
   },
   {
     number: '06',
-    detail: 'Less complexity',
+    detail: 'Systems simplified',
   },
 ]
 
@@ -198,14 +198,14 @@ export function FixSection() {
           viewport={{ once: true, amount: 0.35 }}
         >
           <div className="fix-intro__heading">
-            <h2 id="fix-title" aria-label="Turn Waste Into Rapid Growth">
+            <h2 id="fix-title" aria-label="Build More With What You Have">
               <span className="fix-intro__clip">
                 <motion.span
                   className="fix-intro__line"
                   variants={introLineVariants}
                   transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
                 >
-                  Turn Waste
+                  Build More
                 </motion.span>
               </span>
               <span className="fix-intro__clip">
@@ -214,7 +214,7 @@ export function FixSection() {
                   variants={introLineVariants}
                   transition={{ duration: 0.9, delay: 0.2, ease: easeOut }}
                 >
-                  Into Rapid Growth
+                  With What You Have
                 </motion.span>
               </span>
             </h2>
@@ -227,8 +227,8 @@ export function FixSection() {
               }}
               transition={{ duration: 0.6, delay: 0.26, ease: easeOut }}
             >
-              We recover the time, margin, and capacity lost to inefficient operations.<br />
-              Then turn those gains into stronger systems and cleaner growth.
+              We find the operational drag keeping your business from performing at its best.<br />
+              Then free up the cash, time, and capacity you need to move faster.
             </motion.p>
 
           </div>
