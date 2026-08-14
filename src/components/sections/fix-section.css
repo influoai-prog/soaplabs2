@@ -20,7 +20,7 @@
   min-height: 680px;
   align-items: flex-start;
   justify-content: center;
-  padding: 34px var(--page-gutter) 84px;
+  padding: 34px var(--page-gutter) 104px;
   background: #fff;
 }
 
@@ -120,6 +120,7 @@
   font-size: 12px;
   font-weight: 900;
   line-height: 1;
+  letter-spacing: -0.08em;
   color: #fff;
   -webkit-text-stroke: 0.65px currentColor;
   paint-order: stroke fill;
@@ -310,7 +311,7 @@
 @media (max-width: 900px) {
   .fix-intro {
     min-height: 0;
-    padding: 42px var(--page-gutter) 64px;
+    padding: 42px var(--page-gutter) 80px;
   }
 
   .fix-intro__content {
@@ -388,7 +389,7 @@
 @media (max-width: 479px) {
   .fix-intro {
     min-height: 0;
-    padding: 34px 20px 56px;
+    padding: 34px 20px 72px;
     border-radius: 32px;
   }
 
