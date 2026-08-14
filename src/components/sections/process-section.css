@@ -575,6 +575,10 @@
     padding-left: 0;
   }
 
+  .process-card--one .process-card__number {
+    transform: translateX(4px);
+  }
+
   .process-cta {
     min-height: 224px;
     gap: 24px;
