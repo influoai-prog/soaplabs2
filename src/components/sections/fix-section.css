@@ -82,7 +82,7 @@
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: clamp(17px, 1.45vw, 20px);
   font-weight: var(--type-body-lg-font-weight);
-  line-height: 1.3;
+  line-height: 1.22;
   letter-spacing: -0.015em;
   color: var(--muted);
 }
