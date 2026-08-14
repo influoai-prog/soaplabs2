@@ -10,11 +10,11 @@ const CAL_NAMESPACE = 'soaplabsAudit'
 const CAL_CONTAINER_ID = 'soaplabs-cal-booking'
 
 const INITIAL_ANSWERS = {
-  name: '',
-  email: '',
-  phone: '',
+  company: '',
+  industry: '',
+  teamSize: '',
   challenge: '',
-  notes: '',
+  desiredOutcome: '',
 }
 
 const BookingContext = createContext(null)
@@ -106,16 +106,19 @@ function initializeCalEmbed(answers) {
       },
     })
 
+    const notes = [
+      `Business: ${answers.company}`,
+      `Industry: ${answers.industry}`,
+      `Team size: ${answers.teamSize}`,
+      answers.desiredOutcome ? `Desired outcome: ${answers.desiredOutcome}` : null,
+    ].filter(Boolean).join('\n')
+
     const config = {
       layout: 'month_view',
       theme: 'light',
-      name: answers.name,
-      email: answers.email,
       title: answers.challenge,
-      notes: answers.notes,
+      notes,
     }
-
-    if (answers.phone) config.attendeePhoneNumber = answers.phone
 
     container.replaceChildren()
     bookingCal('inline', {
@@ -127,10 +130,10 @@ function initializeCalEmbed(answers) {
 }
 
 function BookingProgress({ step }) {
-  const labels = ['Details', 'Priorities', 'Schedule']
+  const labels = ['Business', 'Schedule']
 
   return (
-    <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
+    <ol className="booking-progress" aria-label={`Booking step ${step} of 2`}>
       {labels.map((label, index) => {
         const itemStep = index + 1
         return (
@@ -178,11 +181,11 @@ export function BookingProvider({ children }) {
 
   const advanceStep = useCallback((event) => {
     event.preventDefault()
-    setStep((current) => Math.min(current + 1, 3))
+    setStep((current) => Math.min(current + 1, 2))
   }, [])
 
   useEffect(() => {
-    if (!isOpen || step !== 3) return undefined
+    if (!isOpen || step !== 2) return undefined
 
     let active = true
     setEmbedStatus('loading')
@@ -269,52 +272,76 @@ export function BookingProvider({ children }) {
                   {step === 1 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro">
-                        <span>01 / Your details</span>
-                        <h3>Start with the basics.</h3>
-                        <p>A few details now means less friction when you choose a time.</p>
+                        <span>01 / Business context</span>
+                        <h3>Tell us how the business runs.</h3>
+                        <p>Share the operational picture so we can make the first conversation useful.</p>
                       </div>
 
                       <form className="booking-form" onSubmit={advanceStep}>
+                        <div className="booking-form__row">
+                          <label>
+                            <span>Business name</span>
+                            <input
+                              autoComplete="organization"
+                              name="company"
+                              onChange={updateAnswer}
+                              placeholder="Your company"
+                              required
+                              type="text"
+                              value={answers.company}
+                            />
+                          </label>
+
+                          <label>
+                            <span>Industry</span>
+                            <input
+                              name="industry"
+                              onChange={updateAnswer}
+                              placeholder="e.g. Healthcare"
+                              required
+                              type="text"
+                              value={answers.industry}
+                            />
+                          </label>
+                        </div>
+
                         <label>
-                          <span>Your name</span>
-                          <input
-                            autoComplete="name"
-                            name="name"
+                          <span>Team size</span>
+                          <select name="teamSize" onChange={updateAnswer} required value={answers.teamSize}>
+                            <option value="" disabled>Select a range</option>
+                            <option value="1–5 people">1–5 people</option>
+                            <option value="6–15 people">6–15 people</option>
+                            <option value="16–50 people">16–50 people</option>
+                            <option value="51–150 people">51–150 people</option>
+                            <option value="151+ people">151+ people</option>
+                          </select>
+                        </label>
+
+                        <label>
+                          <span>Biggest operational problem</span>
+                          <textarea
+                            name="challenge"
                             onChange={updateAnswer}
-                            placeholder="Full name"
+                            placeholder="What is costing the most time, money, or capacity?"
                             required
+                            rows="3"
+                            value={answers.challenge}
+                          />
+                        </label>
+
+                        <label>
+                          <span>What would a meaningful win look like? <em>Optional</em></span>
+                          <input
+                            name="desiredOutcome"
+                            onChange={updateAnswer}
+                            placeholder="More margin, reclaimed time, extra capacity…"
                             type="text"
-                            value={answers.name}
-                          />
-                        </label>
-
-                        <label>
-                          <span>Work email</span>
-                          <input
-                            autoComplete="email"
-                            name="email"
-                            onChange={updateAnswer}
-                            placeholder="you@company.com"
-                            required
-                            type="email"
-                            value={answers.email}
-                          />
-                        </label>
-
-                        <label>
-                          <span>Phone number <em>Optional</em></span>
-                          <input
-                            autoComplete="tel"
-                            name="phone"
-                            onChange={updateAnswer}
-                            placeholder="Include country code"
-                            type="tel"
-                            value={answers.phone}
+                            value={answers.desiredOutcome}
                           />
                         </label>
 
                         <button className="booking-form__primary" type="submit">
-                          Continue
+                          See available times
                           <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
                         </button>
                       </form>
@@ -322,56 +349,9 @@ export function BookingProvider({ children }) {
                   ) : null}
 
                   {step === 2 ? (
-                    <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro">
-                        <span>02 / Your priorities</span>
-                        <h3>Where is the drag?</h3>
-                        <p>Give us enough context to make the first conversation useful.</p>
-                      </div>
-
-                      <form className="booking-form" onSubmit={advanceStep}>
-                        <label>
-                          <span>Biggest operational problem</span>
-                          <textarea
-                            autoFocus
-                            name="challenge"
-                            onChange={updateAnswer}
-                            placeholder="What is costing the most time, money, or capacity?"
-                            required
-                            rows="4"
-                            value={answers.challenge}
-                          />
-                        </label>
-
-                        <label>
-                          <span>Anything else we should know? <em>Optional</em></span>
-                          <textarea
-                            name="notes"
-                            onChange={updateAnswer}
-                            placeholder="Team size, current systems, urgency, or useful context"
-                            rows="3"
-                            value={answers.notes}
-                          />
-                        </label>
-
-                        <div className="booking-form__actions">
-                          <button className="booking-form__back" type="button" onClick={() => setStep(1)}>
-                            <ArrowLeft size={17} strokeWidth={2} aria-hidden="true" />
-                            Back
-                          </button>
-                          <button className="booking-form__primary" type="submit">
-                            See available times
-                            <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  ) : null}
-
-                  {step === 3 ? (
                     <div className="booking-schedule">
                       <div className="booking-schedule__bar">
-                        <button type="button" onClick={() => setStep(2)}>
+                        <button type="button" onClick={() => setStep(1)}>
                           <ArrowLeft size={16} strokeWidth={2} aria-hidden="true" />
                           Edit answers
                         </button>
