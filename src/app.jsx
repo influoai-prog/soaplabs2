@@ -13,6 +13,8 @@ import './app.css'
 
 const WHITE_SCREEN_MS = 300
 const LOADING_MS = 900
+const MOBILE_WHITE_SCREEN_MS = 250
+const MOBILE_LOADING_MS = 1350
 const BOOT_KEY = 'soap-booted'
 
 function App() {
@@ -30,11 +32,20 @@ function App() {
     if (!shouldBoot) return undefined
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const compactLayout = window.matchMedia('(max-width: 809.98px)').matches
     document.documentElement.classList.add('is-loading')
     document.documentElement.classList.add('is-white-screen')
 
-    const whiteDelay = reducedMotion ? 0 : WHITE_SCREEN_MS
-    const loadDelay = reducedMotion ? 40 : WHITE_SCREEN_MS + LOADING_MS
+    const whiteDelay = reducedMotion
+      ? 0
+      : compactLayout
+        ? MOBILE_WHITE_SCREEN_MS
+        : WHITE_SCREEN_MS
+    const loadDelay = reducedMotion
+      ? 40
+      : compactLayout
+        ? MOBILE_WHITE_SCREEN_MS + MOBILE_LOADING_MS
+        : WHITE_SCREEN_MS + LOADING_MS
 
     const whiteTimer = window.setTimeout(() => {
       setIsWhiteScreen(false)

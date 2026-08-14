@@ -594,3 +594,34 @@
     will-change: auto;
   }
 }
+
+/* Give the mobile loader a calmer scale and a cleaner transition into the header. */
+@media (max-width: 809.98px) {
+  .nav-shell.nav-shell--loading {
+    width: 156px !important;
+    height: 156px !important;
+    min-height: 156px !important;
+    border-radius: 38px !important;
+  }
+
+  .nav-shell.nav-shell--loading .brand {
+    width: 156px !important;
+    height: 156px !important;
+    flex-basis: 156px !important;
+  }
+
+  .nav-shell.nav-shell--loading .brand__mark {
+    width: 156px !important;
+    height: 156px !important;
+    flex-basis: 156px !important;
+  }
+
+  .nav-shell.nav-shell--loading .soap-loader-mark {
+    width: 65px;
+    height: 107px;
+  }
+
+  .loading-wordmark--active {
+    top: calc(50% + 96px);
+  }
+}

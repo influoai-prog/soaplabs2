@@ -391,3 +391,18 @@
     bottom: 24px;
   }
 }
+
+/* Keep the value-creation cards lightweight during native touch scrolling. */
+@media (max-width: 809.98px) {
+  .industry-card__shape g {
+    filter: none !important;
+  }
+
+  .industry-item,
+  .industry-card__shape,
+  .industry-card__media,
+  .industry-card__title-line,
+  .industries-title__line {
+    will-change: auto;
+  }
+}
