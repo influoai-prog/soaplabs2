@@ -17,10 +17,10 @@
 .fix-intro {
   display: flex;
   width: 100vw;
-  min-height: 780px;
-  align-items: center;
+  min-height: 680px;
+  align-items: flex-start;
   justify-content: center;
-  padding: clamp(76px, 8vw, 116px) var(--page-gutter);
+  padding: 34px var(--page-gutter) 84px;
   background: #fff;
 }
 
@@ -308,7 +308,7 @@
 @media (max-width: 900px) {
   .fix-intro {
     min-height: 0;
-    padding: 72px var(--page-gutter);
+    padding: 42px var(--page-gutter) 64px;
   }
 
   .fix-intro__content {
@@ -386,7 +386,7 @@
 @media (max-width: 479px) {
   .fix-intro {
     min-height: 0;
-    padding: 52px 20px;
+    padding: 34px 20px 56px;
     border-radius: 32px;
   }
 
