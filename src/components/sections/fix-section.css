@@ -470,9 +470,9 @@
 /* Keep the original mobile section layout while balancing the two-line heading. */
 @media (max-width: 479px) {
   .fix-intro h2 {
-    gap: 2px;
-    font-size: clamp(40px, 11vw, 46px);
-    line-height: 0.96;
+    gap: 3px;
+    font-size: clamp(36px, 10vw, 40px);
+    line-height: 0.98;
   }
 
   .fix-intro__clip {
@@ -483,5 +483,15 @@
   .fix-intro__line--accent {
     font-size: 0.82em;
     letter-spacing: -0.045em;
+  }
+
+  .fix-intro__subheading {
+    width: min(310px, 100%);
+    margin-top: 12px;
+    font-size: 14.5px;
+    line-height: 1.32;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-wrap: balance;
   }
 }
