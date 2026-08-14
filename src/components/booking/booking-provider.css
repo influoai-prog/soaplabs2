@@ -44,22 +44,6 @@
   background: #fff;
 }
 
-.booking-modal__identity span,
-.booking-questionnaire__intro > span {
-  display: block;
-  color: rgba(1, 2, 5, 0.58);
-  font-size: var(--type-card-label-font-size);
-  font-style: normal;
-  font-weight: var(--type-card-label-font-weight);
-  letter-spacing: 0.075em;
-  line-height: var(--type-card-label-line-height);
-  text-transform: uppercase;
-}
-
-.booking-modal__identity span {
-  margin-bottom: 5px;
-}
-
 .booking-modal__identity h2 {
   margin: 0;
   color: var(--ink);
@@ -202,7 +186,7 @@
   position: relative;
   z-index: 1;
   max-width: 420px;
-  margin: 20px 0 18px;
+  margin: 0 0 18px;
   color: #010205;
   font-size: clamp(44px, 4.5vw, 62px);
   font-weight: var(--type-h2-font-weight);
