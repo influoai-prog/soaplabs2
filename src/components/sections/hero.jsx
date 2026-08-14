@@ -50,7 +50,7 @@ export function Hero() {
 
       <motion.p className="hero-copy" variants={copy}>
         We find the costs, bottlenecks and wasted hours dragging down your 
-        margins then turn them into more profit and more room to grow your business.
+        margins then turn them into more profit.
       </motion.p>
     </motion.section>
   )
