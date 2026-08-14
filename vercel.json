@@ -1,8 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "vite",
-  "installCommand": "pnpm --dir soap-recovered/src install --frozen-lockfile",
-  "buildCommand": "pnpm --dir soap-recovered/src run build",
+  "installCommand": "",
+  "buildCommand": "",
   "outputDirectory": "soap-recovered/src/dist",
   "rewrites": [
     {
