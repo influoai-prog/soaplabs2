@@ -38,12 +38,12 @@ export function Hero() {
       <h1 aria-label="There Is Money Leaking Out of Your Business">
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
-            There Is Money Leaking
+            There's Money Leaking out
           </motion.span>
         </span>
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
-            Out of Your Business
+            of Your Business
           </motion.span>
         </span>
       </h1>
