@@ -96,6 +96,7 @@
 
 .industries-header__action {
   flex: 0 0 auto;
+  border-radius: 20px;
   white-space: nowrap;
 }
 
