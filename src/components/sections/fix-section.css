@@ -33,17 +33,15 @@
 }
 
 .fix-intro__heading {
-  display: grid;
   min-width: 0;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  align-items: end;
-  gap: clamp(44px, 7vw, 100px);
+  text-align: center;
 }
 
 .fix-intro h2 {
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
   margin: 0;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: clamp(72px, 7vw, var(--type-h1-font-size));
@@ -77,59 +75,10 @@
   color: #ff80ad;
 }
 
-.fix-intro__summary {
-  width: min(400px, 100%);
-  margin: 0 0 0.12em;
-  font-family: 'M Saans', 'Segoe UI', sans-serif;
-  font-size: clamp(18px, 1.55vw, 22px);
-  font-weight: var(--type-body-lg-font-weight);
-  line-height: 1.34;
-  color: var(--muted);
-}
-
 .fix-intro__timeline {
   position: relative;
   min-width: 0;
-  overflow: hidden;
-  padding: 36px 42px 40px;
-  border-radius: 34px 34px 112px 34px;
-  background: #f6d0dd;
-  isolation: isolate;
-}
-
-.fix-intro__timeline::before {
-  position: absolute;
-  top: -30px;
-  right: -22px;
-  width: 88px;
-  height: 88px;
-  border: 11px solid #ff80ad;
-  border-radius: 20px;
-  content: '';
-  transform: rotate(12deg);
-}
-
-.fix-intro__timeline::after {
-  position: absolute;
-  right: -1px;
-  bottom: -1px;
-  width: 90px;
-  height: 90px;
-  border-radius: 64px 0 0;
-  background: #fff;
-  content: '';
-  z-index: 4;
-}
-
-.fix-intro__timeline-label {
-  position: relative;
-  z-index: 3;
-  font-family: 'M Saans', 'Segoe UI', sans-serif;
-  font-size: 13px;
-  font-weight: 650;
-  line-height: 1;
-  letter-spacing: 0.015em;
-  color: rgba(1, 2, 5, 0.58);
+  padding: 8px 0 0;
 }
 
 .fix-intro__track {
@@ -137,7 +86,7 @@
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  margin-top: 30px;
+  margin-top: 0;
 }
 
 .fix-intro__track::before {
@@ -164,7 +113,7 @@
   width: 54px;
   height: 54px;
   place-items: center;
-  border: 4px solid #f6d0dd;
+  border: 4px solid #fff;
   border-radius: 17px;
   background: #010205;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
@@ -368,8 +317,6 @@
   }
 
   .fix-intro__heading {
-    grid-template-columns: 1fr;
-    gap: 24px;
     text-align: center;
   }
 
@@ -377,15 +324,10 @@
     font-size: clamp(62px, 11vw, 92px);
   }
 
-  .fix-intro__summary {
-    width: min(480px, 100%);
-    justify-self: center;
-  }
-
   .fix-intro__timeline {
     width: min(620px, 100%);
     justify-self: center;
-    padding: 32px 30px 38px;
+    padding: 0;
   }
 
   .fix-intro__track {
@@ -461,23 +403,8 @@
     font-size: 0.64em;
   }
 
-  .fix-intro__summary {
-    font-size: var(--type-body-sm-font-size);
-  }
-
   .fix-intro__timeline {
-    padding: 26px 20px 32px;
-    border-radius: 26px 26px 76px 26px;
-  }
-
-  .fix-intro__timeline::before {
-    width: 64px;
-    height: 64px;
-  }
-
-  .fix-intro__timeline::after {
-    width: 62px;
-    height: 62px;
+    padding: 0;
   }
 
   .fix-intro__track {
