@@ -578,3 +578,19 @@
 .nav-shell.nav-shell--loading .brand__mark-header {
   transform: rotate(45deg) scale(1.34) !important;
 }
+
+/* Keep the fixed mobile header lightweight while the page is moving. */
+@media (max-width: 809.98px) {
+  .nav-shell::before {
+    background: rgba(237, 237, 237, 0.94);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .brand__mark,
+  .brand__mark-loader,
+  .brand__mark-header,
+  .brand__wordmark {
+    will-change: auto;
+  }
+}
