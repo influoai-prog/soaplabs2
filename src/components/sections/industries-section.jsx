@@ -6,9 +6,9 @@ import './industries-section.css'
 
 const industries = [
   {
-    title: 'Professional Services',
-    titleLines: ['Professional', 'Services'],
-    description: 'Expertise shaped into a stronger, more reliable pipeline.',
+    title: 'Costs & Margins',
+    titleLines: ['Costs &', 'Margins'],
+    description: 'Find hidden costs and inefficiencies cutting into profit.',
     image: null,
     svg: (
       <svg width="257" height="283" viewBox="0 0 257 283" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,9 +29,9 @@ const industries = [
     isSvg: true,
   },
   {
-    title: 'Retail & eCommerce',
-    titleLines: ['Retail &', 'eCommerce'],
-    description: 'Smoother shopping journeys built to convert and retain.',
+    title: 'Systems & Workflow',
+    titleLines: ['Systems &', 'Workflow'],
+    description: 'Fix slow processes and automate work that drains your team.',
     image: null,
     svg: (
       <svg width="253" height="176" viewBox="0 0 253 176" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,9 +48,9 @@ const industries = [
     isSvg: true,
   },
   {
-    title: 'Media & Entertainment',
-    titleLines: ['Media &', 'Entertainment'],
-    description: 'Digital experiences made for attention and audience growth.',
+    title: 'Growth & Capacity',
+    titleLines: ['Growth &', 'Capacity'],
+    description: 'Turn saved time and cash into more margin and room to grow.',
     image: null,
     svg: (
       <svg width="211" height="227" viewBox="0 0 211 227" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +227,7 @@ export function IndustriesSection() {
         }}
       >
         <div className="industries-header__copy">
-          <h2 id="industries-title" aria-label="Industries We Serve">
+          <h2 id="industries-title" aria-label="Where We Create Value">
             <span className="industries-title__clip">
               <motion.span
                 className="industries-title__line"
@@ -236,7 +236,7 @@ export function IndustriesSection() {
                   visible: { y: '0%', transition: { duration: 0.9, ease: easeOut } },
                 }}
               >
-                Industries We Serve
+                Where We Create Value
               </motion.span>
             </span>
           </h2>
@@ -246,8 +246,7 @@ export function IndustriesSection() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: easeOut } },
             }}
           >
-            We shape focused digital systems around the way your industry works,
-            sells, and grows.
+            We find where time and money are being lost, then build the systems that win both back.
           </motion.p>
         </div>
 
@@ -265,7 +264,7 @@ export function IndustriesSection() {
         >
           <Button className="industries-header__action" href="#contact">
             Book a call
-            <ArrowIcon direction="right" size={24} aria-hidden="true" />
+            <ArrowIcon direction="right" size={22} aria-hidden="true" />
           </Button>
         </motion.div>
       </motion.div>
