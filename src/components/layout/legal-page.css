@@ -19,7 +19,7 @@
   font-size: var(--type-eyebrow-font-size);
   font-weight: var(--type-eyebrow-font-weight);
   line-height: var(--type-eyebrow-line-height);
-  letter-spacing: var(--type-eyebrow-letter-spacing);
+  letter-spacing: 0.04em;
   text-transform: var(--type-eyebrow-text-transform);
   color: var(--muted);
 }
