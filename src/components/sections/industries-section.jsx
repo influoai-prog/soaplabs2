@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { ArrowIcon } from './ArrowIcon'
-import { Button } from './ui/button'
-import './IndustriesSection.css'
+import { ArrowIcon } from '../ui/arrow-icon'
+import { Button } from '../ui/button'
+import './industries-section.css'
 
 const industries = [
   {

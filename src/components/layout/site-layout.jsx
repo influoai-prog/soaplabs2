@@ -1,6 +1,6 @@
-import { Navbar } from './Navbar'
-import { Footer } from './Footer'
-import { useLenis } from '../lib/useLenis'
+import { Navbar } from './navbar'
+import { Footer } from './footer'
+import { useLenis } from '../../utilities/smooth-scroll'
 
 export function SiteLayout({ children, pageClassName = '', navbarProps = {} }) {
   useLenis()

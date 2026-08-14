@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { FooterSoapMark } from './FooterSoapMark'
-import './Footer.css'
+import { FooterSoapMark } from '../branding/footer-logo'
+import './footer.css'
 
 const footerLinks = [
   [

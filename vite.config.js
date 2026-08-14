@@ -81,7 +81,7 @@ function cssAsSeparateFilesInBuild() {
 
       ordered.sort((a, b) => {
         const rank = (name) =>
-          name === 'assets/index.css' ? -1 : name === 'assets/App.css' ? 1 : 0
+          name === 'assets/index.css' ? -1 : name === 'assets/app.css' ? 1 : 0
         return rank(a) - rank(b)
       })
 
@@ -136,10 +136,10 @@ function cssFilesInDev() {
 
       const rank = (file) => {
         const name = path.basename(file)
-        return name === 'index.css' ? -1 : name === 'App.css' ? 1 : 0
+        return name === 'index.css' ? -1 : name === 'app.css' ? 1 : 0
       }
       const ordered = cssFiles
-        .filter((file) => path.basename(file) !== 'fonts.tokens.css')
+        .filter((file) => path.basename(file) !== 'font-styles.css')
         .sort((a, b) => rank(a) - rank(b) || a.localeCompare(b))
         .map((file) => {
           const abs = normalizePath(file)

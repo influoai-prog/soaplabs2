@@ -1,9 +1,9 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { easeOut } from '../lib/motion'
-import { ArrowIcon } from './ArrowIcon'
-import { Button } from './ui/button'
-import './Showcase.css'
+import { easeOut } from '../../utilities/motion-settings'
+import { ArrowIcon } from '../ui/arrow-icon'
+import { Button } from '../ui/button'
+import './showcase.css'
 
 const FRAME = {
   width: 886.08,
@@ -141,7 +141,7 @@ export function Showcase() {
               <motion.div className="showcase" style={screenStyle}>
                 <video
                   className="showcase__video"
-                  src="/boringlabs.mp4"
+                  src="/workflow-showcase.mp4"
                   autoPlay
                   muted
                   loop

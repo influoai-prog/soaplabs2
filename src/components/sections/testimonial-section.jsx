@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { easeOut } from '../lib/motion'
-import { ArrowIcon } from './ArrowIcon'
-import './TestimonialSection.css'
+import { easeOut } from '../../utilities/motion-settings'
+import { ArrowIcon } from '../ui/arrow-icon'
+import './testimonial-section.css'
 
 const testimonials = [
   {

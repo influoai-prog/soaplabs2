@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority'
 import { motion } from 'framer-motion'
-import { cn } from '../../lib/utils'
+import { cn } from '../../utilities/class-names'
 import './button.css'
 
 const buttonVariants = cva('button', {

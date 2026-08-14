@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './LegalSection.css'
+import './legal-section.css'
 
 export function LegalSection() {
   return (

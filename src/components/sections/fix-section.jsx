@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import growBusinessFrame from '../assets/grow-business-frame.svg'
-import './FixSection.css'
+import growBusinessFrame from '../../assets/grow-business-frame.svg'
+import './fix-section.css'
 
 const compactSquare = {
   x: 356,

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { SoapMark } from './SoapMark'
-import { SoapLoaderMark } from './SoapLoaderMark'
-import './Navbar.css'
+import { SoapMark } from '../branding/site-logo'
+import { SoapLoaderMark } from '../branding/loading-logo'
+import './navbar.css'
 
 const links = [
   { label: 'Services', href: '#service' },

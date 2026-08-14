@@ -1,9 +1,9 @@
 import { useId, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { easeOut } from '../lib/motion'
+import { easeOut } from '../../utilities/motion-settings'
 import { Plus } from 'lucide-react'
-import { cn } from '../lib/utils'
-import './FAQSection.css'
+import { cn } from '../../utilities/class-names'
+import './faq-section.css'
 
 const soapFaqs = [
   {
