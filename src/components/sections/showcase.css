@@ -138,10 +138,9 @@
 
 @media (max-width: 767.98px) {
 
-
   .showcase-wrap {
     display: flex;
-    margin-top: -18px;
+    margin-top: -8px;
     flex-direction: column;
   }
 
@@ -155,8 +154,20 @@
   .showcase-actions {
     order: 0;
     width: 100%;
-    padding: 14px var(--page-gutter) 0;
+    gap: 8px;
+    padding: 10px var(--page-gutter) 0;
     background: #f6d0dd;
+  }
+
+  .showcase-actions > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .showcase-actions__button {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
   }
 
   .showcase-scroll {
@@ -176,18 +187,19 @@
   }
 
   .showcase-frame {
-    width: 100%;
-    max-width: 100%;
+    width: calc(100% - (var(--page-gutter) * 2));
+    max-width: none;
     max-height: none;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 8px;
     place-items: center;
   }
 
   .showcase {
-    border-radius: 16px;
     width: 100%;
     max-width: 100%;
     min-height: 0;
+    border-radius: 16px;
     aspect-ratio: 16 / 9;
   }
 }
@@ -195,22 +207,21 @@
 @media (max-width: 479px) {
 
   .showcase-actions {
-    gap: 8px;
-    padding: 12px 22px 0;
+    padding-top: 8px;
   }
 
   .showcase-actions__button {
-    min-height: 52px;
-    padding-inline: 20px;
-    font-size: 16px;
+    min-height: 50px;
+    padding-inline: 16px;
+    font-size: 15.5px;
   }
 
   .showcase-actions__button--book {
-    min-width: 140px;
+    min-width: 0;
   }
 
   .showcase-actions__button--explore {
-    padding-inline: 18px;
+    padding-inline: 14px;
   }
 
 }
