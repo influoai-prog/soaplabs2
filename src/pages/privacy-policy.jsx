@@ -1,4 +1,4 @@
-import { LegalPage } from '../components/LegalPage'
+import { LegalPage } from '../components/layout/legal-page'
 
 const sections = [
   {

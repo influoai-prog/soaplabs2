@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { SiteLayout } from './SiteLayout'
-import './LegalPage.css'
+import { SiteLayout } from './site-layout'
+import './legal-page.css'
 
 export function LegalPage({ documentTitle, eyebrow = 'Legal', title, updated, sections, contact }) {
   useEffect(() => {

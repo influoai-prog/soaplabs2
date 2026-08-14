@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { easeOut } from '../lib/motion'
-import './Hero.css'
+import { easeOut } from '../../utilities/motion-settings'
+import './hero.css'
 
 const container = {
   hidden: {},

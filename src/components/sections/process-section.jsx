@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowIcon } from './ArrowIcon'
-import { Button } from './ui/button'
-import './ProcessSection.css'
+import { ArrowIcon } from '../ui/arrow-icon'
+import { Button } from '../ui/button'
+import './process-section.css'
 
 const easeOut = [0.22, 1, 0.36, 1]
 
