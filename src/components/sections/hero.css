@@ -35,6 +35,10 @@
   will-change: transform;
 }
 
+.hero-copy__mobile-break {
+  display: none;
+}
+
 .hero-copy {
   max-width: 580px;
   margin-top: 32px;
@@ -111,37 +115,52 @@
 @media (max-width: 479px) {
 
   .hero-section {
-    margin-top: 28px;
+    margin-top: 38px;
+    margin-bottom: 30px;
   }
 
   .hero-section h1 {
-    --mobile-hero-size: clamp(27px, 7.5vw, 33px);
+    --mobile-hero-size: clamp(29px, 8vw, 35px);
     font-size: var(--mobile-hero-size);
   }
 
+  .hero-title__clip:nth-child(1) .hero-title__line,
   .hero-title__clip:nth-child(2) .hero-title__line {
     font-size: 0;
   }
 
-  .hero-title__clip:nth-child(2) .hero-title__line::before,
-  .hero-title__clip:nth-child(2) .hero-title__line::after {
+  .hero-title__clip:nth-child(1) .hero-title__line::before,
+  .hero-title__clip:nth-child(1) .hero-title__line::after,
+  .hero-title__clip:nth-child(2) .hero-title__line::before {
     display: block;
     font-size: var(--mobile-hero-size);
     line-height: 0.98;
   }
 
-  .hero-title__clip:nth-child(2) .hero-title__line::before {
-    content: 'Money';
+  .hero-title__clip:nth-child(1) .hero-title__line::before {
+    content: 'Your Business Is';
   }
 
-  .hero-title__clip:nth-child(2) .hero-title__line::after {
+  .hero-title__clip:nth-child(1) .hero-title__line::after {
+    content: 'Leaking Money';
+  }
+
+  .hero-title__clip:nth-child(2) .hero-title__line::before {
     content: 'Right Now';
   }
 
+  .hero-title__clip:nth-child(2) .hero-title__line::after {
+    content: none;
+  }
+
   .hero-copy {
-    max-width: 340px;
-    margin-top: 16px;
-    font-size: 17px;
-    line-height: 1.38;
+    max-width: 350px;
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 1.34;
+  }
+
+  .hero-copy__mobile-break {
+    display: block;
   }
 }
