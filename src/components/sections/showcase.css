@@ -223,3 +223,15 @@
   }
 
 }
+
+/* Reduce mobile video compositing work while preserving the desktop treatment. */
+@media (max-width: 767.98px) {
+  .showcase-frame,
+  .showcase {
+    will-change: auto;
+  }
+
+  .showcase__video {
+    filter: none;
+  }
+}

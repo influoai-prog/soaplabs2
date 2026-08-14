@@ -210,3 +210,11 @@
     white-space: nowrap;
   }
 }
+
+/* Avoid sticky-layer repainting during native touch scrolling. */
+@media (max-width: 809.98px) {
+  .site-footer-shell {
+    position: relative;
+    bottom: auto;
+  }
+}
