@@ -277,7 +277,7 @@
 }
 
 .process-cta__button {
-  min-width: 190px;
+  min-width: 176px;
   flex: 0 0 auto;
   border-color: var(--ink);
   border-radius: 20px;

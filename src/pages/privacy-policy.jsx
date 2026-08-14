@@ -92,7 +92,7 @@ const sections = [
 function PrivacyPolicy() {
   return (
     <LegalPage
-      documentTitle="Privacy Policy | Soap Labs"
+      documentTitle="Privacy | Soap Labs"
       eyebrow="Legal"
       title="Privacy Policy"
       updated="Last updated: August 2026"

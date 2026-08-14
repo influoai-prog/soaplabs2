@@ -101,7 +101,7 @@ const sections = [
 function TermsOfService() {
   return (
     <LegalPage
-      documentTitle="Terms of Service | Soap Labs"
+      documentTitle="Terms | Soap Labs"
       eyebrow="Legal"
       title="Terms of Service"
       updated="Last updated: August 2026"
