@@ -178,7 +178,7 @@
   .site-footer {
     min-height: 480px;
     gap: 62px;
-    padding: 84px 20px 40px;
+    padding: 84px clamp(22px, 4vw, 32px) 40px;
   }
 
   .site-footer__top {
