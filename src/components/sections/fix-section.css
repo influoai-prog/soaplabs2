@@ -118,12 +118,12 @@
   border-radius: 17px;
   background: #010205;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 750;
   line-height: 1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: #fff;
-  -webkit-text-stroke: 0.35px currentColor;
+  -webkit-text-stroke: 0.25px currentColor;
   paint-order: stroke fill;
   z-index: 2;
 }
@@ -161,10 +161,10 @@
 }
 
 .fix-intro__step-copy small {
-  font-size: clamp(11px, 0.94vw, 13px);
-  font-weight: 450;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 550;
   line-height: 1.12;
-  color: rgba(1, 2, 5, 0.56);
+  color: rgba(1, 2, 5, 0.74);
 }
 
 .fix-visual {
@@ -359,7 +359,7 @@
   }
 
   .fix-intro__step-copy small {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .fix-visual__title {
