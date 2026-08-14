@@ -446,6 +446,10 @@
     height: 52px;
   }
 
+  .nav-shell:not(.nav-shell--loading) .brand__mark-header {
+    transform: scale(0.88);
+  }
+
   .brand__wordmark {
     width: auto;
   }
