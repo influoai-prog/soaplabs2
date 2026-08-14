@@ -189,6 +189,12 @@
   transform: translateX(30px);
 }
 
+@media (min-width: 1000.01px) {
+  .process-card--three h3 {
+    white-space: nowrap;
+  }
+}
+
 .process-card__title-clip {
   display: block;
   overflow: hidden;
