@@ -13,37 +13,36 @@ const links = [
 
 export function Navbar({ isLoading = false }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [showCta, setShowCta] = useState(false)
+  const [showCta, setShowCta] = useState(true)
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const isHome = pathname === '/'
 
   useEffect(() => {
-    const marker = document.querySelector('[data-industries-end]')
-    if (!marker) {
+    const pageCtas = Array.from(document.querySelectorAll(
+      '.showcase-actions__button--book, .industries-header__action',
+    ))
+
+    if (!pageCtas.length) {
       setShowCta(true)
       return undefined
     }
 
+    const proximity = 120
     const syncCta = () => {
-      const rect = marker.getBoundingClientRect()
-      // Show once the industries bottom has entered (or passed) the viewport.
-      setShowCta(rect.top <= window.innerHeight)
+      const isNearPageCta = pageCtas.some((cta) => {
+        const rect = cta.getBoundingClientRect()
+        return rect.bottom >= -proximity && rect.top <= window.innerHeight + proximity
+      })
+
+      setShowCta(!isNearPageCta)
     }
 
     syncCta()
-
-    const observer = new IntersectionObserver(syncCta, {
-      threshold: [0, 0.01, 1],
-      rootMargin: '0px',
-    })
-
-    observer.observe(marker)
     window.addEventListener('scroll', syncCta, { passive: true })
     window.addEventListener('resize', syncCta)
 
     return () => {
-      observer.disconnect()
       window.removeEventListener('scroll', syncCta)
       window.removeEventListener('resize', syncCta)
     }
