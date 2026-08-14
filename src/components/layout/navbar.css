@@ -378,7 +378,7 @@
     width: calc(100vw - 48px);
     height: 52px;
     min-height: 52px;
-    padding: 0 4px 0 10px;
+    padding: 0 4px 0 14px;
     border-radius: 28px;
   }
 
@@ -431,18 +431,18 @@
 
   .nav-brand {
     width: auto;
-    height: 20px;
-    gap: 6px;
+    height: 52px;
+    gap: 0;
   }
 
   .brand__mark {
-    width: 35px;
+    width: 37px;
     height: 52px;
-    flex-basis: 35px;
+    flex-basis: 37px;
   }
 
   .soap-mark {
-    width: 35px;
+    width: 37px;
     height: 52px;
   }
 
