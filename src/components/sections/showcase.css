@@ -25,6 +25,10 @@
   min-width: 156px;
 }
 
+.showcase-actions__button--explore {
+  padding-inline: 26px;
+}
+
 .showcase-actions__arrow {
   display: inline-grid;
   place-items: center;
