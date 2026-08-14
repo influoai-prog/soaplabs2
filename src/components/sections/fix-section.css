@@ -66,6 +66,7 @@
 
 .fix-intro__line {
   display: block;
+  white-space: nowrap;
   will-change: transform;
 }
 
@@ -138,6 +139,7 @@
   left: 29.72%;
   width: 40.07%;
   margin: 0;
+  white-space: nowrap;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: var(--type-h4-font-size);
   font-weight: var(--type-h4-font-weight);
