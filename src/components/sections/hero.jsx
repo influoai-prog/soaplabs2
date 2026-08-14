@@ -49,9 +49,9 @@ export function Hero() {
       </h1>
 
       <motion.p className="hero-copy" variants={copy}>
-        We find the costs, bottlenecks and
+        We find the costs, bottlenecks and{' '}
         <br className="hero-copy__mobile-break" />
-        wasted hours dragging down your margins
+        wasted hours dragging down your margins{' '}
         <br className="hero-copy__mobile-break" />
         then turn them into profit.
       </motion.p>
