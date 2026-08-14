@@ -15,8 +15,12 @@
 }
 
 .showcase-actions__button {
-  min-height: 52px;
-  padding-inline: 26px;
+  min-height: 56px;
+  padding-inline: 30px;
+}
+
+.showcase-actions__button--book {
+  min-width: 144px;
 }
 
 .showcase-actions__arrow {
