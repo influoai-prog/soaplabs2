@@ -22,6 +22,10 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    document.title = 'Soap Labs | Better Operations'
+  }, [])
+
+  useEffect(() => {
     const shouldBoot = !sessionStorage.getItem(BOOT_KEY)
     if (!shouldBoot) return undefined
 
