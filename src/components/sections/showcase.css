@@ -145,7 +145,7 @@
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 809.98px) {
 
 
   .showcase-wrap {
@@ -225,7 +225,7 @@
 }
 
 /* Reduce mobile video compositing work while preserving the desktop treatment. */
-@media (max-width: 767.98px) {
+@media (max-width: 809.98px) {
   .showcase-frame,
   .showcase {
     will-change: auto;
