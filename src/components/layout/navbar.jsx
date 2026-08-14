@@ -84,15 +84,6 @@ export function Navbar({ isLoading = false }) {
 
   return (
     <>
-      <div className={`mobile-boot-screen${isLoading ? ' mobile-boot-screen--active' : ''}`} aria-hidden="true">
-        <div className="mobile-boot-screen__tile">
-          <SoapLoaderMark />
-        </div>
-        <div className="mobile-boot-screen__wordmark">
-          <strong>soap</strong>
-          <span>Labs</span>
-        </div>
-      </div>
       <div className={`loading-wordmark${isLoading ? ' loading-wordmark--active' : ''}`} aria-hidden="true">
         <strong>soap</strong>
         <span>Labs</span>
