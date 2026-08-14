@@ -27,21 +27,36 @@ const shapePieces = [
 
 const easeOut = [0.22, 1, 0.36, 1]
 
-const valueSteps = [
+const timelineSteps = [
   {
     number: '01',
-    title: 'Find the waste',
-    detail: 'Costs and bottlenecks',
+    title: 'Audit the work',
+    detail: 'See how it runs',
   },
   {
     number: '02',
-    title: 'Build the system',
-    detail: 'Workflows and automation',
+    title: 'Find the leaks',
+    detail: 'Time and money',
   },
   {
     number: '03',
-    title: 'Create capacity',
-    detail: 'Margin and growth',
+    title: 'Rank the wins',
+    detail: 'Impact first',
+  },
+  {
+    number: '04',
+    title: 'Map the plan',
+    detail: 'Clear priorities',
+  },
+  {
+    number: '05',
+    title: 'Build systems',
+    detail: 'Fix and automate',
+  },
+  {
+    number: '06',
+    title: 'Compound gains',
+    detail: 'Scale what works',
   },
 ]
 
@@ -209,38 +224,48 @@ export function FixSection() {
                 </motion.span>
               </span>
             </h2>
+
+            <motion.p
+              className="fix-intro__summary"
+              variants={{
+                hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.65, delay: 0.28, ease: easeOut }}
+            >
+              We remove operational drag and build systems that create room to scale.
+            </motion.p>
           </div>
 
           <motion.div
-            className="fix-intro__value-card"
+            className="fix-intro__timeline"
             variants={{
               hidden: {
                 opacity: reduceMotion ? 1 : 0,
-                x: reduceMotion ? 0 : 32,
+                y: reduceMotion ? 0 : 28,
               },
-              visible: { opacity: 1, x: 0 },
+              visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.72, delay: 0.24, ease: easeOut }}
+            transition={{ duration: 0.72, delay: 0.3, ease: easeOut }}
           >
-            <span className="fix-intro__value-label">How value moves</span>
-            <p>
-              We remove operational drag and build systems that create room to scale.
-            </p>
-
-            <div className="fix-intro__steps">
-              {valueSteps.map((step, index) => (
-                <div className="fix-intro__step-group" key={step.number}>
-                  <div className="fix-intro__step">
-                    <span className="fix-intro__step-number">{step.number}</span>
-                    <span className="fix-intro__step-copy">
-                      <strong>{step.title}</strong>
-                      <small>{step.detail}</small>
-                    </span>
-                  </div>
-                  {index < valueSteps.length - 1 && (
-                    <span className="fix-intro__connector" aria-hidden="true" />
-                  )}
-                </div>
+            <span className="fix-intro__timeline-label">How value moves</span>
+            <div className="fix-intro__track">
+              {timelineSteps.map((step, index) => (
+                <motion.article
+                  className="fix-intro__step"
+                  key={step.number}
+                  variants={{
+                    hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.45, delay: 0.42 + (index * 0.07), ease: easeOut }}
+                >
+                  <span className="fix-intro__step-number">{step.number}</span>
+                  <span className="fix-intro__step-copy">
+                    <strong>{step.title}</strong>
+                    <small>{step.detail}</small>
+                  </span>
+                </motion.article>
               ))}
             </div>
           </motion.div>
