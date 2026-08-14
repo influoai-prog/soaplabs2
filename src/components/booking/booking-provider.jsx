@@ -1,13 +1,21 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import './booking-provider.css'
 
 const CAL_LINK = 'soaplabs/audit'
 const CAL_URL = `https://cal.com/${CAL_LINK}`
 const CAL_NAMESPACE = 'soaplabsAudit'
 const CAL_CONTAINER_ID = 'soaplabs-cal-booking'
+
+const INITIAL_ANSWERS = {
+  name: '',
+  email: '',
+  phone: '',
+  challenge: '',
+  notes: '',
+}
 
 const BookingContext = createContext(null)
 let calEmbedPromise
@@ -59,7 +67,7 @@ function loadCalEmbed() {
   return calEmbedPromise
 }
 
-function initializeCalEmbed() {
+function initializeCalEmbed(answers) {
   return loadCalEmbed().then((Cal) => {
     if (!Cal) throw new Error('Cal.com embed could not be loaded')
 
@@ -84,35 +92,66 @@ function initializeCalEmbed() {
           'cal-text-subtle': '#747474',
           'cal-text-muted': '#969696',
           'cal-bg': '#ffffff',
-          'cal-bg-emphasis': '#fff3f7',
+          'cal-bg-emphasis': '#f7f7f7',
           'cal-bg-subtle': '#f7f7f7',
           'cal-bg-muted': '#f1f1f1',
-          'cal-border': '#e5e5e5',
-          'cal-border-booker': '#efcad7',
+          'cal-border': '#dedede',
+          'cal-border-booker': '#dedede',
           'cal-border-booker-width': '1px',
-          'radius': '10px',
-          'radius-md': '12px',
-          'radius-xl': '18px',
-          'radius-3xl': '24px',
+          'radius': '4px',
+          'radius-md': '6px',
+          'radius-xl': '8px',
+          'radius-3xl': '10px',
         },
       },
     })
+
+    const config = {
+      layout: 'month_view',
+      theme: 'light',
+      name: answers.name,
+      email: answers.email,
+      title: answers.challenge,
+      notes: answers.notes,
+    }
+
+    if (answers.phone) config.attendeePhoneNumber = answers.phone
 
     container.replaceChildren()
     bookingCal('inline', {
       elementOrSelector: container,
       calLink: CAL_LINK,
-      config: {
-        layout: 'month_view',
-        theme: 'light',
-      },
+      config,
     })
   })
+}
+
+function BookingProgress({ step }) {
+  const labels = ['Details', 'Priorities', 'Schedule']
+
+  return (
+    <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
+      {labels.map((label, index) => {
+        const itemStep = index + 1
+        return (
+          <li
+            className={itemStep === step ? 'is-current' : itemStep < step ? 'is-complete' : ''}
+            key={label}
+          >
+            <span>0{itemStep}</span>
+            <strong>{label}</strong>
+          </li>
+        )
+      })}
+    </ol>
+  )
 }
 
 export function BookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [hasOpened, setHasOpened] = useState(false)
+  const [step, setStep] = useState(1)
+  const [answers, setAnswers] = useState(INITIAL_ANSWERS)
   const [embedStatus, setEmbedStatus] = useState('idle')
   const closeButtonRef = useRef(null)
   const triggerRef = useRef(null)
@@ -122,6 +161,8 @@ export function BookingProvider({ children }) {
     event?.preventDefault()
     triggerRef.current = event?.currentTarget ?? document.activeElement
     setHasOpened(true)
+    setStep(1)
+    setEmbedStatus('idle')
     setIsOpen(true)
   }, [])
 
@@ -130,13 +171,23 @@ export function BookingProvider({ children }) {
     window.requestAnimationFrame(() => triggerRef.current?.focus?.())
   }, [])
 
+  const updateAnswer = useCallback((event) => {
+    const { name, value } = event.target
+    setAnswers((current) => ({ ...current, [name]: value }))
+  }, [])
+
+  const advanceStep = useCallback((event) => {
+    event.preventDefault()
+    setStep((current) => Math.min(current + 1, 3))
+  }, [])
+
   useEffect(() => {
-    if (!isOpen) return undefined
+    if (!isOpen || step !== 3) return undefined
 
     let active = true
     setEmbedStatus('loading')
 
-    initializeCalEmbed()
+    initializeCalEmbed(answers)
       .then(() => {
         if (active) setEmbedStatus('ready')
       })
@@ -147,7 +198,7 @@ export function BookingProvider({ children }) {
     return () => {
       active = false
     }
-  }, [isOpen])
+  }, [answers, isOpen, step])
 
   useEffect(() => {
     if (!isOpen) return undefined
@@ -181,7 +232,7 @@ export function BookingProvider({ children }) {
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: reduceMotion ? 0 : 0.22 }}
+              transition={{ duration: reduceMotion ? 0 : 0.18 }}
             >
               <button
                 className="booking-modal__backdrop"
@@ -192,16 +243,17 @@ export function BookingProvider({ children }) {
 
               <motion.section
                 className="booking-modal__panel"
-                initial={reduceMotion ? false : { opacity: 0, y: 24, scale: 0.985 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 18, scale: 0.99 }}
-                transition={{ duration: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
+                initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 12 }}
+                transition={{ duration: reduceMotion ? 0 : 0.26, ease: [0.22, 1, 0.36, 1] }}
               >
                 <header className="booking-modal__header">
-                  <div>
-                    <span>Operational audit</span>
-                    <h2 id="booking-modal-title">Book a call</h2>
+                  <div className="booking-modal__identity">
+                    <span>Soap Labs</span>
+                    <h2 id="booking-modal-title">Evolution audit</h2>
                   </div>
+                  <BookingProgress step={step} />
                   <button
                     ref={closeButtonRef}
                     className="booking-modal__close"
@@ -209,32 +261,146 @@ export function BookingProvider({ children }) {
                     aria-label="Close booking"
                     onClick={closeBooking}
                   >
-                    <X size={20} aria-hidden="true" />
+                    <X size={19} strokeWidth={1.8} aria-hidden="true" />
                   </button>
                 </header>
 
-                <div className="booking-modal__content">
-                  {embedStatus === 'loading' ? (
-                    <div className="booking-modal__loading" role="status">
-                      <span aria-hidden="true" />
-                      Loading available times…
+                <div className={`booking-modal__content booking-modal__content--step-${step}`}>
+                  {step === 1 ? (
+                    <div className="booking-questionnaire">
+                      <div className="booking-questionnaire__intro">
+                        <span>01 / Your details</span>
+                        <h3>Start with the basics.</h3>
+                        <p>A few details now means less friction when you choose a time.</p>
+                      </div>
+
+                      <form className="booking-form" onSubmit={advanceStep}>
+                        <label>
+                          <span>Your name</span>
+                          <input
+                            autoComplete="name"
+                            name="name"
+                            onChange={updateAnswer}
+                            placeholder="Full name"
+                            required
+                            type="text"
+                            value={answers.name}
+                          />
+                        </label>
+
+                        <label>
+                          <span>Work email</span>
+                          <input
+                            autoComplete="email"
+                            name="email"
+                            onChange={updateAnswer}
+                            placeholder="you@company.com"
+                            required
+                            type="email"
+                            value={answers.email}
+                          />
+                        </label>
+
+                        <label>
+                          <span>Phone number <em>Optional</em></span>
+                          <input
+                            autoComplete="tel"
+                            name="phone"
+                            onChange={updateAnswer}
+                            placeholder="Include country code"
+                            type="tel"
+                            value={answers.phone}
+                          />
+                        </label>
+
+                        <button className="booking-form__primary" type="submit">
+                          Continue
+                          <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                        </button>
+                      </form>
                     </div>
                   ) : null}
 
-                  {embedStatus === 'error' ? (
-                    <div className="booking-modal__error">
-                      <p>The calendar could not load here.</p>
-                      <a href={CAL_URL} target="_blank" rel="noreferrer">
-                        Open the booking page
-                      </a>
+                  {step === 2 ? (
+                    <div className="booking-questionnaire">
+                      <div className="booking-questionnaire__intro">
+                        <span>02 / Your priorities</span>
+                        <h3>Where is the drag?</h3>
+                        <p>Give us enough context to make the first conversation useful.</p>
+                      </div>
+
+                      <form className="booking-form" onSubmit={advanceStep}>
+                        <label>
+                          <span>Biggest operational problem</span>
+                          <textarea
+                            autoFocus
+                            name="challenge"
+                            onChange={updateAnswer}
+                            placeholder="What is costing the most time, money, or capacity?"
+                            required
+                            rows="4"
+                            value={answers.challenge}
+                          />
+                        </label>
+
+                        <label>
+                          <span>Anything else we should know? <em>Optional</em></span>
+                          <textarea
+                            name="notes"
+                            onChange={updateAnswer}
+                            placeholder="Team size, current systems, urgency, or useful context"
+                            rows="3"
+                            value={answers.notes}
+                          />
+                        </label>
+
+                        <div className="booking-form__actions">
+                          <button className="booking-form__back" type="button" onClick={() => setStep(1)}>
+                            <ArrowLeft size={17} strokeWidth={2} aria-hidden="true" />
+                            Back
+                          </button>
+                          <button className="booking-form__primary" type="submit">
+                            See available times
+                            <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                          </button>
+                        </div>
+                      </form>
                     </div>
                   ) : null}
 
-                  <div
-                    id={CAL_CONTAINER_ID}
-                    className="booking-modal__calendar"
-                    aria-hidden={embedStatus === 'error'}
-                  />
+                  {step === 3 ? (
+                    <div className="booking-schedule">
+                      <div className="booking-schedule__bar">
+                        <button type="button" onClick={() => setStep(2)}>
+                          <ArrowLeft size={16} strokeWidth={2} aria-hidden="true" />
+                          Edit answers
+                        </button>
+                        <p>Choose a 30-minute time that works for you.</p>
+                      </div>
+
+                      {embedStatus === 'loading' ? (
+                        <div className="booking-modal__loading" role="status">
+                          <span aria-hidden="true" />
+                          Loading available times…
+                        </div>
+                      ) : null}
+
+                      {embedStatus === 'error' ? (
+                        <div className="booking-modal__error">
+                          <p>The calendar could not load here.</p>
+                          <a href={CAL_URL} target="_blank" rel="noreferrer">
+                            Open the booking page
+                          </a>
+                        </div>
+                      ) : null}
+
+                      <div
+                        id={CAL_CONTAINER_ID}
+                        className="booking-modal__calendar"
+                        aria-hidden={embedStatus === 'error'}
+                      />
+                    </div>
+                  ) : null}
                 </div>
               </motion.section>
             </motion.div>
