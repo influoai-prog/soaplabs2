@@ -260,7 +260,6 @@ export function BookingProvider({ children }) {
               >
                 <header className="booking-modal__header">
                   <div className="booking-modal__identity">
-                    <span>Soap Labs</span>
                     <h2 id="booking-modal-title">Evolution audit</h2>
                   </div>
                   <BookingProgress step={step} />
@@ -279,7 +278,6 @@ export function BookingProvider({ children }) {
                   {step === 1 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro" data-step="01">
-                        <span>01 / Business profile</span>
                         <h3>Show us the business.</h3>
                         <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
                       </div>
@@ -348,7 +346,6 @@ export function BookingProvider({ children }) {
                   {step === 2 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro" data-step="02">
-                        <span>02 / Operations</span>
                         <h3>Show us where it gets stuck.</h3>
                         <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
                       </div>
