@@ -30,33 +30,33 @@ const easeOut = [0.22, 1, 0.36, 1]
 const timelineSteps = [
   {
     number: '01',
-    title: 'Audit the work',
-    detail: 'See how it runs',
+    title: 'Cost leakage',
+    detail: 'Hidden spend',
   },
   {
     number: '02',
-    title: 'Find the leaks',
-    detail: 'Time and money',
+    title: 'Time drains',
+    detail: 'Manual effort',
   },
   {
     number: '03',
-    title: 'Rank the wins',
-    detail: 'Impact first',
+    title: 'Margin recovered',
+    detail: 'Profit protected',
   },
   {
     number: '04',
-    title: 'Map the plan',
-    detail: 'Clear priorities',
+    title: 'Capacity unlocked',
+    detail: 'Team unblocked',
   },
   {
     number: '05',
-    title: 'Build systems',
-    detail: 'Fix and automate',
+    title: 'Growth funded',
+    detail: 'Reinvest the gains',
   },
   {
     number: '06',
-    title: 'Compound gains',
-    detail: 'Scale what works',
+    title: 'Scale cleaner',
+    detail: 'Less complexity',
   },
 ]
 
