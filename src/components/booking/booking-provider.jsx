@@ -244,7 +244,7 @@ export function BookingProvider({ children }) {
                   aria-label="Close booking"
                   onClick={closeBooking}
                 >
-                  <X size={18} strokeWidth={1.8} aria-hidden="true" />
+                  <X size={16} strokeWidth={2.6} aria-hidden="true" />
                 </button>
 
                 <div className={`booking-modal__content booking-modal__content--step-${step}`}>
