@@ -576,7 +576,7 @@
   }
 
   .process-card--one .process-card__number {
-    transform: translateX(10px);
+    transform: translateX(16px);
   }
 
   .process-cta {
