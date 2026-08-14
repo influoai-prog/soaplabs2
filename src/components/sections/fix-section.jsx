@@ -170,8 +170,6 @@ export function FixSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.55 }}
         >
-          <span className="fix-intro__eyebrow">Where we make the difference</span>
-
           <h2 id="fix-title" aria-label="Turn Waste Into Growth">
             <span className="fix-intro__clip">
               <motion.span
@@ -203,63 +201,44 @@ export function FixSection() {
             transition={{ duration: 0.72, delay: 0.4, ease: easeOut }}
           >
             <div className="fix-intro__graph-labels">
-              <span>Cost leakage</span>
-              <span>Recovered capacity</span>
+              <span>Leakage</span>
+              <span>Recovered value</span>
               <span>Growth</span>
             </div>
 
-            <svg viewBox="0 0 880 190" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="fix-line-gradient" x1="36" y1="0" x2="844" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stopColor="#010205" />
-                  <stop offset="0.58" stopColor="#ff80ad" />
-                  <stop offset="1" stopColor="#ff80ad" />
-                </linearGradient>
-                <linearGradient id="fix-area-gradient" x1="0" y1="34" x2="0" y2="174" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#ff80ad" stopOpacity="0.2" />
-                  <stop offset="1" stopColor="#ff80ad" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-
-              <g className="fix-intro__graph-grid">
-                <path d="M36 54H844" />
-                <path d="M36 94H844" />
-                <path d="M36 134H844" />
-                <path d="M36 174H844" />
-                <path d="M238 34V174" />
-                <path d="M440 34V174" />
-                <path d="M642 34V174" />
+            <svg viewBox="0 0 880 190" preserveAspectRatio="none" shapeRendering="crispEdges">
+              <g className="fix-intro__pixel-bars">
+                <rect x="62" y="142" width="78" height="32" />
+                <rect x="170" y="130" width="78" height="44" />
+                <rect x="278" y="114" width="78" height="60" />
+                <rect x="386" y="94" width="78" height="80" />
+                <rect x="494" y="70" width="78" height="104" />
+                <rect x="602" y="44" width="78" height="130" />
+                <rect x="710" y="18" width="78" height="156" />
               </g>
 
               <motion.path
-                className="fix-intro__graph-area"
-                d="M36 158C118 157 165 151 238 143C329 133 359 126 440 112C526 97 572 86 642 69C725 49 778 35 844 20V174H36Z"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                transition={{ duration: 0.8, delay: 0.78, ease: easeOut }}
-              />
-              <motion.path
-                className="fix-intro__graph-line"
-                d="M36 158C118 157 165 151 238 143C329 133 359 126 440 112C526 97 572 86 642 69C725 49 778 35 844 20"
+                className="fix-intro__pixel-line"
+                d="M62 138H170V126H278V110H386V90H494V66H602V40H710V14H808"
                 variants={{
                   hidden: { pathLength: reduceMotion ? 1 : 0 },
                   visible: { pathLength: 1 },
                 }}
-                transition={{ duration: reduceMotion ? 0 : 1.25, delay: 0.58, ease: easeOut }}
+                transition={{ duration: reduceMotion ? 0 : 1.15, delay: 0.58, ease: easeOut }}
               />
-              <g className="fix-intro__graph-points">
-                <circle cx="36" cy="158" r="7" />
-                <circle cx="440" cy="112" r="7" />
-                <circle cx="844" cy="20" r="9" />
+
+              <g className="fix-intro__pixel-highlights">
+                <rect x="70" y="150" width="10" height="10" />
+                <rect x="394" y="102" width="10" height="10" />
+                <rect x="718" y="26" width="12" height="12" />
+                <path d="M798 14H830V0H850V34H836V20H798Z" />
               </g>
             </svg>
 
             <div className="fix-intro__graph-metrics">
-              <span><i />Less waste</span>
-              <span><i />More capacity</span>
-              <span><i />Higher margins</span>
+              <span><strong>01</strong> Less waste</span>
+              <span><strong>02</strong> More capacity</span>
+              <span><strong>03</strong> Higher margins</span>
             </div>
           </motion.div>
 
@@ -270,7 +249,7 @@ export function FixSection() {
             }}
             transition={{ duration: 0.7, delay: 0.48, ease: easeOut }}
           >
-            Cleaner operations and less dependence on people holding everything together. We build the infrastructure your business needs to scale without adding more complexity.
+            Cleaner operations and less dependence on people holding everything together. We build the systems your business needs to scale without added complexity.
           </motion.p>
         </motion.div>
       </div>
@@ -302,7 +281,7 @@ export function FixSection() {
         </motion.div>
 
         <p className="fix-copy">
-          Cleaner operations and less dependence on people holding everything together. We build the infrastructure your business needs to scale without adding more complexity.
+          Cleaner operations and less dependence on people holding everything together. We build the systems your business needs to scale without added complexity.
         </p>
       </div>
     </section>
