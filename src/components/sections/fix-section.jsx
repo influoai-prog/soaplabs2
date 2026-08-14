@@ -227,8 +227,8 @@ export function FixSection() {
               }}
               transition={{ duration: 0.6, delay: 0.26, ease: easeOut }}
             >
-              Recover the time and margin your operations lose.<br />
-              Turn both into capacity for cleaner growth.
+              We recover the time, margin, and capacity lost to inefficient operations.<br />
+              Then turn those gains into stronger systems and more room for cleaner growth.
             </motion.p>
 
           </div>
