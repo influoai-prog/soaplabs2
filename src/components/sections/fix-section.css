@@ -395,13 +395,6 @@
 
 @media (max-width: 479px) {
   .fix-intro {
-    min-height: 560px;
-    padding: 48px 20px;
-  }
-
-  .fix-intro__eyebrow {
-    mar@media (max-width: 479px) {
-  .fix-intro {
     min-height: 0;
     padding: 52px 20px;
     border-radius: 32px;
