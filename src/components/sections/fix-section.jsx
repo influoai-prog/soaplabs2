@@ -170,7 +170,7 @@ export function FixSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.55 }}
         >
-          <h2 id="fix-title" aria-label="Turn Waste Into Growth">
+          <h2 id="fix-title" aria-label="Turn Waste Into Rapid Growth">
             <span className="fix-intro__clip">
               <motion.span
                 className="fix-intro__line"
@@ -186,7 +186,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.24, ease: easeOut }}
               >
-                Into Growth
+                Into Rapid Growth
               </motion.span>
             </span>
           </h2>
@@ -264,7 +264,7 @@ export function FixSection() {
             variants={reduceMotion ? undefined : titleVariants}
           >
             Turn Waste<br />
-            Into Growth
+            Into Rapid Growth
           </motion.h2>
           <motion.div
             className="fix-visual__dots"
