@@ -51,7 +51,7 @@
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: var(--type-h1-font-size);
   font-weight: var(--type-h1-font-weight);
-  line-height: 0.98;
+  line-height: 0.9;
   letter-spacing: -0.035em;
   word-spacing: 0.02em;
   color: var(--ink);
@@ -370,7 +370,7 @@
 
   .fix-intro h2 {
     font-size: var(--type-fix-title-mobile-font-size);
-    line-height: 0.98;
+    line-height: 0.9;
   }
 
   .fix-intro p {
@@ -425,7 +425,7 @@
 
   .fix-intro h2 {
     font-size: var(--type-fix-title-mobile-sm-font-size);
-    line-height: 0.98;
+    line-height: 0.9;
   }
 
   .fix-intro p {
