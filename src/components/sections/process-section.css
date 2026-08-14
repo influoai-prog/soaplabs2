@@ -624,3 +624,16 @@
     min-height: 2.8em;
   }
 }
+
+/* Keep the mobile process CTA focused on the action. */
+@media (max-width: 620px) {
+  .process-cta__copy {
+    display: none;
+  }
+
+  .process-cta {
+    min-height: 0;
+    align-items: stretch;
+    padding-top: 28px;
+  }
+}
