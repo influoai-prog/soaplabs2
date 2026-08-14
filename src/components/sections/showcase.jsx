@@ -172,7 +172,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button href="#contact">Book a call</Button>
+          <Button className="showcase-actions__button" href="#contact">Book a call</Button>
         </motion.div>
         <motion.div
           variants={{
@@ -180,7 +180,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button href="#outcomes" variant="outline">
+          <Button className="showcase-actions__button" href="#process" variant="outline">
             Explore more
             <motion.span
               className="showcase-actions__arrow"
