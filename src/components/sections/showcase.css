@@ -17,6 +17,7 @@
 .showcase-actions__button {
   min-height: 56px;
   padding-inline: 30px;
+  border-radius: 22px;
   font-size: 17px;
 }
 
