@@ -4,6 +4,7 @@
   "description": "Soap Labs finds operational drag and creates room for cleaner growth.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#fbfbfa",
   "theme_color": "#fbfbfa",
   "icons": [

@@ -30,6 +30,30 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 809.98px)').matches
+    const orientation = window.screen?.orientation
+
+    if (!isMobile || typeof orientation?.lock !== 'function') {
+      return undefined
+    }
+
+    try {
+      const lockRequest = orientation.lock('portrait-primary')
+      lockRequest?.catch?.(() => {})
+    } catch {
+      // Browsers only allow orientation locking in supported display modes.
+    }
+
+    return () => {
+      try {
+        orientation.unlock?.()
+      } catch {
+        // Nothing to release when the browser rejected the lock.
+      }
+    }
+  }, [])
+
+  useEffect(() => {
     const shouldBoot = !sessionStorage.getItem(BOOT_KEY)
     if (!shouldBoot) return undefined
 
