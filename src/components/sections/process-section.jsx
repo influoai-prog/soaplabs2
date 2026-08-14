@@ -227,7 +227,7 @@ export function ProcessSection() {
             <motion.div className="process-cta__button-wrap" variants={innerItem}>
               <Button href="#contact" variant="outline" className="process-cta__button">
                 See our plans
-                <ArrowIcon direction="right" size={22} aria-hidden="true" />
+                <ArrowIcon direction="right" size={20} aria-hidden="true" />
               </Button>
             </motion.div>
           </motion.div>
