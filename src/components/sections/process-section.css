@@ -280,8 +280,23 @@
   min-width: 207px;
   flex: 0 0 auto;
   border-color: var(--ink);
+  border-radius: 20px;
   color: #fff;
   background: var(--ink);
+}
+
+.process-cta__button:hover {
+  border-color: #292929;
+  color: #fff;
+  background: #292929;
+}
+
+.process-cta__button svg {
+  transition: transform 220ms ease;
+}
+
+.process-cta__button:hover svg {
+  transform: translateX(3px);
 }
 
 @media (max-width: 1000px) {
