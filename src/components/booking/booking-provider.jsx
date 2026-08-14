@@ -95,16 +95,16 @@ function initializeCalEmbed(answers) {
           'cal-text-subtle': '#747474',
           'cal-text-muted': '#969696',
           'cal-bg': '#ffffff',
-          'cal-bg-emphasis': '#f7f7f7',
+          'cal-bg-emphasis': '#fff0f5',
           'cal-bg-subtle': '#f7f7f7',
           'cal-bg-muted': '#f1f1f1',
           'cal-border': '#dedede',
           'cal-border-booker': '#dedede',
           'cal-border-booker-width': '1px',
-          'radius': '8px',
-          'radius-md': '10px',
-          'radius-xl': '14px',
-          'radius-3xl': '18px',
+          'radius': '10px',
+          'radius-md': '12px',
+          'radius-xl': '16px',
+          'radius-3xl': '20px',
         },
       },
     })
@@ -277,9 +277,9 @@ export function BookingProvider({ children }) {
                 <div className={`booking-modal__content booking-modal__content--step-${step}`}>
                   {step === 1 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro">
+                      <div className="booking-questionnaire__intro" data-step="01">
                         <span>01 / Business profile</span>
-                        <h3>First, the shape of the business.</h3>
+                        <h3>Show us the business.</h3>
                         <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
                       </div>
 
@@ -346,9 +346,9 @@ export function BookingProvider({ children }) {
 
                   {step === 2 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro">
+                      <div className="booking-questionnaire__intro" data-step="02">
                         <span>02 / Operations</span>
-                        <h3>Now, where is the drag?</h3>
+                        <h3>Show us where it gets stuck.</h3>
                         <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
                       </div>
 
