@@ -51,6 +51,49 @@
   caret-color: transparent;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+img,
+picture,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
+}
+
+input,
+textarea {
+  caret-color: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+label,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
@@ -64,6 +107,13 @@ body {
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
 }
 
 html::-webkit-scrollbar,
