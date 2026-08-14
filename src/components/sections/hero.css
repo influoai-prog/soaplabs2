@@ -111,17 +111,37 @@
 @media (max-width: 479px) {
 
   .hero-section {
-    margin-top: 18px;
+    margin-top: 28px;
   }
 
   .hero-section h1 {
-    font-size: clamp(24px, 7vw, 31px);
+    --mobile-hero-size: clamp(27px, 7.5vw, 33px);
+    font-size: var(--mobile-hero-size);
+  }
+
+  .hero-title__clip:nth-child(2) .hero-title__line {
+    font-size: 0;
+  }
+
+  .hero-title__clip:nth-child(2) .hero-title__line::before,
+  .hero-title__clip:nth-child(2) .hero-title__line::after {
+    display: block;
+    font-size: var(--mobile-hero-size);
+    line-height: 0.98;
+  }
+
+  .hero-title__clip:nth-child(2) .hero-title__line::before {
+    content: 'Money';
+  }
+
+  .hero-title__clip:nth-child(2) .hero-title__line::after {
+    content: 'Right Now';
   }
 
   .hero-copy {
-    max-width: 330px;
-    margin-top: 14px;
-    font-size: 16px;
-    line-height: 1.36;
+    max-width: 340px;
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 1.38;
   }
 }
