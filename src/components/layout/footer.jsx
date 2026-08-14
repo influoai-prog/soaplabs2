@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FooterSoapMark } from '../branding/footer-logo'
+import { useBooking } from '../booking/booking-provider'
 import './footer.css'
 
 const footerLinks = [
@@ -19,6 +20,7 @@ export function Footer() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const isHome = pathname === '/'
+  const { openBooking, bookingUrl } = useBooking()
 
   const handleHomeNavigation = (event, href) => {
     event.preventDefault()
@@ -69,9 +71,13 @@ export function Footer() {
               <div className="site-footer__link-column" key={index}>
                 {column.map((link) => (
                   <a
-                    href={link.href}
+                    href={link.label === 'Book a call' ? bookingUrl : link.href}
                     key={link.label}
-                    onClick={(event) => handleHomeNavigation(event, link.href)}
+                    onClick={(event) => (
+                      link.label === 'Book a call'
+                        ? openBooking(event)
+                        : handleHomeNavigation(event, link.href)
+                    )}
                   >
                     {link.label}
                   </a>

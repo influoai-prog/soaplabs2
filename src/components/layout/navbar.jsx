@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { SoapMark } from '../branding/site-logo'
 import { SoapLoaderMark } from '../branding/loading-logo'
+import { useBooking } from '../booking/booking-provider'
 import './navbar.css'
 
 const links = [
@@ -16,6 +17,7 @@ export function Navbar({ isLoading = false }) {
   const [showCta, setShowCta] = useState(true)
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const { openBooking, bookingUrl } = useBooking()
   const isHome = pathname === '/'
 
   useEffect(() => {
@@ -120,8 +122,11 @@ export function Navbar({ isLoading = false }) {
             ))}
             <a
               className="nav-cta"
-              href="#contact"
-              onClick={(event) => handleNavigation(event, '#contact')}
+              href={bookingUrl}
+              onClick={(event) => {
+                setIsOpen(false)
+                openBooking(event)
+              }}
             >
               Book a call
             </a>
