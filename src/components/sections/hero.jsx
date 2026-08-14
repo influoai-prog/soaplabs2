@@ -43,7 +43,7 @@ export function Hero() {
         </span>
         <span className="hero-title__clip">
           <motion.span className="hero-title__line" variants={line}>
-            Money Right Now
+            Money Daily
           </motion.span>
         </span>
       </h1>
