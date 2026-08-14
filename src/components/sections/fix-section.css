@@ -331,6 +331,25 @@
 
 @media (max-width: 809.98px) {
 
+  .fix-intro__graph {
+    height: 180px;
+    margin-top: 24px;
+    border-radius: 22px;
+  }
+
+  .fix-intro__graph-labels {
+    left: 16px;
+    right: 16px;
+    font-size: 9px;
+  }
+
+  .fix-intro__graph-metrics {
+    left: 16px;
+    right: 16px;
+    gap: 18px;
+    font-size: 10px;
+  }
+
   .fix-intro__eyebrow {
     margin-bottom: 26px;
   }
@@ -341,12 +360,38 @@
   }
 
   .fix-intro p {
-    margin-top: 40px;
+    margin-top: 28px;
     font-size: var(--type-body-mobile-font-size);
   }
 }
 
 @media (max-width: 479px) {
+  .fix-intro__graph {
+    height: 158px;
+    margin-top: 20px;
+    border-radius: 18px;
+  }
+
+  .fix-intro__graph-labels {
+    top: 12px;
+    font-size: 8px;
+  }
+
+  .fix-intro__graph-labels span:nth-child(2) {
+    display: none;
+  }
+
+  .fix-intro__graph-metrics {
+    bottom: 11px;
+    gap: 12px;
+    font-size: 9px;
+  }
+
+  .fix-intro__graph-metrics i {
+    width: 5px;
+    height: 5px;
+  }
+
   .fix-intro {
     min-height: 560px;
     padding: 48px 20px;
