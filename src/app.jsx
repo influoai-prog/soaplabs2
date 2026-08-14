@@ -13,7 +13,7 @@ import './app.css'
 
 const WHITE_SCREEN_MS = 300
 const LOADING_MS = 900
-const MOBILE_LOADING_MS = 2100
+const MOBILE_LOADING_MS = 2600
 const BOOT_KEY = 'soap-booted'
 
 function App() {
