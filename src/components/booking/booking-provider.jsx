@@ -231,7 +231,7 @@ export function BookingProvider({ children }) {
               />
 
               <motion.section
-                className="booking-modal__panel"
+                className={`booking-modal__panel booking-modal__panel--step-${step}`}
                 initial={reduceMotion ? false : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 12 }}
@@ -250,11 +250,6 @@ export function BookingProvider({ children }) {
                 <div className={`booking-modal__content booking-modal__content--step-${step}`}>
                   {step === 1 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro" data-step="01">
-                        <h3>Show us the business.</h3>
-                        <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
-                      </div>
-
                       <form className="booking-form" onSubmit={advanceStep}>
                         <div className="booking-form__row">
                           <label>
@@ -318,11 +313,6 @@ export function BookingProvider({ children }) {
 
                   {step === 2 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro" data-step="02">
-                        <h3>Show us where it gets stuck.</h3>
-                        <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
-                      </div>
-
                       <form className="booking-form" onSubmit={advanceStep}>
                         <label>
                           <span>Biggest operational problem</span>
