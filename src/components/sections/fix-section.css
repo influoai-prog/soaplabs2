@@ -55,7 +55,11 @@
 .fix-intro__clip {
   display: block;
   overflow: hidden;
-  padding: 0.02em 0 0.08em;
+  padding: 0.01em 0 0.035em;
+}
+
+.fix-intro__clip + .fix-intro__clip {
+  margin-top: -0.065em;
 }
 
 .fix-intro__line {
@@ -66,6 +70,7 @@
 
 .fix-intro__line--accent {
   font-size: 0.7em;
+  letter-spacing: -0.065em;
   color: #ff80ad;
 }
 
