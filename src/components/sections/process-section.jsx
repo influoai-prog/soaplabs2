@@ -25,7 +25,7 @@ const steps = [
   {
     number: '03',
     label: 'Plan',
-    title: 'Shape the plan',
+    title: 'Map the plan',
     description: 'Turn the findings into a clear rollout plan with priorities and timing.',
     direction: 'down',
     className: 'process-card--three',
