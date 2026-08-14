@@ -11,8 +11,8 @@ import { FAQSection } from './components/sections/faq-section'
 import { LegalSection } from './components/sections/legal-section'
 import './app.css'
 
-const WHITE_SCREEN_MS = 800
-const LOADING_MS = 2220
+const WHITE_SCREEN_MS = 550
+const LOADING_MS = 1650
 const BOOT_KEY = 'soap-booted'
 
 function App() {
