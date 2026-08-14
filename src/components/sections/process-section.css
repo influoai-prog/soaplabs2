@@ -637,3 +637,11 @@
     padding-top: 28px;
   }
 }
+
+/* Do not permanently promote every process card on memory-constrained phones. */
+@media (max-width: 620px) {
+  .process-card,
+  .process-cta {
+    will-change: auto;
+  }
+}
