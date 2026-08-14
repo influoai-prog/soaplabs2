@@ -172,7 +172,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button className="showcase-actions__button showcase-actions__button--book" href="#contact">Book a call</Button>
+          <Button className="showcase-actions__button showcase-actions__button--book" href="#contact" whileHover={{ scale: 1.01 }}>Book a call</Button>
         </motion.div>
         <motion.div
           variants={{
@@ -180,7 +180,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button className="showcase-actions__button" href="#process" variant="outline">
+          <Button className="showcase-actions__button" href="#process" variant="outline" whileHover={{ scale: 1.01 }}>
             Explore more
             <motion.span
               className="showcase-actions__arrow"
