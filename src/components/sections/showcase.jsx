@@ -180,7 +180,7 @@ export function Showcase() {
             visible: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOut } },
           }}
         >
-          <Button className="showcase-actions__button" href="#process" variant="outline" whileHover={{ scale: 1.01 }}>
+          <Button className="showcase-actions__button" href="#process" variant="outline" whileHover={{ scale: 1.04 }}>
             Explore more
             <motion.span
               className="showcase-actions__arrow"
