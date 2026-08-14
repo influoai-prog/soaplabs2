@@ -173,7 +173,7 @@
   font-size: var(--type-card-label-font-size);
   font-weight: var(--type-card-label-font-weight);
   line-height: var(--type-card-label-line-height);
-  letter-spacing: var(--type-card-label-letter-spacing);
+  letter-spacing: 0.025em;
   text-transform: var(--type-card-label-text-transform);
 }
 
@@ -183,6 +183,10 @@
 
 .process-card__label {
   color: rgba(0, 0, 0, 0.56);
+}
+
+.process-card--three .process-card__label {
+  transform: translateX(20px);
 }
 
 .process-card__title-clip {
