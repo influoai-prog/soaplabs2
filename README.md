@@ -1,16 +1,30 @@
-# React + Vite
+# Soap
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Marketing website for Soap, built with React and Vite.
 
-Currently, two official plugins are available:
+## Project structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `src/components/` — reusable page sections and UI components
+- `src/pages/` — legal and standalone pages
+- `src/lib/` — shared utilities and motion helpers
+- `src/assets/` — source-controlled images and graphics
+- `public/` — static fonts, media, icons, and manifest files
+- `index.html` — Vite HTML entry point
+- `vite.config.js` — development and production build configuration
+- `vercel.json` — Vercel build and SPA routing configuration
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+pnpm install
+pnpm dev
+```
 
-## Expanding the Oxlint configuration
+## Checks and production build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+pnpm lint
+pnpm build
+```
+
+The production build is generated in `dist/` and is intentionally excluded from version control.
