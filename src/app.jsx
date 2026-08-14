@@ -68,7 +68,7 @@ function App() {
       }
     }
 
-    navigate(scrollTo === '#top' ? '/' : `${location.pathname}${scrollTo}`, {
+    navigate('/', {
       replace: true,
       state: null,
     })
