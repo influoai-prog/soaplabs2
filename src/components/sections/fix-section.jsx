@@ -179,7 +179,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
               >
-                TURN WASTE INTO
+                TURN WASTE
               </motion.span>
             </span>
             <span className="fix-intro__clip">
@@ -188,7 +188,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.24, ease: easeOut }}
               >
-                GROWTH
+                INTO GROWTH
               </motion.span>
             </span>
           </h2>
@@ -200,8 +200,7 @@ export function FixSection() {
             }}
             transition={{ duration: 0.7, delay: 0.48, ease: easeOut }}
           >
-            Better systems. Cleaner operations. Less dependence on people holding everything together.
-            We build the infrastructure your business needs to scale without adding more complexity.
+            Cleaner operations and less dependence on people holding everything together. We build the infrastructure your business needs to scale without adding more complexity.
           </motion.p>
         </motion.div>
       </div>
@@ -218,7 +217,8 @@ export function FixSection() {
             className="fix-visual__title"
             variants={reduceMotion ? undefined : titleVariants}
           >
-            Turn Waste Into Growth
+            Turn Waste<br />
+            Into Growth
           </motion.h2>
           <motion.div
             className="fix-visual__dots"
@@ -232,8 +232,7 @@ export function FixSection() {
         </motion.div>
 
         <p className="fix-copy">
-          Better systems. Cleaner operations. Less dependence on people holding everything together.
-          We build the infrastructure your business needs to scale without adding more complexity.
+          Cleaner operations and less dependence on people holding everything together. We build the infrastructure your business needs to scale without adding more complexity.
         </p>
       </div>
     </section>
