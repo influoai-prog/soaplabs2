@@ -38,6 +38,7 @@
   position: relative;
   z-index: 120;
   width: 100%;
+  margin-top: -16px;
   background: transparent;
 }
 
@@ -137,8 +138,10 @@
 
 @media (max-width: 767.98px) {
 
+
   .showcase-wrap {
     display: flex;
+    margin-top: 0;
     flex-direction: column;
   }
 

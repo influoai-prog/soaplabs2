@@ -8,7 +8,7 @@ const industries = [
   {
     title: 'Costs & Margins',
     titleLines: ['Costs &', 'Margins'],
-    description: 'Find hidden costs and inefficiencies cutting into profit.',
+    description: 'Find hidden costs cutting into profit.',
     image: null,
     svg: (
       <svg width="257" height="283" viewBox="0 0 257 283" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ const industries = [
   {
     title: 'Systems & Workflow',
     titleLines: ['Systems &', 'Workflow'],
-    description: 'Fix slow processes and automate work that drains your team.',
+    description: 'Fix slow processes and automate draining work.',
     image: null,
     svg: (
       <svg width="253" height="176" viewBox="0 0 253 176" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ const industries = [
   {
     title: 'Growth & Capacity',
     titleLines: ['Growth &', 'Capacity'],
-    description: 'Turn saved time and cash into more margin and room to grow.',
+    description: 'Turn saved time and cash into margin and growth.',
     image: null,
     svg: (
       <svg width="211" height="227" viewBox="0 0 211 227" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +227,7 @@ export function IndustriesSection() {
         }}
       >
         <div className="industries-header__copy">
-          <h2 id="industries-title" aria-label="Where We Create Value">
+          <h2 id="industries-title" aria-label="Value Creation Process">
             <span className="industries-title__clip">
               <motion.span
                 className="industries-title__line"
@@ -236,7 +236,7 @@ export function IndustriesSection() {
                   visible: { y: '0%', transition: { duration: 0.9, ease: easeOut } },
                 }}
               >
-                Where We Create Value
+                Value Creation Process
               </motion.span>
             </span>
           </h2>
@@ -264,7 +264,7 @@ export function IndustriesSection() {
         >
           <Button className="industries-header__action" href="#contact">
             Book a call
-            <ArrowIcon direction="right" size={22} aria-hidden="true" />
+            <ArrowIcon direction="right" size={20} aria-hidden="true" />
           </Button>
         </motion.div>
       </motion.div>
