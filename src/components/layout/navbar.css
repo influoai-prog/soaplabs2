@@ -735,3 +735,48 @@
     display: flex;
   }
 }
+
+
+/* Restore the original, smoother desktop loader-to-header morph. */
+@media (min-width: 810px) {
+  .nav-shell {
+    transition:
+      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      translate 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      width 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      height 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      padding 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      border-radius 720ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .brand__mark {
+    transition:
+      width 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      height 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      flex-basis 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .brand__mark-loader,
+  .brand__mark-header {
+    transition:
+      opacity 100ms linear 430ms,
+      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .brand__wordmark {
+    transition:
+      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      left 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      gap 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .loading-wordmark {
+    transition:
+      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      left 940ms cubic-bezier(0.76, 0, 0.24, 1),
+      opacity 180ms ease 600ms,
+      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
+  }
+}
