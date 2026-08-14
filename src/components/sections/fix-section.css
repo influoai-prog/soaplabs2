@@ -74,9 +74,109 @@
   color: #ff80ad;
 }
 
+.fix-intro__graph {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  margin-top: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(1, 2, 5, 0.08);
+  border-radius: 28px;
+  background:
+    linear-gradient(120deg, rgba(255, 128, 173, 0.08), rgba(255, 255, 255, 0) 52%),
+    #fafafa;
+}
+
+.fix-intro__graph svg {
+  position: absolute;
+  inset: 24px 0 24px;
+  width: 100%;
+  height: calc(100% - 48px);
+  overflow: visible;
+}
+
+.fix-intro__graph-labels,
+.fix-intro__graph-metrics {
+  position: absolute;
+  z-index: 2;
+  left: 22px;
+  right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'M Saans', 'Segoe UI', sans-serif;
+  line-height: 1;
+  color: rgba(1, 2, 5, 0.55);
+}
+
+.fix-intro__graph-labels {
+  top: 15px;
+  font-size: 10px;
+  font-weight: 652;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fix-intro__graph-metrics {
+  bottom: 14px;
+  justify-content: center;
+  gap: 34px;
+  font-size: 11px;
+  font-weight: 520;
+  letter-spacing: 0.01em;
+}
+
+.fix-intro__graph-metrics span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fix-intro__graph-metrics i {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: #ff80ad;
+}
+
+.fix-intro__graph-metrics span:first-child i {
+  background: #010205;
+}
+
+.fix-intro__graph-grid {
+  fill: none;
+  stroke: rgba(1, 2, 5, 0.11);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.fix-intro__graph-area {
+  fill: url(#fix-area-gradient);
+}
+
+.fix-intro__graph-line {
+  fill: none;
+  stroke: url(#fix-line-gradient);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.fix-intro__graph-points circle {
+  fill: #fff;
+  stroke: #ff80ad;
+  stroke-width: 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.fix-intro__graph-points circle:first-child {
+  stroke: #010205;
+}
+
 .fix-intro p {
   width: min(640px, 100%);
-  margin: 40px 0 0;
+  margin: 28px 0 0;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: var(--type-body-font-size);
   font-weight: var(--type-body-lg-font-weight);
