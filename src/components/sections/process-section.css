@@ -317,7 +317,7 @@
 .process-cta h3 {
   margin: 0;
   font-size: var(--type-process-card-mobile-font-size);
-  font-weight: 525;
+  font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.045em;
   text-wrap: balance;
