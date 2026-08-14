@@ -402,14 +402,21 @@
   }
 
   .fix-intro__graph-metrics {
-    bottom: 11px;
+    right: 54px;
+    bottom: 9px;
     gap: 12px;
     font-size: 9px;
   }
 
-  .fix-intro__graph-metrics i {
-    width: 5px;
-    height: 5px;
+  .fix-intro__graph-metrics span:nth-child(2) {
+    display: none;
+  }
+
+  .fix-intro__graph-metrics strong {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    font-size: 7px;
   }
 
   .fix-intro {
