@@ -9,32 +9,32 @@ const soapFaqs = [
   {
     question: 'What does Soap Labs actually do?',
     answer:
-      'We map how your business really operates, identify the workflows, handoffs, and recurring work that are quietly costing you money, then build a practical system to remove that waste.',
+      'We find where your business is wasting time and money, then build and implement the systems to fix it.',
   },
   {
     question: 'How do you find where money is being wasted?',
     answer:
-      'We look beyond the org chart and follow the work itself. That means reviewing processes, tools, meetings, ownership, and repeated manual tasks to reveal where time, margin, and momentum are being lost.',
+      'We audit your workflows, tools, team structure and recurring processes to find unnecessary spend, bottlenecks, and manual work that can be improved or removed.',
   },
   {
     question: 'What happens after you map our operations?',
     answer:
-      'You get a clear, prioritized view of what is costing the business most. From there, we design and implement the right fix, whether that means simplifying a workflow, clarifying ownership, connecting tools, or removing unnecessary work.',
+      'We show you what’s costing you money, what should change and where the biggest upside is. Then, if it makes sense, we implement the fixes for you.',
   },
   {
     question: 'How quickly can we expect to see an impact?',
     answer:
-      'The timing depends on the complexity of your operation, but we focus first on the highest-value constraints so progress is visible early. Every recommendation is tied to a measurable operational or financial outcome.',
+      'It depends on the business, but the biggest inefficiencies usually become clear early. From there, we prioritize the changes that can create the fastest meaningful impact.',
   },
   {
     question: 'Will we need to replace our current tools or team?',
     answer:
-      'Not by default. We start with what you already have and improve how the business runs around it. New tools or structural changes are only recommended when they solve a specific, proven constraint.',
+      'Usually not. The goal is to get more out of what you already have first. We only recommend changing tools, systems, or roles when there’s a clear reason to.',
   },
   {
     question: 'What kind of businesses are a good fit for Soap Labs?',
     answer:
-      'We are best suited to growing businesses that feel operational friction: too much manual work, unclear handoffs, disconnected tools, rising overhead, or a sense that growth is creating more complexity than progress.',
+      'Established businesses with real revenue, growing teams and enough operational complexity that small inefficiencies are starting to become expensive.',
   },
 ]
 
