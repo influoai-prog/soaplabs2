@@ -209,20 +209,14 @@
 .process-card .process-card__copy h3 {
   max-width: none;
   margin-top: clamp(48px, 4.4vw, 62px);
-  text-wrap: balance;
-}
-
-.process-card:nth-child(-n + 3) h3 {
   letter-spacing: -0.042em;
-}
-
-.process-card:nth-child(n + 4) h3 {
-  letter-spacing: -0.058em;
+  text-wrap: balance;
 }
 
 .process-card .process-card__copy p {
   max-width: 300px;
   margin-top: 16px;
+  letter-spacing: -0.012em;
 }
 
 .process-card--one::before,
