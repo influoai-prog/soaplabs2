@@ -252,9 +252,14 @@
   }
 }
 
+
 @media (min-width: 810px) and (max-width: 1199px) {
-  .process-card--one .process-card__topline {
-    padding-left: 0;
+  .process-card--one .process-card__number {
+    transform: translateX(12px);
+  }
+
+  .process-card--one .process-card__copy {
+    padding-left: 12px;
   }
 }
 
