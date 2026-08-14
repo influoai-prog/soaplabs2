@@ -1,7 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, X } from 'lucide-react'
+import { ArrowLeft, X } from 'lucide-react'
+import { ArrowIcon } from '../ui/arrow-icon'
 import './booking-provider.css'
 
 const CAL_LINK = 'soaplabs/audit'
@@ -338,7 +339,7 @@ export function BookingProvider({ children }) {
 
                         <button className="booking-form__primary" type="submit">
                           Continue
-                          <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                          <ArrowIcon direction="right" size={18} aria-hidden="true" />
                         </button>
                       </form>
                     </div>
@@ -408,7 +409,7 @@ export function BookingProvider({ children }) {
                           </button>
                           <button className="booking-form__primary" type="submit">
                             See available times
-                            <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                            <ArrowIcon direction="right" size={18} aria-hidden="true" />
                           </button>
                         </div>
                       </form>
