@@ -47,20 +47,31 @@
   top: 16px;
   right: 16px;
   display: grid;
-  width: 42px;
-  height: 42px;
-  border: 1px solid #010205;
-  border-radius: 13px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #010205;
+  border-radius: 999px;
   cursor: pointer;
   place-items: center;
-  color: #fff;
-  background: var(--ink);
-  transition: color 160ms ease, background 160ms ease;
+  color: #010205;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(1, 2, 5, 0.08);
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .booking-modal__close:hover {
-  color: #010205;
-  background: #ff98bc;
+  color: #fff;
+  background: #010205;
+  transform: translateY(-1px);
+}
+
+.booking-modal__close:active {
+  transform: scale(0.96);
+}
+
+.booking-modal__close svg {
+  width: 16px;
+  height: 16px;
 }
 
 .booking-modal__close:focus-visible,
@@ -101,6 +112,13 @@
 
 .booking-modal__panel--step-2 .booking-form {
   transform: translateY(8px);
+}
+
+@media (min-width: 810px) {
+  .booking-modal__panel--step-2 .booking-form > label,
+  .booking-modal__panel--step-2 .booking-form > .booking-form__row {
+    transform: translateY(-6px);
+  }
 }
 
 .booking-form label {
@@ -356,8 +374,8 @@
   }
 
   .booking-modal__close {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
   .booking-modal__content,
