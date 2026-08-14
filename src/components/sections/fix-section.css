@@ -42,7 +42,7 @@
   width: 100%;
   align-items: baseline;
   justify-content: center;
-  gap: 0.2em;
+  gap: 0.08em;
   margin: 0;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: clamp(46px, 4.75vw, 68px);
@@ -57,7 +57,7 @@
 .fix-intro__clip {
   display: block;
   overflow: hidden;
-  padding: 0.01em 0.1em 0.035em 0.03em;
+  padding: 0.01em 0.08em 0.035em 0.01em;
 }
 
 .fix-intro__clip + .fix-intro__clip {
