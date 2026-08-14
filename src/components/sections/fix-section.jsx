@@ -177,7 +177,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
               >
-                TURN WASTE
+                Turn Waste
               </motion.span>
             </span>
             <span className="fix-intro__clip">
@@ -186,7 +186,7 @@ export function FixSection() {
                 variants={introLineVariants}
                 transition={{ duration: 0.9, delay: 0.24, ease: easeOut }}
               >
-                INTO GROWTH
+                Into Growth
               </motion.span>
             </span>
           </h2>
@@ -208,18 +208,17 @@ export function FixSection() {
 
             <svg viewBox="0 0 880 190" preserveAspectRatio="none" shapeRendering="crispEdges">
               <g className="fix-intro__pixel-bars">
-                <rect x="62" y="142" width="78" height="32" />
-                <rect x="170" y="130" width="78" height="44" />
-                <rect x="278" y="114" width="78" height="60" />
-                <rect x="386" y="94" width="78" height="80" />
-                <rect x="494" y="70" width="78" height="104" />
-                <rect x="602" y="44" width="78" height="130" />
-                <rect x="710" y="18" width="78" height="156" />
+                <rect x="68" y="138" width="88" height="36" />
+                <rect x="174" y="122" width="88" height="52" />
+                <rect x="326" y="94" width="88" height="80" />
+                <rect x="432" y="68" width="88" height="106" />
+                <rect x="584" y="40" width="88" height="134" />
+                <rect x="690" y="16" width="88" height="158" />
               </g>
 
               <motion.path
                 className="fix-intro__pixel-line"
-                d="M62 138H170V126H278V110H386V90H494V66H602V40H710V14H808"
+                d="M68 134H174V118H326V90H432V64H584V36H690V12H812"
                 variants={{
                   hidden: { pathLength: reduceMotion ? 1 : 0 },
                   visible: { pathLength: 1 },
@@ -227,12 +226,10 @@ export function FixSection() {
                 transition={{ duration: reduceMotion ? 0 : 1.15, delay: 0.58, ease: easeOut }}
               />
 
-              <g className="fix-intro__pixel-highlights">
-                <rect x="70" y="150" width="10" height="10" />
-                <rect x="394" y="102" width="10" height="10" />
-                <rect x="718" y="26" width="12" height="12" />
-                <path d="M798 14H830V0H850V34H836V20H798Z" />
-              </g>
+              <path
+                className="fix-intro__pixel-arrow"
+                d="M806 2H842V-8L868 12L842 32V22H806Z"
+              />
             </svg>
 
             <div className="fix-intro__graph-metrics">
@@ -249,7 +246,7 @@ export function FixSection() {
             }}
             transition={{ duration: 0.7, delay: 0.48, ease: easeOut }}
           >
-            Cleaner operations and less dependence on people holding everything together. We build the systems your business needs to scale without added complexity.
+            Cleaner operations and less dependence on key people. We build the systems your business needs to scale without added complexity.
           </motion.p>
         </motion.div>
       </div>
@@ -281,7 +278,7 @@ export function FixSection() {
         </motion.div>
 
         <p className="fix-copy">
-          Cleaner operations and less dependence on people holding everything together. We build the systems your business needs to scale without added complexity.
+          Cleaner operations and less dependence on key people. We build the systems your business needs to scale without added complexity.
         </p>
       </div>
     </section>
