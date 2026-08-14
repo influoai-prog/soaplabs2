@@ -2,9 +2,9 @@ export function SoapMark() {
   return (
     <svg
       className="soap-mark"
-      width="102"
-      height="102"
-      viewBox="-46.0664 19.6797 102.066 102.066"
+      width="56"
+      height="78"
+      viewBox="0 0 56 78"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
