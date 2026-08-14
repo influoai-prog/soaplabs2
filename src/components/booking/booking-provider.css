@@ -112,7 +112,7 @@
   color: #010205;
   font-size: 15px;
   font-weight: var(--font-weight-semibold);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.025em;
 }
 
 .booking-form label em {
@@ -129,7 +129,7 @@
   width: 100%;
   border: 1px solid transparent;
   border-radius: 12px;
-  color: #010205;
+  color: rgba(1, 2, 5, 0.76);
   background-color: #f3f3f1;
   font: inherit;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
