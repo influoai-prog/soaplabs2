@@ -193,6 +193,76 @@ export function FixSection() {
             </span>
           </h2>
 
+          <motion.div
+            className="fix-intro__graph"
+            aria-hidden="true"
+            variants={{
+              hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 26 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.72, delay: 0.4, ease: easeOut }}
+          >
+            <div className="fix-intro__graph-labels">
+              <span>Cost leakage</span>
+              <span>Recovered capacity</span>
+              <span>Growth</span>
+            </div>
+
+            <svg viewBox="0 0 880 190" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="fix-line-gradient" x1="36" y1="0" x2="844" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stopColor="#010205" />
+                  <stop offset="0.58" stopColor="#ff80ad" />
+                  <stop offset="1" stopColor="#ff80ad" />
+                </linearGradient>
+                <linearGradient id="fix-area-gradient" x1="0" y1="34" x2="0" y2="174" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#ff80ad" stopOpacity="0.2" />
+                  <stop offset="1" stopColor="#ff80ad" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+
+              <g className="fix-intro__graph-grid">
+                <path d="M36 54H844" />
+                <path d="M36 94H844" />
+                <path d="M36 134H844" />
+                <path d="M36 174H844" />
+                <path d="M238 34V174" />
+                <path d="M440 34V174" />
+                <path d="M642 34V174" />
+              </g>
+
+              <motion.path
+                className="fix-intro__graph-area"
+                d="M36 158C118 157 165 151 238 143C329 133 359 126 440 112C526 97 572 86 642 69C725 49 778 35 844 20V174H36Z"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
+                }}
+                transition={{ duration: 0.8, delay: 0.78, ease: easeOut }}
+              />
+              <motion.path
+                className="fix-intro__graph-line"
+                d="M36 158C118 157 165 151 238 143C329 133 359 126 440 112C526 97 572 86 642 69C725 49 778 35 844 20"
+                variants={{
+                  hidden: { pathLength: reduceMotion ? 1 : 0 },
+                  visible: { pathLength: 1 },
+                }}
+                transition={{ duration: reduceMotion ? 0 : 1.25, delay: 0.58, ease: easeOut }}
+              />
+              <g className="fix-intro__graph-points">
+                <circle cx="36" cy="158" r="7" />
+                <circle cx="440" cy="112" r="7" />
+                <circle cx="844" cy="20" r="9" />
+              </g>
+            </svg>
+
+            <div className="fix-intro__graph-metrics">
+              <span><i />Less waste</span>
+              <span><i />More capacity</span>
+              <span><i />Higher margins</span>
+            </div>
+          </motion.div>
+
           <motion.p
             variants={{
               hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 24 },
