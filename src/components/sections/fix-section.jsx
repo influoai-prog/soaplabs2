@@ -225,16 +225,6 @@ export function FixSection() {
               </span>
             </h2>
 
-            <motion.p
-              className="fix-intro__summary"
-              variants={{
-                hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.65, delay: 0.28, ease: easeOut }}
-            >
-              We remove operational drag and build systems that create room to scale.
-            </motion.p>
           </div>
 
           <motion.div
@@ -248,7 +238,6 @@ export function FixSection() {
             }}
             transition={{ duration: 0.72, delay: 0.3, ease: easeOut }}
           >
-            <span className="fix-intro__timeline-label">How value moves</span>
             <div className="fix-intro__track">
               {timelineSteps.map((step, index) => (
                 <motion.article
