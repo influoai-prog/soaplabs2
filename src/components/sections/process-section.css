@@ -135,7 +135,7 @@
   font-size: var(--type-h3-font-size);
   font-weight: var(--type-h3-font-weight);
   line-height: var(--type-h3-line-height);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.05em;
   text-wrap: balance;
 }
 
@@ -189,8 +189,47 @@
   transform: translateX(30px);
 }
 
+/* Keep every process card on the same internal alignment grid. */
+.process-card,
+.process-card--one,
+.process-card--three,
+.process-card--four,
+.process-card--six {
+  display: grid;
+  height: auto;
+  grid-template-rows: auto 1fr;
+  justify-content: normal;
+  padding-bottom: clamp(27px, 2.6vw, 36px);
+}
+
+.process-card .process-card__copy {
+  display: block;
+}
+
+.process-card .process-card__copy h3 {
+  max-width: none;
+  margin-top: clamp(48px, 4.4vw, 62px);
+  text-wrap: balance;
+}
+
+.process-card .process-card__copy p {
+  max-width: 300px;
+  margin-top: 16px;
+}
+
+.process-card--one::before,
+.process-card--three::before,
+.process-card--six::before,
+.process-card--four .process-card__copy::before {
+  display: none;
+}
+
+.process-card--three .process-card__label {
+  transform: none;
+}
+
 @media (min-width: 1000.01px) {
-  .process-card--three h3 {
+  .process-card .process-card__copy h3 {
     white-space: nowrap;
   }
 }
@@ -220,6 +259,11 @@
 .process-card--four p,
 .process-card--six p {
   max-width: none;
+}
+
+.process-card .process-card__copy p {
+  max-width: 300px;
+  margin-top: 16px;
 }
 
 .process-card__arrow {
