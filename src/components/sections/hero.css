@@ -116,11 +116,11 @@
 
   .hero-section {
     margin-top: 38px;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
   }
 
   .hero-section h1 {
-    --mobile-hero-size: clamp(29px, 8vw, 35px);
+    --mobile-hero-size: clamp(31px, 8.5vw, 37px);
     font-size: var(--mobile-hero-size);
   }
 
