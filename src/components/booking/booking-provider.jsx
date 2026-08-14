@@ -1,7 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, X } from 'lucide-react'
+import { ArrowLeft, X } from 'lucide-react'
+import { ArrowIcon } from '../ui/arrow-icon'
 import './booking-provider.css'
 
 const CAL_LINK = 'soaplabs/audit'
@@ -95,16 +96,16 @@ function initializeCalEmbed(answers) {
           'cal-text-subtle': '#747474',
           'cal-text-muted': '#969696',
           'cal-bg': '#ffffff',
-          'cal-bg-emphasis': '#f7f7f7',
+          'cal-bg-emphasis': '#fff0f5',
           'cal-bg-subtle': '#f7f7f7',
           'cal-bg-muted': '#f1f1f1',
           'cal-border': '#dedede',
           'cal-border-booker': '#dedede',
           'cal-border-booker-width': '1px',
-          'radius': '4px',
-          'radius-md': '6px',
-          'radius-xl': '8px',
-          'radius-3xl': '10px',
+          'radius': '10px',
+          'radius-md': '12px',
+          'radius-xl': '16px',
+          'radius-3xl': '20px',
         },
       },
     })
@@ -133,27 +134,6 @@ function initializeCalEmbed(answers) {
       config,
     })
   })
-}
-
-function BookingProgress({ step }) {
-  const labels = ['Profile', 'Operations', 'Schedule']
-
-  return (
-    <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
-      {labels.map((label, index) => {
-        const itemStep = index + 1
-        return (
-          <li
-            className={itemStep === step ? 'is-current' : itemStep < step ? 'is-complete' : ''}
-            key={label}
-          >
-            <span>0{itemStep}</span>
-            <strong>{label}</strong>
-          </li>
-        )
-      })}
-    </ol>
-  )
 }
 
 export function BookingProvider({ children }) {
@@ -237,7 +217,7 @@ export function BookingProvider({ children }) {
               className="booking-modal"
               role="dialog"
               aria-modal="true"
-              aria-labelledby="booking-modal-title"
+              aria-label="Book an evolution audit"
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -251,38 +231,25 @@ export function BookingProvider({ children }) {
               />
 
               <motion.section
-                className="booking-modal__panel"
+                className={`booking-modal__panel booking-modal__panel--step-${step}`}
                 initial={reduceMotion ? false : { opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 12 }}
                 transition={{ duration: reduceMotion ? 0 : 0.26, ease: [0.22, 1, 0.36, 1] }}
               >
-                <header className="booking-modal__header">
-                  <div className="booking-modal__identity">
-                    <span>Soap Labs</span>
-                    <h2 id="booking-modal-title">Evolution audit</h2>
-                  </div>
-                  <BookingProgress step={step} />
-                  <button
-                    ref={closeButtonRef}
-                    className="booking-modal__close"
-                    type="button"
-                    aria-label="Close booking"
-                    onClick={closeBooking}
-                  >
-                    <X size={19} strokeWidth={1.8} aria-hidden="true" />
-                  </button>
-                </header>
+                <button
+                  ref={closeButtonRef}
+                  className="booking-modal__close"
+                  type="button"
+                  aria-label="Close booking"
+                  onClick={closeBooking}
+                >
+                  <X size={18} strokeWidth={1.8} aria-hidden="true" />
+                </button>
 
                 <div className={`booking-modal__content booking-modal__content--step-${step}`}>
                   {step === 1 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro">
-                        <span>01 / Business profile</span>
-                        <h3>First, the shape of the business.</h3>
-                        <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
-                      </div>
-
                       <form className="booking-form" onSubmit={advanceStep}>
                         <div className="booking-form__row">
                           <label>
@@ -338,7 +305,7 @@ export function BookingProvider({ children }) {
 
                         <button className="booking-form__primary" type="submit">
                           Continue
-                          <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                          <ArrowIcon direction="right" size={16} aria-hidden="true" />
                         </button>
                       </form>
                     </div>
@@ -346,12 +313,6 @@ export function BookingProvider({ children }) {
 
                   {step === 2 ? (
                     <div className="booking-questionnaire">
-                      <div className="booking-questionnaire__intro">
-                        <span>02 / Operations</span>
-                        <h3>Now, where is the drag?</h3>
-                        <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
-                      </div>
-
                       <form className="booking-form" onSubmit={advanceStep}>
                         <label>
                           <span>Biggest operational problem</span>
@@ -408,7 +369,7 @@ export function BookingProvider({ children }) {
                           </button>
                           <button className="booking-form__primary" type="submit">
                             See available times
-                            <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                            <ArrowIcon direction="right" size={16} aria-hidden="true" />
                           </button>
                         </div>
                       </form>
