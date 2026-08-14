@@ -27,6 +27,39 @@ const shapePieces = [
 
 const easeOut = [0.22, 1, 0.36, 1]
 
+const timelineSteps = [
+  {
+    number: '01',
+    title: 'Cost leakage',
+    detail: 'Hidden spend',
+  },
+  {
+    number: '02',
+    title: 'Time drains',
+    detail: 'Manual effort',
+  },
+  {
+    number: '03',
+    title: 'Margin recovered',
+    detail: 'Profit protected',
+  },
+  {
+    number: '04',
+    title: 'Capacity unlocked',
+    detail: 'Team unblocked',
+  },
+  {
+    number: '05',
+    title: 'Growth funded',
+    detail: 'Reinvest the gains',
+  },
+  {
+    number: '06',
+    title: 'Scale cleaner',
+    detail: 'Less complexity',
+  },
+]
+
 const titleVariants = {
   hidden: { opacity: 0, y: 18, scale: 0.97 },
   visible: {
@@ -168,40 +201,63 @@ export function FixSection() {
           className="fix-intro__content"
           initial={reduceMotion ? false : 'hidden'}
           whileInView="visible"
-          viewport={{ once: true, amount: 0.55 }}
+          viewport={{ once: true, amount: 0.35 }}
         >
-          <span className="fix-intro__eyebrow">Where we make the difference</span>
+          <div className="fix-intro__heading">
+            <h2 id="fix-title" aria-label="Turn Waste Into Rapid Growth">
+              <span className="fix-intro__clip">
+                <motion.span
+                  className="fix-intro__line"
+                  variants={introLineVariants}
+                  transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
+                >
+                  Turn Waste
+                </motion.span>
+              </span>
+              <span className="fix-intro__clip">
+                <motion.span
+                  className="fix-intro__line fix-intro__line--accent"
+                  variants={introLineVariants}
+                  transition={{ duration: 0.9, delay: 0.2, ease: easeOut }}
+                >
+                  Into Rapid Growth
+                </motion.span>
+              </span>
+            </h2>
 
-          <h2 id="fix-title" aria-label="Turn Waste Into Growth">
-            <span className="fix-intro__clip">
-              <motion.span
-                className="fix-intro__line"
-                variants={introLineVariants}
-                transition={{ duration: 0.9, delay: 0.08, ease: easeOut }}
-              >
-                TURN WASTE
-              </motion.span>
-            </span>
-            <span className="fix-intro__clip">
-              <motion.span
-                className="fix-intro__line fix-intro__line--accent"
-                variants={introLineVariants}
-                transition={{ duration: 0.9, delay: 0.24, ease: easeOut }}
-              >
-                INTO GROWTH
-              </motion.span>
-            </span>
-          </h2>
+          </div>
 
-          <motion.p
+          <motion.div
+            className="fix-intro__timeline"
             variants={{
-              hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 24 },
+              hidden: {
+                opacity: reduceMotion ? 1 : 0,
+                y: reduceMotion ? 0 : 28,
+              },
               visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.7, delay: 0.48, ease: easeOut }}
+            transition={{ duration: 0.72, delay: 0.3, ease: easeOut }}
           >
-            Cleaner operations and less dependence on people holding everything together. We build the infrastructure your business needs to scale without adding more complexity.
-          </motion.p>
+            <div className="fix-intro__track">
+              {timelineSteps.map((step, index) => (
+                <motion.article
+                  className="fix-intro__step"
+                  key={step.number}
+                  variants={{
+                    hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 14 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.45, delay: 0.42 + (index * 0.07), ease: easeOut }}
+                >
+                  <span className="fix-intro__step-number">{step.number}</span>
+                  <span className="fix-intro__step-copy">
+                    <strong>{step.title}</strong>
+                    <small>{step.detail}</small>
+                  </span>
+                </motion.article>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
