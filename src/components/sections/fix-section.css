@@ -465,3 +465,37 @@
     font-size: var(--type-xs-17-font-size);
   }
 }
+
+
+/* Keep the original section layout while enforcing a clean two-line mobile heading. */
+@media (max-width: 620px) {
+  .fix-intro h2 {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: clamp(36px, 9.5vw, 44px);
+    line-height: 0.98;
+  }
+
+  .fix-intro__clip {
+    width: max-content;
+    max-width: 100%;
+    overflow: visible;
+    padding-right: 0.06em;
+    padding-left: 0.03em;
+  }
+
+  .fix-intro__line {
+    white-space: nowrap;
+  }
+
+  .fix-intro__line--accent {
+    font-size: 1em;
+    letter-spacing: -0.045em;
+  }
+
+  .fix-intro__subheading {
+    display: none;
+  }
+}

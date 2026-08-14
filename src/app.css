@@ -1,11 +1,12 @@
 .site-shell {
   width: 100%;
   min-height: 100svh;
+  overflow-x: clip;
   background: #141414;
 }
 
 .page {
-  --page-gutter: clamp(16px, 3.4vw, 48px);
+  --page-gutter: clamp(22px, 4vw, 64px);
   position: relative;
   z-index: 2;
   width: 100%;
@@ -18,11 +19,16 @@
 .page-content {
   display: flex;
   width: 100%;
+  min-width: 0;
   flex-direction: column;
   align-items: center;
   opacity: 1;
   transform: none;
   transition: opacity 360ms ease 80ms;
+}
+
+.page-content > * {
+  min-width: 0;
 }
 
 .page-content > .hero-section + .proof-industries-flow {
@@ -104,6 +110,6 @@ html.is-white-screen body {
 
 @media (max-width: 479px) {
   .page {
-    --page-gutter: 20px;
+    --page-gutter: 22px;
   }
 }

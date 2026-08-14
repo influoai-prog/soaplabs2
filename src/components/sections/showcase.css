@@ -141,7 +141,7 @@
 
   .showcase-wrap {
     display: flex;
-    margin-top: 0;
+    margin-top: -18px;
     flex-direction: column;
   }
 
@@ -153,10 +153,10 @@
   }
 
   .showcase-actions {
-    order: -1;
+    order: 0;
     width: 100%;
-    background: #fff;
-    padding: 16px 0;
+    padding: 14px var(--page-gutter) 0;
+    background: #f6d0dd;
   }
 
   .showcase-scroll {
@@ -196,7 +196,21 @@
 
   .showcase-actions {
     gap: 8px;
-    padding-top: 28px;
+    padding: 12px 22px 0;
+  }
+
+  .showcase-actions__button {
+    min-height: 52px;
+    padding-inline: 20px;
+    font-size: 16px;
+  }
+
+  .showcase-actions__button--book {
+    min-width: 140px;
+  }
+
+  .showcase-actions__button--explore {
+    padding-inline: 18px;
   }
 
 }
