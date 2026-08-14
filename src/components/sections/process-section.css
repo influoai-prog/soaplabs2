@@ -243,7 +243,10 @@
     white-space: nowrap;
   }
 
-  .process-card--one .process-card__copy,
+  .process-card--one .process-card__copy {
+    padding-left: 22px;
+  }
+
   .process-card--four .process-card__copy {
     padding-left: 14px;
   }
