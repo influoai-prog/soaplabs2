@@ -267,7 +267,7 @@
   border: 1px solid transparent;
   border-radius: 12px;
   color: #010205;
-  background: #f3f3f1;
+  background-color: #f3f3f1;
   font: inherit;
   font-family: 'M Saans', 'Segoe UI', sans-serif;
   font-size: 16px;
@@ -284,8 +284,14 @@
 }
 
 .booking-form select {
-  padding-right: 40px;
+  padding-right: 48px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5332 15.1406V11.501H2.89551V7.85938H6.53613V11.5H10.1738V15.1406H6.5332ZM17.4609 11.501V15.1406H13.8232V18.7813H10.1826V15.1406H13.8203V11.5H17.4609V7.85938H21.1016V11.501H17.4609Z' fill='%23010205' transform='rotate(0 12 12)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px 18px;
 }
 
 .booking-form textarea {
@@ -304,7 +310,7 @@
 .booking-form textarea:focus,
 .booking-form select:focus {
   border-color: #010205;
-  background: #fff;
+  background-color: #fff;
   box-shadow: 0 0 0 1px #010205, 0 8px 24px rgba(1, 2, 5, 0.08);
   outline: 0;
 }
@@ -336,7 +342,7 @@
   font-size: var(--type-button-font-size);
   font-weight: var(--type-button-font-weight);
   letter-spacing: var(--type-button-letter-spacing);
-  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+  transition: color 220ms ease, background 220ms ease, border-color 220ms ease, transform 220ms ease;
 }
 
 .booking-form > .booking-form__primary {
@@ -345,24 +351,29 @@
 
 .booking-form__primary {
   min-width: 184px;
-  padding: 0 20px;
+  min-height: 56px;
+  padding: 0 30px;
   border: 1px solid #010205;
+  border-radius: 999px;
   color: #fff;
   background: #010205;
+  font-size: 17px;
 }
 
 .booking-form__primary:hover {
-  color: #010205;
-  border-color: #ff98bc;
-  background: #ff98bc;
+  color: #fff;
+  border-color: #292929;
+  background: #292929;
+  transform: translateY(-2px);
+}
+
+.booking-form__primary:active {
+  transform: scale(0.97);
 }
 
 .booking-form__primary svg {
-  color: #eaff58;
-}
-
-.booking-form__primary:hover svg {
-  color: #010205;
+  flex: 0 0 auto;
+  color: currentColor;
 }
 
 .booking-form__back {
