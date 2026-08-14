@@ -18,12 +18,12 @@
   background: transparent;
   box-shadow: none;
   transition:
-    top 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    translate 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    width 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    height 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    padding 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    border-radius 480ms cubic-bezier(0.76, 0, 0.24, 1);
+    top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    translate 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    width 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    height 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    padding 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    border-radius 720ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .nav-shell::before {
@@ -89,10 +89,10 @@
   place-items: center;
   transform: translate(0, 0);
   transition:
-    width 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    height 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    flex-basis 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
+    width 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    height 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    flex-basis 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
   will-change: width, height, flex-basis, transform;
 }
 
@@ -109,7 +109,7 @@
 .brand__mark-loader {
   opacity: 0;
   transform: rotate(0deg) scale(0.756);
-  transition: opacity 80ms linear 260ms, transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
+  transition: opacity 100ms linear 430ms, transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .brand__mark-header {
@@ -143,10 +143,10 @@
   transform: translate(0, 0);
   transform-origin: left center;
   transition:
-    top 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    left 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    gap 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
+    top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    left 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    gap 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
   will-change: top, left, gap, transform;
 }
 
@@ -199,10 +199,10 @@
   opacity: 0;
   transform: translateX(0);
   transition:
-    top 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    left 600ms cubic-bezier(0.76, 0, 0.24, 1),
-    opacity 130ms ease 330ms,
-    transform 600ms cubic-bezier(0.76, 0, 0.24, 1);
+    top 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    left 940ms cubic-bezier(0.76, 0, 0.24, 1),
+    opacity 180ms ease 600ms,
+    transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .loading-wordmark--active {
@@ -595,136 +595,6 @@
   }
 }
 
-/* Give the mobile loader a calmer scale and a cleaner transition into the header. */
-@media (max-width: 809.98px) {
-  .nav-shell.nav-shell--loading {
-    width: 156px !important;
-    height: 156px !important;
-    min-height: 156px !important;
-    border-radius: 38px !important;
-  }
-
-  .nav-shell.nav-shell--loading .brand {
-    width: 156px !important;
-    height: 156px !important;
-    flex-basis: 156px !important;
-  }
-
-  .nav-shell.nav-shell--loading .brand__mark {
-    width: 156px !important;
-    height: 156px !important;
-    flex-basis: 156px !important;
-  }
-
-  .nav-shell.nav-shell--loading .soap-loader-mark {
-    width: 65px;
-    height: 107px;
-  }
-
-  .loading-wordmark--active {
-    top: calc(50% + 96px);
-  }
-}
-
-/* Preserve a smooth mobile loader-to-header morph after the performance pass. */
-@media (max-width: 809.98px) {
-  .nav-shell.nav-shell--loading,
-  .nav-shell.nav-shell--loading .brand__mark,
-  .nav-shell.nav-shell--loading .brand__mark-loader,
-  .nav-shell.nav-shell--loading .brand__mark-header,
-  .loading-wordmark--active {
-    will-change: width, height, transform, opacity;
-  }
-}
-
-/* A dedicated phone loader avoids the unstable navbar morph on mobile Safari. */
-.mobile-boot-screen {
-  display: none;
-}
-
-@media (max-width: 809.98px) {
-  .mobile-boot-screen--active {
-    position: fixed;
-    z-index: 10001;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    background: #fff;
-    animation: mobile-boot-screen-cycle 2600ms ease both;
-  }
-
-  .mobile-boot-screen__tile {
-    display: grid;
-    width: 156px;
-    height: 156px;
-    place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 38px;
-    background: rgba(237, 237, 237, 0.96);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
-    animation: mobile-boot-tile-settle 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  .mobile-boot-screen__tile .soap-loader-mark {
-    width: 65px;
-    height: 107px;
-  }
-
-  .mobile-boot-screen__wordmark {
-    display: flex;
-    height: 28px;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .mobile-boot-screen__wordmark strong {
-    font-size: var(--type-wordmark-font-size);
-    font-weight: 652;
-    line-height: 28px;
-    letter-spacing: -0.045em;
-    color: #020407;
-  }
-
-  .mobile-boot-screen__wordmark span {
-    padding-top: 3px;
-    font-size: var(--type-xs-14-font-size);
-    font-weight: 450;
-    line-height: 1.36;
-    color: rgba(0, 0, 0, 0.56);
-  }
-
-  .nav-shell.nav-shell--loading,
-  .loading-wordmark--active {
-    visibility: hidden;
-  }
-}
-
-@keyframes mobile-boot-screen-cycle {
-  0%,
-  84% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes mobile-boot-tile-settle {
-  from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 /* Keep the complete Soap Labs wordmark visible in the mobile header. */
 @media (max-width: 809.98px) {
   .brand__wordmark {
@@ -733,50 +603,5 @@
 
   .brand__wordmark span {
     display: flex;
-  }
-}
-
-
-/* Restore the original, smoother desktop loader-to-header morph. */
-@media (min-width: 810px) {
-  .nav-shell {
-    transition:
-      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      translate 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      width 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      height 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      padding 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      border-radius 720ms cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  .brand__mark {
-    transition:
-      width 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      height 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      flex-basis 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  .brand__mark-loader,
-  .brand__mark-header {
-    transition:
-      opacity 100ms linear 430ms,
-      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  .brand__wordmark {
-    transition:
-      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      left 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      gap 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  .loading-wordmark {
-    transition:
-      top 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      left 940ms cubic-bezier(0.76, 0, 0.24, 1),
-      opacity 180ms ease 600ms,
-      transform 940ms cubic-bezier(0.76, 0, 0.24, 1);
   }
 }
