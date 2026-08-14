@@ -406,3 +406,28 @@
     will-change: auto;
   }
 }
+
+/* The phone layout is vertical, so remove inherited horizontal scroller behavior. */
+@media (max-width: 479px) {
+  .industries-viewport {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .industries-track {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: visible;
+    overscroll-behavior: auto;
+    scroll-padding: 0;
+    scroll-snap-type: none;
+    touch-action: pan-y;
+  }
+
+  .industry-item {
+    scroll-snap-align: none;
+  }
+}

@@ -625,3 +625,14 @@
     top: calc(50% + 96px);
   }
 }
+
+/* Preserve a smooth mobile loader-to-header morph after the performance pass. */
+@media (max-width: 809.98px) {
+  .nav-shell.nav-shell--loading,
+  .nav-shell.nav-shell--loading .brand__mark,
+  .nav-shell.nav-shell--loading .brand__mark-loader,
+  .nav-shell.nav-shell--loading .brand__mark-header,
+  .loading-wordmark--active {
+    will-change: width, height, transform, opacity;
+  }
+}

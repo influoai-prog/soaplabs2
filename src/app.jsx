@@ -13,12 +13,14 @@ import './app.css'
 
 const WHITE_SCREEN_MS = 300
 const LOADING_MS = 900
-const MOBILE_WHITE_SCREEN_MS = 250
-const MOBILE_LOADING_MS = 1350
+const MOBILE_LOADING_MS = 2100
 const BOOT_KEY = 'soap-booted'
 
 function App() {
-  const [isWhiteScreen, setIsWhiteScreen] = useState(() => !sessionStorage.getItem(BOOT_KEY))
+  const [isWhiteScreen, setIsWhiteScreen] = useState(
+    () => !sessionStorage.getItem(BOOT_KEY)
+      && !window.matchMedia('(max-width: 809.98px)').matches,
+  )
   const [isLoading, setIsLoading] = useState(() => !sessionStorage.getItem(BOOT_KEY))
   const location = useLocation()
   const navigate = useNavigate()
@@ -34,23 +36,23 @@ function App() {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const compactLayout = window.matchMedia('(max-width: 809.98px)').matches
     document.documentElement.classList.add('is-loading')
-    document.documentElement.classList.add('is-white-screen')
 
-    const whiteDelay = reducedMotion
-      ? 0
-      : compactLayout
-        ? MOBILE_WHITE_SCREEN_MS
-        : WHITE_SCREEN_MS
+    let whiteTimer
+    if (compactLayout) {
+      setIsWhiteScreen(false)
+    } else {
+      document.documentElement.classList.add('is-white-screen')
+      whiteTimer = window.setTimeout(() => {
+        setIsWhiteScreen(false)
+        document.documentElement.classList.remove('is-white-screen')
+      }, reducedMotion ? 0 : WHITE_SCREEN_MS)
+    }
+
     const loadDelay = reducedMotion
       ? 40
       : compactLayout
-        ? MOBILE_WHITE_SCREEN_MS + MOBILE_LOADING_MS
+        ? MOBILE_LOADING_MS
         : WHITE_SCREEN_MS + LOADING_MS
-
-    const whiteTimer = window.setTimeout(() => {
-      setIsWhiteScreen(false)
-      document.documentElement.classList.remove('is-white-screen')
-    }, whiteDelay)
 
     const loadTimer = window.setTimeout(() => {
       setIsLoading(false)
@@ -59,7 +61,7 @@ function App() {
     }, loadDelay)
 
     return () => {
-      window.clearTimeout(whiteTimer)
+      if (whiteTimer) window.clearTimeout(whiteTimer)
       window.clearTimeout(loadTimer)
       document.documentElement.classList.remove('is-loading')
       document.documentElement.classList.remove('is-white-screen')

@@ -171,7 +171,7 @@ function IndustryNeoPixelShape({ index, reduceMotion }) {
         </filter>
       </defs>
 
-      <motion.g filter={`url(#${filterId})`} variants={driftVariants}>
+      <motion.g filter={reduceMotion ? undefined : `url(#${filterId})`} variants={driftVariants}>
         {shapePieces.map((piece, pieceIndex) => (
           <motion.rect
             key={`${piece.x}-${piece.y}`}
