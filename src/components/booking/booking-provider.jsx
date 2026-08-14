@@ -315,12 +315,12 @@ export function BookingProvider({ children }) {
                           <span>Annual revenue</span>
                           <select name="revenue" onChange={updateAnswer} required value={answers.revenue}>
                             <option value="" disabled>Select a range</option>
-                            <option value="Under $500k">Under $500k</option>
+                            <option value="Below $250k">Below $250k</option>
+                            <option value="$250k–$500k">$250k–$500k</option>
                             <option value="$500k–$1m">$500k–$1m</option>
                             <option value="$1m–$3m">$1m–$3m</option>
                             <option value="$3m–$10m">$3m–$10m</option>
-                            <option value="$10m–$25m">$10m–$25m</option>
-                            <option value="$25m+">$25m+</option>
+                            <option value="$10m+">$10m+</option>
                           </select>
                         </label>
 
