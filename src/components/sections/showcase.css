@@ -17,10 +17,11 @@
 .showcase-actions__button {
   min-height: 56px;
   padding-inline: 30px;
+  font-size: 17px;
 }
 
 .showcase-actions__button--book {
-  min-width: 144px;
+  min-width: 156px;
 }
 
 .showcase-actions__arrow {
