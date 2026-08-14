@@ -107,6 +107,31 @@ function IndustryNeoPixelShape({ index, reduceMotion }) {
   const filterId = `industry-neopixel-morph-${index}`
   const shapePieces = industryShapeSets[index % industryShapeSets.length]
 
+  if (reduceMotion) {
+    return (
+      <svg
+        className="industry-card__shape"
+        viewBox="0 0 461.9 497.61"
+        preserveAspectRatio="none"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <g>
+          {shapePieces.map((piece) => (
+            <rect
+              key={`${piece.x}-${piece.y}`}
+              {...piece}
+              rx="20"
+              fill="#FFFFFF"
+            />
+          ))}
+        </g>
+      </svg>
+    )
+  }
+
   const pieceVariants = (piece, pieceIndex) => ({
     hidden: reduceMotion ? { ...piece, rx: 15 } : { ...compactIndustryShape, rx: 72 },
     visible: {
