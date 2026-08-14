@@ -1,0 +1,109 @@
+.site-shell {
+  width: 100%;
+  min-height: 100svh;
+  background: #141414;
+}
+
+.page {
+  --page-gutter: clamp(16px, 3.4vw, 48px);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100svh;
+  padding: 116px var(--page-gutter) clamp(72px, 8vw, 120px);
+  border-radius: 0 0 32px 32px;
+  background: #fff;
+}
+
+.page-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transform: none;
+  transition: opacity 520ms ease 240ms;
+}
+
+.page-content > .hero-section + .proof-industries-flow {
+  margin-top: -8px;
+}
+
+.page--loading .page-content {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+}
+
+.boot-white {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  background: #fff;
+  pointer-events: none;
+}
+
+html.is-white-screen,
+html.is-white-screen body {
+  background: #fff;
+}
+
+.proof-industries-flow {
+  display: flex;
+  width: 100vw;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  background: transparent;
+}
+
+.proof-section {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+}
+
+@media (min-width: 1200px) {
+  .page {
+    min-height: 1585px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .page {
+    padding-top: 160px;
+  }
+
+
+}
+
+@media (max-width: 809.98px) {
+  .page {
+    padding-top: 68px;
+    padding-bottom: 64px;
+  }
+
+  .page-content > .hero-section + .proof-industries-flow {
+    margin-top: -6px;
+  }
+
+  .proof-section {
+    width: 100vw;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 479px) {
+  .page {
+    --page-gutter: 20px;
+  }
+}
