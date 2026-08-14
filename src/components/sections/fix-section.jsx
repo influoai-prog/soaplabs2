@@ -30,32 +30,26 @@ const easeOut = [0.22, 1, 0.36, 1]
 const timelineSteps = [
   {
     number: '01',
-    title: 'Cost leakage',
     detail: 'Hidden spend',
   },
   {
     number: '02',
-    title: 'Time drains',
     detail: 'Manual effort',
   },
   {
     number: '03',
-    title: 'Margin recovered',
     detail: 'Profit protected',
   },
   {
     number: '04',
-    title: 'Capacity unlocked',
     detail: 'Team unblocked',
   },
   {
     number: '05',
-    title: 'Growth funded',
     detail: 'Reinvest the gains',
   },
   {
     number: '06',
-    title: 'Scale cleaner',
     detail: 'Less complexity',
   },
 ]
@@ -251,7 +245,6 @@ export function FixSection() {
                 >
                   <span className="fix-intro__step-number">{step.number}</span>
                   <span className="fix-intro__step-copy">
-                    <strong>{step.title}</strong>
                     <small>{step.detail}</small>
                   </span>
                 </motion.article>
