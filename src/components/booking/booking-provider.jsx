@@ -136,27 +136,6 @@ function initializeCalEmbed(answers) {
   })
 }
 
-function BookingProgress({ step }) {
-  const labels = ['Profile', 'Operations', 'Schedule']
-
-  return (
-    <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
-      {labels.map((label, index) => {
-        const itemStep = index + 1
-        return (
-          <li
-            className={itemStep === step ? 'is-current' : itemStep < step ? 'is-complete' : ''}
-            key={label}
-          >
-            <span>0{itemStep}</span>
-            <strong>{label}</strong>
-          </li>
-        )
-      })}
-    </ol>
-  )
-}
-
 export function BookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [hasOpened, setHasOpened] = useState(false)
@@ -238,7 +217,7 @@ export function BookingProvider({ children }) {
               className="booking-modal"
               role="dialog"
               aria-modal="true"
-              aria-labelledby="booking-modal-title"
+              aria-label="Book an evolution audit"
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -258,21 +237,15 @@ export function BookingProvider({ children }) {
                 exit={{ opacity: 0, y: 12 }}
                 transition={{ duration: reduceMotion ? 0 : 0.26, ease: [0.22, 1, 0.36, 1] }}
               >
-                <header className="booking-modal__header">
-                  <div className="booking-modal__identity">
-                    <h2 id="booking-modal-title">Evolution audit</h2>
-                  </div>
-                  <BookingProgress step={step} />
-                  <button
-                    ref={closeButtonRef}
-                    className="booking-modal__close"
-                    type="button"
-                    aria-label="Close booking"
-                    onClick={closeBooking}
-                  >
-                    <X size={19} strokeWidth={1.8} aria-hidden="true" />
-                  </button>
-                </header>
+                <button
+                  ref={closeButtonRef}
+                  className="booking-modal__close"
+                  type="button"
+                  aria-label="Close booking"
+                  onClick={closeBooking}
+                >
+                  <X size={18} strokeWidth={1.8} aria-hidden="true" />
+                </button>
 
                 <div className={`booking-modal__content booking-modal__content--step-${step}`}>
                   {step === 1 ? (
