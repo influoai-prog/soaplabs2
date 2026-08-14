@@ -724,3 +724,10 @@
     transform: translateY(0) scale(1);
   }
 }
+
+/* Keep the complete Soap Labs wordmark visible in the mobile header. */
+@media (max-width: 809.98px) {
+  .brand__wordmark span {
+    display: flex;
+  }
+}
