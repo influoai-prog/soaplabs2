@@ -339,7 +339,7 @@ export function BookingProvider({ children }) {
 
                         <button className="booking-form__primary" type="submit">
                           Continue
-                          <ArrowIcon direction="right" size={18} aria-hidden="true" />
+                          <ArrowIcon direction="right" size={16} aria-hidden="true" />
                         </button>
                       </form>
                     </div>
@@ -409,7 +409,7 @@ export function BookingProvider({ children }) {
                           </button>
                           <button className="booking-form__primary" type="submit">
                             See available times
-                            <ArrowIcon direction="right" size={18} aria-hidden="true" />
+                            <ArrowIcon direction="right" size={16} aria-hidden="true" />
                           </button>
                         </div>
                       </form>
