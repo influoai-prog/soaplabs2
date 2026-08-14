@@ -238,7 +238,7 @@
   padding-right: clamp(72px, 8vw, 104px);
 }
 
-@media (min-width: 1000.01px) {
+@media (min-width: 1200px) {
   .process-card .process-card__copy h3 {
     white-space: nowrap;
   }
@@ -249,6 +249,12 @@
 
   .process-card--four .process-card__copy {
     padding-left: 14px;
+  }
+}
+
+@media (min-width: 810px) and (max-width: 1199px) {
+  .process-card--one .process-card__topline {
+    padding-left: 0;
   }
 }
 
