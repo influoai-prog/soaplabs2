@@ -12,9 +12,12 @@ const CAL_CONTAINER_ID = 'soaplabs-cal-booking'
 const INITIAL_ANSWERS = {
   company: '',
   industry: '',
+  revenue: '',
   teamSize: '',
   challenge: '',
   desiredOutcome: '',
+  priority: '',
+  urgency: '',
 }
 
 const BookingContext = createContext(null)
@@ -109,7 +112,10 @@ function initializeCalEmbed(answers) {
     const notes = [
       `Business: ${answers.company}`,
       `Industry: ${answers.industry}`,
+      `Annual revenue: ${answers.revenue}`,
       `Team size: ${answers.teamSize}`,
+      `Primary priority: ${answers.priority}`,
+      `Timing: ${answers.urgency}`,
       answers.desiredOutcome ? `Desired outcome: ${answers.desiredOutcome}` : null,
     ].filter(Boolean).join('\n')
 
@@ -130,10 +136,10 @@ function initializeCalEmbed(answers) {
 }
 
 function BookingProgress({ step }) {
-  const labels = ['Business', 'Schedule']
+  const labels = ['Profile', 'Operations', 'Schedule']
 
   return (
-    <ol className="booking-progress" aria-label={`Booking step ${step} of 2`}>
+    <ol className="booking-progress" aria-label={`Booking step ${step} of 3`}>
       {labels.map((label, index) => {
         const itemStep = index + 1
         return (
@@ -181,11 +187,11 @@ export function BookingProvider({ children }) {
 
   const advanceStep = useCallback((event) => {
     event.preventDefault()
-    setStep((current) => Math.min(current + 1, 2))
+    setStep((current) => Math.min(current + 1, 3))
   }, [])
 
   useEffect(() => {
-    if (!isOpen || step !== 2) return undefined
+    if (!isOpen || step !== 3) return undefined
 
     let active = true
     setEmbedStatus('loading')
@@ -272,9 +278,9 @@ export function BookingProvider({ children }) {
                   {step === 1 ? (
                     <div className="booking-questionnaire">
                       <div className="booking-questionnaire__intro">
-                        <span>01 / Business context</span>
-                        <h3>Tell us how the business runs.</h3>
-                        <p>Share the operational picture so we can make the first conversation useful.</p>
+                        <span>01 / Business profile</span>
+                        <h3>First, the shape of the business.</h3>
+                        <p>A quick snapshot helps us understand the scale and complexity you are operating at.</p>
                       </div>
 
                       <form className="booking-form" onSubmit={advanceStep}>
@@ -306,6 +312,19 @@ export function BookingProvider({ children }) {
                         </div>
 
                         <label>
+                          <span>Annual revenue</span>
+                          <select name="revenue" onChange={updateAnswer} required value={answers.revenue}>
+                            <option value="" disabled>Select a range</option>
+                            <option value="Under $500k">Under $500k</option>
+                            <option value="$500k–$1m">$500k–$1m</option>
+                            <option value="$1m–$3m">$1m–$3m</option>
+                            <option value="$3m–$10m">$3m–$10m</option>
+                            <option value="$10m–$25m">$10m–$25m</option>
+                            <option value="$25m+">$25m+</option>
+                          </select>
+                        </label>
+
+                        <label>
                           <span>Team size</span>
                           <select name="teamSize" onChange={updateAnswer} required value={answers.teamSize}>
                             <option value="" disabled>Select a range</option>
@@ -317,6 +336,23 @@ export function BookingProvider({ children }) {
                           </select>
                         </label>
 
+                        <button className="booking-form__primary" type="submit">
+                          Continue
+                          <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                        </button>
+                      </form>
+                    </div>
+                  ) : null}
+
+                  {step === 2 ? (
+                    <div className="booking-questionnaire">
+                      <div className="booking-questionnaire__intro">
+                        <span>02 / Operations</span>
+                        <h3>Now, where is the drag?</h3>
+                        <p>Tell us what is getting in the way and what a worthwhile result would look like.</p>
+                      </div>
+
+                      <form className="booking-form" onSubmit={advanceStep}>
                         <label>
                           <span>Biggest operational problem</span>
                           <textarea
@@ -329,6 +365,31 @@ export function BookingProvider({ children }) {
                           />
                         </label>
 
+                        <div className="booking-form__row">
+                          <label>
+                            <span>Primary priority</span>
+                            <select name="priority" onChange={updateAnswer} required value={answers.priority}>
+                              <option value="" disabled>Select one</option>
+                              <option value="Reduce costs">Reduce costs</option>
+                              <option value="Improve margins">Improve margins</option>
+                              <option value="Reclaim team time">Reclaim team time</option>
+                              <option value="Create capacity">Create capacity</option>
+                              <option value="Simplify systems">Simplify systems</option>
+                            </select>
+                          </label>
+
+                          <label>
+                            <span>Timing</span>
+                            <select name="urgency" onChange={updateAnswer} required value={answers.urgency}>
+                              <option value="" disabled>Select one</option>
+                              <option value="As soon as possible">As soon as possible</option>
+                              <option value="Within 30 days">Within 30 days</option>
+                              <option value="Within 90 days">Within 90 days</option>
+                              <option value="Exploring options">Exploring options</option>
+                            </select>
+                          </label>
+                        </div>
+
                         <label>
                           <span>What would a meaningful win look like? <em>Optional</em></span>
                           <input
@@ -340,18 +401,24 @@ export function BookingProvider({ children }) {
                           />
                         </label>
 
-                        <button className="booking-form__primary" type="submit">
-                          See available times
-                          <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
-                        </button>
+                        <div className="booking-form__actions">
+                          <button className="booking-form__back" type="button" onClick={() => setStep(1)}>
+                            <ArrowLeft size={17} strokeWidth={2} aria-hidden="true" />
+                            Back
+                          </button>
+                          <button className="booking-form__primary" type="submit">
+                            See available times
+                            <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+                          </button>
+                        </div>
                       </form>
                     </div>
                   ) : null}
 
-                  {step === 2 ? (
+                  {step === 3 ? (
                     <div className="booking-schedule">
                       <div className="booking-schedule__bar">
-                        <button type="button" onClick={() => setStep(1)}>
+                        <button type="button" onClick={() => setStep(2)}>
                           <ArrowLeft size={16} strokeWidth={2} aria-hidden="true" />
                           Edit answers
                         </button>
