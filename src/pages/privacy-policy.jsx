@@ -99,7 +99,7 @@ function PrivacyPolicy() {
       sections={sections}
       contact={
         <p>
-          Questions about this policy? Email us at <a href="mailto:hello@soaplabs.co">hello@soaplabs.co</a>.
+          Questions about this policy? Email us at <a href="mailto:hello@soaplabs.io">hello@soaplabs.io</a>.
         </p>
       }
     />
