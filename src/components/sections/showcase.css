@@ -235,3 +235,8 @@
     filter: none;
   }
 }
+@media (min-width: 1200px) {
+  .showcase-wrap {
+    margin-top: -32px;
+  }
+}
