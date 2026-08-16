@@ -218,3 +218,17 @@
     bottom: auto;
   }
 }
+
+@media (max-width: 479px) {
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .site-footer__legal {
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
