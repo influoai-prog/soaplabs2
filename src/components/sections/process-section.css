@@ -671,3 +671,11 @@
     will-change: auto;
   }
 }
+
+/* Lift the mobile process CTA without affecting its surrounding layout. */
+@media (max-width: 620px) {
+  .process-cta__button-wrap {
+    position: relative;
+    top: -4px;
+  }
+}
