@@ -100,6 +100,25 @@ html {
   background: #fff;
 }
 
+/* Lenis owns desktop interpolation. Running native smooth scrolling at the
+   same time adds a second easing pass and makes short wheel gestures uneven. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   min-width: 320px;
