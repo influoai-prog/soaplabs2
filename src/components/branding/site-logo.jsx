@@ -1,17 +1,16 @@
 import { useId } from 'react'
 
-export function SoapMark() {
-  const instanceId = useId().replace(/:/g, '')
-  const gradientId = `${instanceId}-soap-gradient`
-  const outerClipId = `${instanceId}-soap-outer-clip`
-  const innerClipId = `${instanceId}-soap-inner-clip`
+function SoapMarkSvg({ className, height, idPrefix, viewBox, width }) {
+  const gradientId = `${idPrefix}-gradient`
+  const outerClipId = `${idPrefix}-outer-clip`
+  const innerClipId = `${idPrefix}-inner-clip`
 
   return (
     <svg
-      className="soap-mark"
-      width="56"
-      height="78"
-      viewBox="0 0 56 78"
+      className={`soap-mark ${className}`}
+      width={width}
+      height={height}
+      viewBox={viewBox}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -37,5 +36,28 @@ export function SoapMark() {
 </clipPath>
 </defs>
     </svg>
+  )
+}
+
+export function SoapMark() {
+  const instanceId = useId().replace(/:/g, '')
+
+  return (
+    <>
+      <SoapMarkSvg
+        className="soap-mark--desktop"
+        width="56"
+        height="78"
+        viewBox="0 0 56 78"
+        idPrefix={`${instanceId}-desktop`}
+      />
+      <SoapMarkSvg
+        className="soap-mark--mobile"
+        width="102"
+        height="102"
+        viewBox="-46.0664 19.6797 102.066 102.066"
+        idPrefix={`${instanceId}-mobile`}
+      />
+    </>
   )
 }
