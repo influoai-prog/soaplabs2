@@ -112,20 +112,20 @@ function App() {
         <span>Soap Labs works best in portrait.</span>
       </div>
       <SiteLayout pageClassName={isLoading ? 'page--loading' : ''} navbarProps={{ isLoading }}>
-      {isWhiteScreen ? <div className="boot-white" aria-hidden="true" /> : null}
-      <Hero />
+        {isWhiteScreen ? <div className="boot-white" aria-hidden="true" /> : null}
+        <Hero />
 
-      <div className="proof-industries-flow">
-        <section className="proof-section" id="contact">
-          <Showcase />
-        </section>
+        <div className="proof-industries-flow">
+          <section className="proof-section" id="contact">
+            <Showcase />
+          </section>
 
-        <IndustriesSection />
-      </div>
-      <FixSection />
-      <ProcessSection />
-      <TestimonialSection />
-      <FAQSection />
+          <IndustriesSection />
+        </div>
+        <FixSection />
+        <ProcessSection />
+        <TestimonialSection />
+        <FAQSection />
         <LegalSection />
       </SiteLayout>
     </>
