@@ -573,6 +573,7 @@
     min-width: 156px;
     min-height: 48px;
     padding: 0 22px;
+    border-radius: 999px;
     font-size: 15px;
   }
 
@@ -601,5 +602,10 @@
 
   .booking-modal__panel--step-2 .booking-form__primary {
     min-height: 46px;
+    border-radius: 999px;
+  }
+
+  .booking-schedule__bar button {
+    transform: translateY(3px);
   }
 }
