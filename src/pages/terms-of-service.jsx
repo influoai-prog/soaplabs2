@@ -108,7 +108,7 @@ function TermsOfService() {
       sections={sections}
       contact={
         <p>
-          Questions about these terms? Email us at <a href="mailto:hello@soaplabs.co">hello@soaplabs.co</a>.
+          Questions about these terms? Email us at <a href="mailto:hello@soaplabs.io">hello@soaplabs.io</a>.
         </p>
       }
     />
