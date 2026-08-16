@@ -129,7 +129,7 @@
   mix-blend-mode: hue;
 }
 
-@media (max-width: 809.98px) {
+@media (max-width: 1199.98px) {
 
   .showcase-frame {
     max-height: 100vh;
@@ -145,12 +145,12 @@
   }
 }
 
-@media (max-width: 809.98px) {
+@media (max-width: 1199.98px) {
 
 
   .showcase-wrap {
     display: flex;
-    margin-top: -18px;
+    margin-top: 0;
     flex-direction: column;
   }
 
@@ -225,7 +225,7 @@
 }
 
 /* Reduce mobile video compositing work while preserving the desktop treatment. */
-@media (max-width: 809.98px) {
+@media (max-width: 1199.98px) {
   .showcase-frame,
   .showcase {
     will-change: auto;

@@ -145,6 +145,12 @@ html.is-white-screen body {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .page-content > .hero-section + .proof-industries-flow {
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 479px) {
   .page {
     --page-gutter: 22px;

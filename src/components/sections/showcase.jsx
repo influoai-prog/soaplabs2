@@ -81,7 +81,7 @@ export function Showcase() {
     offset: ['start start', 'end end'],
   })
 
-  const compactLayout = viewport.width < 768
+  const compactLayout = viewport.width < 1200
   const motionDisabled = shouldReduceMotion || compactLayout
   const framePadding = compactLayout ? 10 : FRAME.padding
   const gutter = compactLayout ? 8 : 32
