@@ -474,19 +474,20 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    font-size: clamp(36px, 9.5vw, 44px);
+    font-size: clamp(32px, 9.5vw, 44px);
     line-height: 0.98;
   }
 
   .fix-intro__clip {
-    width: max-content;
+    width: 100%;
     max-width: 100%;
-    overflow: visible;
+    overflow: hidden;
     padding-right: 0.06em;
     padding-left: 0.03em;
   }
 
   .fix-intro__line {
+    max-width: 100%;
     white-space: nowrap;
   }
 
@@ -497,5 +498,11 @@
 
   .fix-intro__subheading {
     display: none;
+  }
+}
+
+@media (max-width: 359px) {
+  .fix-intro h2 {
+    font-size: clamp(29px, 9.25vw, 33px);
   }
 }
