@@ -188,8 +188,11 @@
     width: 100%;
     max-width: 100%;
     max-height: none;
-    padding: 10px;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 16px;
     place-items: center;
+    background: #010205 !important;
   }
 
   .showcase {
@@ -198,6 +201,7 @@
     max-width: 100%;
     min-height: 0;
     aspect-ratio: 16 / 9;
+    background: #010205;
   }
 }
 
@@ -233,5 +237,12 @@
 
   .showcase__video {
     filter: none;
+  }
+
+  .showcase__video,
+  .showcase__hue-layer {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    inset: -1px;
   }
 }
