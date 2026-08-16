@@ -1,6 +1,18 @@
 .showcase-actions {
+  position: relative;
   display: flex;
   align-items: center;
+}
+
+.showcase-actions::before {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 8px;
+  background: inherit;
+  content: '';
+  pointer-events: none;
 }
 
 .showcase-actions {
