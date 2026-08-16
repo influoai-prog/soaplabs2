@@ -514,7 +514,7 @@
     min-height: 100%;
     transform: none;
     gap: 12px;
-    padding: 62px 34px 24px;
+    padding: 62px 38px 24px;
     background: #fff;
   }
 
@@ -574,5 +574,32 @@
     min-height: 48px;
     padding: 0 22px;
     font-size: 15px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form {
+    gap: 10px;
+    padding-top: 54px;
+    padding-bottom: 20px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form label {
+    gap: 6px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form input,
+  .booking-modal__panel--step-2 .booking-form select {
+    height: 46px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form textarea {
+    min-height: 70px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form__actions {
+    margin-top: 2px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form__primary {
+    min-height: 46px;
   }
 }
