@@ -577,6 +577,18 @@
     font-size: 15px;
   }
 
+  .booking-form > .booking-form__primary {
+    min-height: 50px;
+    margin-top: 6px;
+    border-radius: 999px;
+  }
+
+  .booking-form > .booking-form__primary {
+    min-height: 50px;
+    margin-top: 5px;
+    border-radius: 999px;
+  }
+
   .booking-modal__panel--step-2 .booking-form {
     gap: 15px;
     padding-top: 58px;
