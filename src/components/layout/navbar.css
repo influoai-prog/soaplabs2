@@ -133,6 +133,10 @@
   height: 60px;
 }
 
+.soap-mark--mobile {
+  display: none;
+}
+
 .brand__wordmark {
   width: auto;
   height: 28px;
@@ -444,6 +448,16 @@
   .soap-mark {
     width: 35px;
     height: 52px;
+  }
+
+  .nav-shell .soap-mark--desktop {
+    display: none;
+  }
+
+  .nav-shell .soap-mark--mobile {
+    display: block;
+    width: 34px;
+    height: 34px;
   }
 
   .brand__wordmark {
