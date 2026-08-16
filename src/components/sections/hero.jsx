@@ -49,11 +49,11 @@ export function Hero() {
       </h1>
 
       <motion.p className="hero-copy" variants={copy}>
-        We find the costs, bottlenecks and{' '}
+        <span className="hero-copy__line">We find the costs, bottlenecks and</span>{' '}
         <br className="hero-copy__mobile-break" />
-        wasted hours dragging down your margins{' '}
+        <span className="hero-copy__line">wasted hours dragging down your margins</span>{' '}
         <br className="hero-copy__mobile-break" />
-        then turn them into profit.
+        <span className="hero-copy__line">then turn them into profit.</span>
       </motion.p>
     </motion.section>
   )

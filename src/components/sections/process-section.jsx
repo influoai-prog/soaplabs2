@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowIcon } from '../ui/arrow-icon'
 import { Button } from '../ui/button'
@@ -73,7 +74,7 @@ const arrowOffset = {
 }
 
 // Different entrance animations for variety
-const getCardVariants = (index, reduceMotion) => {
+const getCardVariants = (index, reduceMotion, compactLayout) => {
   if (reduceMotion) {
     return {
       hidden: { opacity: 1, scale: 1, y: 0, x: 0, rotateX: 0 },
@@ -84,6 +85,22 @@ const getCardVariants = (index, reduceMotion) => {
         x: 0,
         rotateX: 0,
         transition: { duration: 0 },
+      },
+    }
+  }
+
+  if (compactLayout) {
+    return {
+      hidden: { opacity: 0, y: 22 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.55,
+          ease: easeOut,
+          staggerChildren: 0.08,
+          delayChildren: 0.08,
+        },
       },
     }
   }
@@ -145,6 +162,18 @@ const getCardVariants = (index, reduceMotion) => {
 export function ProcessSection() {
   const { openBooking, bookingUrl } = useBooking()
   const reduceMotion = useReducedMotion()
+  const [compactLayout, setCompactLayout] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 809.98px)').matches,
+  )
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 809.98px)')
+    const updateLayout = () => setCompactLayout(mediaQuery.matches)
+
+    updateLayout()
+    mediaQuery.addEventListener('change', updateLayout)
+    return () => mediaQuery.removeEventListener('change', updateLayout)
+  }, [])
 
   const innerItem = {
     hidden: { opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : 18 },
@@ -193,7 +222,7 @@ export function ProcessSection() {
             <motion.article
               className={`process-card ${step.className}`}
               key={step.number}
-              variants={getCardVariants(index, reduceMotion)}
+              variants={getCardVariants(index, reduceMotion, compactLayout)}
             >
               <motion.div className="process-card__topline" variants={innerItem}>
                 <span className="process-card__number">{step.number}</span>
