@@ -473,7 +473,7 @@
     width: min(500px, calc(100vw - 48px));
     height: min(500px, calc(100svh - 48px));
     max-height: calc(100svh - 48px);
-    border-radius: 28px;
+    border-radius: 32px;
     box-shadow: 0 24px 68px rgba(1, 2, 5, 0.11);
   }
 
@@ -578,9 +578,9 @@
   }
 
   .booking-modal__panel--step-2 .booking-form {
-    gap: 10px;
-    padding-top: 54px;
-    padding-bottom: 20px;
+    gap: 13px;
+    padding-top: 58px;
+    padding-bottom: 24px;
   }
 
   .booking-modal__panel--step-2 .booking-form label {
@@ -589,23 +589,58 @@
 
   .booking-modal__panel--step-2 .booking-form input,
   .booking-modal__panel--step-2 .booking-form select {
-    height: 46px;
+    height: 48px;
   }
 
   .booking-modal__panel--step-2 .booking-form textarea {
-    min-height: 70px;
+    min-height: 78px;
   }
 
   .booking-modal__panel--step-2 .booking-form__actions {
-    margin-top: 2px;
+    margin-top: 8px;
   }
 
   .booking-modal__panel--step-2 .booking-form__primary {
-    min-height: 46px;
+    min-height: 48px;
     border-radius: 999px;
   }
 
   .booking-schedule__bar button {
     transform: translateY(3px);
+  }
+}
+
+@media (max-width: 809.98px) {
+  .booking-modal__panel--step-2 .booking-form {
+    gap: 13px;
+    padding: 64px 20px 28px;
+    transform: none;
+  }
+
+  .booking-modal__panel--step-2 .booking-form label {
+    gap: 7px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form input,
+  .booking-modal__panel--step-2 .booking-form select {
+    height: 50px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form textarea {
+    min-height: 78px;
+  }
+
+  .booking-modal__panel--step-2 .booking-form__actions {
+    margin-top: 7px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .booking-modal__panel--step-2 .booking-form__primary {
+    width: auto;
+    min-width: 150px;
+    min-height: 48px;
+    align-self: auto;
+    border-radius: 999px;
   }
 }
