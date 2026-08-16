@@ -196,3 +196,16 @@
     margin-bottom: clamp(26px, 7vw, 30px);
   }
 }
+/* Keep tablet and desktop hero rhythm independent from the phone layout. */
+@media (min-width: 640px) and (max-width: 1199.98px) {
+  .hero-section {
+    margin-top: clamp(40px, 5vw, 56px);
+    margin-bottom: clamp(20px, 2.5vw, 26px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-section {
+    margin-top: 68px;
+  }
+}
