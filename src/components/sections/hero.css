@@ -163,7 +163,7 @@
   }
 
   .hero-copy__mobile-break {
-    display: block;
+    display: none;
   }
 
   .hero-copy__line {
