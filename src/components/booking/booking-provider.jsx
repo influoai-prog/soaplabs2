@@ -352,7 +352,7 @@ export function BookingProvider({ children }) {
                         </div>
 
                         <label>
-                          <span>What would a meaningful win look like? <em>Optional</em></span>
+                          <span>What would a win look like? <em>Optional</em></span>
                           <input
                             name="desiredOutcome"
                             onChange={updateAnswer}
