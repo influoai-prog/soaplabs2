@@ -117,6 +117,12 @@
   }
 }
 
+@media (max-width: 1199.98px) {
+  .hero-section {
+    margin-bottom: clamp(28px, 3.5vw, 36px);
+  }
+}
+
 @media (max-width: 639px) {
 
   .hero-section h1 {
@@ -187,6 +193,6 @@
 @media (max-width: 479px) {
   .hero-section {
     margin-top: 48px;
-    margin-bottom: 60px;
+    margin-bottom: clamp(26px, 7vw, 30px);
   }
 }
