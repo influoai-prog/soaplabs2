@@ -5,6 +5,46 @@
   background: #141414;
 }
 
+.portrait-guard {
+  display: none;
+}
+
+/* Mobile browsers do not reliably grant Screen Orientation API locks outside
+   installed/fullscreen experiences. Keep the existing lock request and use a
+   portrait-only fallback for phone-sized landscape viewports. */
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) and (max-height: 600px) {
+  .site-shell {
+    display: none;
+  }
+
+  .portrait-guard {
+    position: fixed;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    text-align: center;
+    color: var(--ink);
+    background: #fff;
+    inset: 0;
+  }
+
+  .portrait-guard strong {
+    font-size: clamp(28px, 7vw, 42px);
+    font-weight: 652;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .portrait-guard span {
+    font-size: 15px;
+    color: var(--muted);
+  }
+}
+
 .page {
   --page-gutter: clamp(22px, 4vw, 64px);
   position: relative;
