@@ -133,10 +133,6 @@
   height: 60px;
 }
 
-.soap-mark--mobile {
-  display: none;
-}
-
 .brand__wordmark {
   width: auto;
   height: 28px;
@@ -382,7 +378,7 @@
     width: calc(100vw - 48px);
     height: 52px;
     min-height: 52px;
-    padding: 0 4px 0 10px;
+    padding: 0 4px 0 0;
     border-radius: 28px;
   }
 
@@ -435,33 +431,25 @@
 
   .nav-brand {
     width: auto;
-    height: 20px;
-    gap: 6px;
+    height: 52px;
+    gap: 0;
   }
 
   .brand__mark {
-    width: 35px;
+    width: 37px;
     height: 52px;
-    flex-basis: 35px;
+    flex-basis: 37px;
   }
 
   .soap-mark {
-    width: 35px;
+    width: 37px;
     height: 52px;
-  }
-
-  .nav-shell .soap-mark--desktop {
-    display: none;
-  }
-
-  .nav-shell .soap-mark--mobile {
-    display: block;
-    width: 34px;
-    height: 34px;
   }
 
   .brand__wordmark {
     width: auto;
+    height: 24px;
+    gap: 4px;
   }
 
   .brand__wordmark span {
@@ -469,8 +457,14 @@
   }
 
   .brand__wordmark strong {
-    font-size: var(--type-body-font-size);
-    line-height: 20px;
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  .brand__wordmark span {
+    height: 24px;
+    padding-top: 2px;
+    font-size: 12px;
   }
 
   .nav-trailing {
