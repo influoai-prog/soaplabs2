@@ -106,23 +106,29 @@ function App() {
   }, [location.pathname, location.state?.scrollTo, navigate])
 
   return (
-    <SiteLayout pageClassName={isLoading ? 'page--loading' : ''} navbarProps={{ isLoading }}>
-      {isWhiteScreen ? <div className="boot-white" aria-hidden="true" /> : null}
-      <Hero />
-
-      <div className="proof-industries-flow">
-        <section className="proof-section" id="contact">
-          <Showcase />
-        </section>
-
-        <IndustriesSection />
+    <>
+      <div className="portrait-guard" role="status" aria-live="polite">
+        <strong>Rotate your phone</strong>
+        <span>Soap Labs works best in portrait.</span>
       </div>
-      <FixSection />
-      <ProcessSection />
-      <TestimonialSection />
-      <FAQSection />
-      <LegalSection />
-    </SiteLayout>
+      <SiteLayout pageClassName={isLoading ? 'page--loading' : ''} navbarProps={{ isLoading }}>
+        {isWhiteScreen ? <div className="boot-white" aria-hidden="true" /> : null}
+        <Hero />
+
+        <div className="proof-industries-flow">
+          <section className="proof-section" id="contact">
+            <Showcase />
+          </section>
+
+          <IndustriesSection />
+        </div>
+        <FixSection />
+        <ProcessSection />
+        <TestimonialSection />
+        <FAQSection />
+        <LegalSection />
+      </SiteLayout>
+    </>
   )
 }
 
