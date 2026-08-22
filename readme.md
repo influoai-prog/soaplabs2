@@ -1,35 +1,1 @@
-# soap
-
-Marketing website for Soap, built with React and Vite.
-
-## folder guide
-
-- `src/components/layout/` â€” navigation, footer, and page layout components
-- `src/components/sections/` â€” homepage content sections
-- `src/components/branding/` â€” logo and brand-mark components
-- `src/components/ui/` â€” reusable buttons and icons
-- `src/pages/` â€” standalone legal pages
-- `src/utilities/` â€” shared animation, scrolling, and styling helpers
-- `src/assets/` â€” images and graphics imported by source code
-- `public/fonts/` â€” locally hosted font files
-- `public/images/` â€” images served directly by the browser
-- `public/workflow-showcase.mp4` â€” homepage workflow demonstration
-- `index.html` â€” browser entry document
-- `vite.config.js` â€” local and production build configuration
-- `vercel.json` â€” deployment and route configuration
-
-## local development
-
-```bash
-pnpm install
-pnpm dev
-```
-
-## checks and production build
-
-```bash
-pnpm lint
-pnpm build
-```
-
-Generated output is written to `dist/` and excluded from version control.
+m«ëˆ§½©buªàºg§¶·švg¦uKæÚ±î¸Ø[é¢Šwâ•ê(º×â•æÛ­æ¤n·š‘éÜ¡×¢ëiºÛ©Š{h–)Ş²‡åzx-†{¦×^r‡^uç(uè§¦ëa…éiv+)•¬­†+&zËè¢›­Šznµø¥y×Ÿjém~ŠìµØ§¢‹­¦ëhºÚnµø¥y×Ÿjém~ŠìµÚ.
